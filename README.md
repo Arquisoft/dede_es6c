@@ -55,3 +55,4 @@ Encontrarás más información sobre el repositorio en los otros archivos README
 Miembros del equipo:
 Germán Díaz González UO258472
 Mateo Garcia Subiran UO278193
+Álvaro García Peña UO275778
