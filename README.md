@@ -56,3 +56,4 @@ Miembros del equipo:
 Germán Díaz González UO258472
 Mateo Garcia Subiran UO278193
 Álvaro García Peña UO275778
+Luis Manuel González Baizán UO269502
