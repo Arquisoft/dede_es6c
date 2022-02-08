@@ -50,3 +50,7 @@ Encontrarás más información sobre el repositorio en los otros archivos README
 - Documentación: https://github.com/Arquisoft/dede_es6c/tree/master/docs
 - Webapp: https://github.com/Arquisoft/dede_es6c/tree/master/webapp
 - Restapi: https://github.com/Arquisoft/dede_es6c/tree/master/restapi
+
+
+Miembros del equipo:
+Germán Díaz González UO258472
