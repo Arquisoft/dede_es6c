@@ -1,24 +1,30 @@
 [[section-solution-strategy]]
 == Solution Strategy
 
+==Technology decisions
 
 [role="arc42help"]
 ****
-.Contents
-A short summary and explanation of the fundamental decisions and solution strategies, that shape the system's architecture. These include
+.Libraries
+The main libraries we are going to use in our project are:
 
-* technology decisions
-* decisions about the top-level decomposition of the system, e.g. usage of an architectural pattern or design pattern
-* decisions on how to achieve key quality goals
-* relevant organizational decisions, e.g. selecting a development process or delegating certain tasks to third parties.
+* React: The main library for the front-end of the app.
+* TypeScript: JavaScript but with types, its usefull for programming.
+* Node.js: Package manager for the project.
+* SOLID Pods: For descentraliced data usage.
+* MongoDB: Database for the different items in our project.
 
-.Motivation
-These decisions form the cornerstones for your architecture. They are the basis for many other detailed decisions or implementation rules.
+.Development tools
 
-.Form
-Keep the explanation of these key decisions short.
+* GitHub: For source control.
+* GitKraken: Simplifies the use of Git.
+* Docker: For encapsulate and deploy the code in an easier way.
+* Heroku: For the webApp deployment.
+* AsciiDoc: For an easier way to document the project.
 
-Motivate what you have decided and why you decided that way,
-based upon your problem statement, the quality goals and key constraints.
-Refer to details in the following sections.
+.Organizational decisions
+
+* We will use the issues system to comunicate with the other developers, to leave a register of what its happening in our project continously.
+* Another way to communicate and work will be the face to face meetings and the online meetings, in this meeting we will argue the problems and the progress in our individual, and collective work.
+* We will use the GitHub tool that let us create a project to work like an agile methodology. With this we will add the product backlog user stories that we can asign to team members.
 ****
