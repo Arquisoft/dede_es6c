@@ -6,9 +6,19 @@
 
 === 10.1. Quality Tree
 
-
+[caption="Quality Tree"]
+:imagesdir: images/ 
+image:Docu10_QualityTree.PNG["Fallo imagen"]
 
 === 10.2. Quality Scenarios
 
-
-
+[options="header",cols="1,2,2"]
+|===
+|Quality goal|Scenario|Priority
+| Usability | The application has to be usable by everyone, and the more specific functionalities have to be quickly accessible. | High 
+| Security  | the application has to be very secure and has to be robust so that customers do not have problems with their data. | High 
+| Confidentiality | The information must be fully decentralized and the user has complete control over his data that he can share with the application. | High 
+| Maintainability | The code must be reusable and easy to make changes to, so that if necessary, the code can be updated in the future. | Medium 
+| Portability | 	The application should be adapted to the device where it is deployed, from computers to mobile phones or tablets. | Medium 
+| Compatibility | The application must be easily deployable on different available systems | Low-Medium 
+|===
