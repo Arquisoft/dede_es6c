@@ -9,6 +9,7 @@ A list of identified technical risks or technical debts, ordered by priority.
 .Technical Risks
 |===
 | Technical Risk | Explanation | mitigation/acceptance
+| Experience | Lack of experience of developers using the technologies required for the project | Team effort to study and learn what is necessary to carry out the project
 |=== 
 
 .Technical Debts
