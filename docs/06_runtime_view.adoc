@@ -24,6 +24,11 @@ If there is no problem, a confirmation message will be sent.
 
 image::06_buyProduct_runtime_view.png[Buy Product]
 
+Version 2.
+
+image::Diagrama_secuencia_compra_producto.png[Buy Product]
+
+
 === Registration Product
 The administrator will be the only one capable of registering a new vehicle, 
 for this he must enter the data about the vehicle.
@@ -32,6 +37,10 @@ an internal message will be sent to the products window and it will be updated i
 The user will be able to see the updated list of products without any problem.
 
 image::06_registrationProduct_runtime_view.png[Registration Product]
+
+Version 2.
+
+image::Diagrama_secuencia_registro_producto.png[Registration Product]
 
 === Product Deletion
 The administrator is the only user able to delete vehicles by entering the vehicle code.
@@ -44,3 +53,4 @@ image::06_productDeletion_runtime_view.png[Product Deletion]
 In order to have an administrator, we need to register one in the System. We check if the user exists. If so, we update their status as a superuser on the database. After this, they will have permission to add and delete products. 'Superuser' is the same as 'Administrator'.
 
 image::06_add_superuser.png[Adding a Superuser]
+
