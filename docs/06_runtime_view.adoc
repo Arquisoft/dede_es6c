@@ -32,3 +32,10 @@ an internal message will be sent to the products window and it will be updated i
 The user will be able to see the updated list of products without any problem.
 
 image::06_registrationProduct_runtime_view.png[Registration Product]
+
+=== Product Deletion
+The administrator is the only user able to delete vehicles by entering the vehicle code.
+The vehicle is checked to see if it exists in the database, and if it does, it will be deleted. The product view is then updated and the deleted product will not appear.
+Obviously, you cannot purchase a deleted vehicle.
+
+image::06_productDeletion_runtime_view.png[Product Deletion]
