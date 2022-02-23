@@ -3,73 +3,68 @@
 
 [role="arc42help"]
 ****
-Describes the relevant requirements and the driving forces that software architects and development team must consider. These include
-
-* underlying business goals, essential features and functional requirements for the system
-* quality goals for the architecture
-* relevant stakeholders and their expectations
+This is a group project oriented to the ASW subject and with this it is 
+intended to learn to work in teams in a professional way and to manage 
+and develop a project continuously.
+The application will be an online store of all types of vehicles. 
+Customer data must be secure and only be accessed by its owners, respecting the SOLID principles.
+Within project management, there are two stakeholders:
+* On the one hand, the developers, who intend to create a project to match, of a 
+professional nature or, at least, that appears so. In addition, we intend that it 
+meets, at least, the requirements imposed by the teachers.
+* On the other hand, the professors, the people who have imposed on us the development of 
+the project together with its restrictions.
 ****
 
 === Requirements Overview
 
 [role="arc42help"]
 ****
-.Contents
-Short description of the functional requirements, driving forces, extract (or abstract)
-of requirements. Link to (hopefully existing) requirements documents
-(with version number and information where to find it).
 
-.Motivation
-From the point of view of the end users a system is created or modified to
-improve support of a business activity and/or improve the quality.
-
-.Form
-Short textual description, probably in tabular use-case format.
-If requirements documents exist this overview should refer to these documents.
-
-Keep these excerpts as short as possible. Balance readability of this document with potential redundancy w.r.t to requirements documents.
+This application aims to be a digital store for all kinds of second-hand vehicles. 
+The store must respect the privacy of customers by complying with the SOLID principles, 
+that is, store customer data through personal web servers (Pods), but only if they allow it.
+The main expected functionality is:
+* Show the catalog of available vehicles, in such a way that any user can access any that is 
+for sale, even if they do not register.
+* Purchase of vehicles by customers, which can be purchased by anyone as long as it is for 
+sale and they have logged in.
+* Modification of the catalog: apart from the clients, there will be an administrator user 
+who will be able to add or remove vehicles from the application's list of vehicles for sale.
+* Registration: for a user to be able to buy any vehicle, they must sign up as a client of the application.
+* Login: if a user has previously registered, they must be able to log back in with all of 
+their previously saved data.
+Other functional requirements that the application must meet is to calculate the costs of a purchase 
+from a customer based on the selected products and the shipping distance of these. Customers must 
+also be able to view the orders placed at all times.
 ****
 
 === Quality Goals
 
 [role="arc42help"]
 ****
-.Contents
-The top three (max five) quality goals for the architecture whose fulfillment is of highest importance to the major stakeholders. We really mean quality goals for the architecture. Don't confuse them with project goals. They are not necessarily identical.
 
-.Motivation
-You should know the quality goals of your most important stakeholders, since they will influence fundamental architectural decisions. Make sure to be very concrete about these qualities, avoid buzzwords.
-If you as an architect do not know how the quality of your work will be judged …
-
-.Form
-A table with quality goals and concrete scenarios, ordered by priorities
+[options="header",cols="1,2,2"]
+|===
+|Nº|Quality attribute|Motivation
+| _1_ | _Usability_ | _Users should be able to use the page with little difficulty without having to search for instructions for use. A web application is useless if no one knows how to handle it._
+| _2_ | _Security_ | _The application must be able to resist attack from anyone trying to take down the application or extract information from it without authorization. If a user doesn't feel safe in the app, they might leave the app._
+| _3_ | _Confidentiality_ | _Customer data can only be accessed by them, and the store manager must be the only one capable of changing the available stock._
+|===
 ****
 
 === Stakeholders
 
 [role="arc42help"]
 ****
-.Contents
-Explicit overview of stakeholders of the system, i.e. all person, roles or organizations that
 
-* should know the architecture
-* have to be convinced of the architecture
-* have to work with the architecture or with code
-* need the documentation of the architecture for their work
-* have to come up with decisions about the system or its development
-
-.Motivation
-You should know all parties involved in development of the system or affected by the system.
-Otherwise, you may get nasty surprises later in the development process.
-These stakeholders determine the extent and the level of detail of your work and its results.
-
-.Form
-Table with role names, person names, and their expectations with respect to the architecture and its documentation.
+There are various stakeholders related to the 
+application to be developed. These are the relevant ones:
+* Developers: they are the people in charge of developing the 
+project and researching tools to be used in the project, 
+which, in this case, are the members of the 6-c laboratory 
+team.
+* Professors: they are the people who “finance” the development 
+of the project. These would be the teachers of the ASW subject, 
+in charge of evaluating the development of the project.
 ****
-
-[options="header",cols="1,2,2"]
-|===
-|Role/Name|Contact|Expectations
-| _<Role-1>_ | _<Contact-1>_ | _<Expectation-1>_
-| _<Role-2>_ | _<Contact-2>_ | _<Expectation-2>_
-|===

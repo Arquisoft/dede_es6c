@@ -1,67 +1,54 @@
 [[section-concepts]]
 == Cross-cutting Concepts
 
-
 [role="arc42help"]
 ****
-.Content
-This section describes overall, principal regulations and solution ideas that are
-relevant in multiple parts (= cross-cutting) of your system.
-Such concepts are often related to multiple building blocks.
-They can include many different topics, such as
+.Domain Model
+image:08_domain_model.png["Domain Model"]
 
-* domain models
-* architecture patterns or design patterns
-* rules for using specific technology
-* principal, often technical decisions of overall decisions
-* implementation rules
+.Domain Concepts
+* SuperUser: user administrator of the application. It has special permissions such as adding or deleting products and viewing the list of all existing users in the database.
+* User: standar user of the application. They store their data in PODs.
+* POD: stores the data of each of the user.
+    - username (primary key): user account login name.
+    - password: user's access key to his account.
+    - name: user's real name.
+    - address: user's delivery address.
+* ShoppingCart: virtual shopping cart where products are stored.
+    - list of products
+    - total price
+* History: user purchase history.
+    - username: user account login name.
+    - code: product identification.
+* Product: each of the products available in the online store.
+    - code (primary key): product identification.
+    - type: product category.
+    - name: product designation.
+    - price: total price of the product.
 
-.Motivation
-Concepts form the basis for _conceptual integrity_ (consistency, homogeneity)
-of the architecture. Thus, they are an important contribution to achieve inner qualities of your system.
+.User Experience Concepts
+This application requires the user to register in order to authenticate and place an order. For this purpose, a registration form will be available, in which the user will have to fill in a series of data including a password that he/she will then have to use in the authentication form to access his/her personal account.
+Once authenticated the user will be able to access the list of products that can be added to the cart and then make the purchase.
 
-Some of these concepts cannot be assigned to individual building blocks
-(e.g. security or safety). This is the place in the template that we provided for a
-cohesive specification of such concepts.
+.Security Concepts
+One of the objectives of the application, since it is an online sales system, is customer security. In order to guarantee this aspect, a procedure is used in which each user will have a password with which he/she can access his/her account.
+In addition to this, PODs (Personal Online Datastore) are used to store all user data, so they are in a trusted environment.
 
-.Form
-The form can be varied:
+."Under-the-hood" Concepts
+SOLID principles are used to store the user data.
 
-* concept papers with any kind of structure
-* cross-cutting model excerpts or scenarios using notations of the architecture views
-* sample implementations, especially for technical concepts
-* reference to typical usage of standard frameworks (e.g. using Hibernate for object/relational mapping)
+.Operational Concepts
+* Shopping cart: you can look at the products you currently have in your shopping cart and delete them from there.
+* History: it is possible to review personal purchase history.
+* Products view: in this view you can see all the available products and add them to the cart from there.
 
-.Structure
-A potential (but not mandatory) structure for this section could be:
+.Usability
+In order to offer a good user experience, the application is designed to be easily navigable and with a friendly interface.
 
-* Domain concepts
-* User Experience concepts (UX)
-* Safety and security concepts
-* Architecture and design patterns
-* "Under-the-hood"
-* development concepts
-* operational concepts
+.Sections Under Construction
+* Architecture and Design Patterns
+* Additional Libraries
+* Acessibility
+* Development Concepts
 
-Note: it might be difficult to assign individual concepts to one specific topic
-on this list.
-
-image:08-Crosscutting-Concepts-Structure-EN.png["Possible topics for crosscutting concepts"]
 ****
-
-
-=== Domain model
-
-image:UmlDiagram.png["Example UML Diagram"]
-
-
-
-=== _<Concept 2>_
-
-_<explanation>_
-
-...
-
-=== _<Concept n>_
-
-_<explanation>_

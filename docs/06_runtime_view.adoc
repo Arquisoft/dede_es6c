@@ -1,57 +1,56 @@
 [[section-runtime-view]]
 == Runtime View
+In this section, we will develop the main runtime views of use cases of our application.
+
+=== Sign Up
+The customer will be able to navigate freely in the store without having to be registered, 
+but in case he wants to buy a vehicle he must register.
+The client will be asked to enter their personal data, if this data is already registered in the database, 
+the registration will be canceled and the log in window will be displayed. On the other hand, 
+the customer's data will be saved in the database and access to make the purchase will be allowed.
+
+image::06_signUp_runtime_view.png[Sign Up]
+
+=== Log In
+Both the client and the administrator will see the option to log in, 
+for this they must enter their username and password, if they are registered in the database, 
+the system is loaded corresponding to their role and access is allowed, otherwise they will be deny access.
+
+image::06_login_runtime_view.png[Log In]
+
+=== Buy Product
+The client selects all the elements that he is going to buy, a new order is made that must be registered in the database.
+If there is no problem, a confirmation message will be sent.
+
+image::06_buyProduct_runtime_view.png[Buy Product]
+
+Version 2.
+
+image::Diagrama_secuencia_compra_producto.png[Buy Product]
 
 
-[role="arc42help"]
-****
-.Contents
-The runtime view describes concrete behavior and interactions of the system’s building blocks in form of scenarios from the following areas:
+=== Registration Product
+The administrator will be the only one capable of registering a new vehicle, 
+for this he must enter the data about the vehicle.
+The vehicle will be added to the database, once the vehicle registration is finished, 
+an internal message will be sent to the products window and it will be updated immediately.
+The user will be able to see the updated list of products without any problem.
 
-* important use cases or features: how do building blocks execute them?
-* interactions at critical external interfaces: how do building blocks cooperate with users and neighboring systems?
-* operation and administration: launch, start-up, stop
-* error and exception scenarios
+image::06_registrationProduct_runtime_view.png[Registration Product]
 
-Remark: The main criterion for the choice of possible scenarios (sequences, workflows) is their *architectural relevance*. It is *not* important to describe a large number of scenarios. You should rather document a representative selection.
+Version 2.
 
-.Motivation
-You should understand how (instances of) building blocks of your system perform their job and communicate at runtime.
-You will mainly capture scenarios in your documentation to communicate your architecture to stakeholders that are less willing or able to read and understand the static models (building block view, deployment view).
+image::Diagrama_secuencia_registro_producto.png[Registration Product]
 
-.Form
-There are many notations for describing scenarios, e.g.
+=== Product Deletion
+The administrator is the only user able to delete vehicles by entering the vehicle code.
+The vehicle is checked to see if it exists in the database, and if it does, it will be deleted. The product view is then updated and the deleted product will not appear.
+Obviously, you cannot purchase a deleted vehicle.
 
-* numbered list of steps (in natural language)
-* activity diagrams or flow charts
-* sequence diagrams
-* BPMN or EPCs (event process chains)
-* state machines
-* ...
+image::06_productDeletion_runtime_view.png[Product Deletion]
 
-****
+=== Adding a Superuser
+In order to have an administrator, we need to register one in the System. We check if the user exists. If so, we update their status as a superuser on the database. After this, they will have permission to add and delete products. 'Superuser' is the same as 'Administrator'.
 
-=== <Runtime Scenario 1>
+image::06_add_superuser.png[Adding a Superuser]
 
-
-* _<insert runtime diagram or textual description of the scenario>_
-* _<insert description of the notable aspects of the interactions between the
-building block instances depicted in this diagram.>_
-
-It is possible to use a sequence diagram:
-
-[plantuml,"Sequence diagram",png]
-----
-actor Alice
-actor Bob
-database Pod as "Bob's Pod"
-Alice -> Bob: Authentication Request
-Bob --> Alice: Authentication Response
-Alice  --> Pod: Store route
-Alice -> Bob: Another authentication Request
-Alice <-- Bob: another authentication Response
-----
-=== <Runtime Scenario 2>
-
-=== ...
-
-=== <Runtime Scenario n>

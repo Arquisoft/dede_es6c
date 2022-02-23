@@ -4,23 +4,10 @@
 
 [role="arc42help"]
 ****
-.Contents
-Important, expensive, large scale or risky architecture decisions including rationals.
-With "decisions" we mean selecting one alternative based on given criteria.
-
-Please use your judgement to decide whether an architectural decision should be documented
-here in this central section or whether you better document it locally
-(e.g. within the white box template of one building block).
-
-Avoid redundancy. Refer to section 4, where you already captured the most important decisions of your architecture.
-
-.Motivation
-Stakeholders of your system should be able to comprehend and retrace your decisions.
-
-.Form
-Various options:
-
-* List or table, ordered by importance and consequences or:
-* more detailed in form of separate sections per decision
-* ADR (architecture decision record) for every important decision
+.Design changes
+The following decisions have been made regarding the design of the application architecture:
+* The decision has been made to use the MERN architectural stack in the project, consisting of MongoDB, Express, React, Node. The reason is that since the use of React, Express and Node is a restriction, we thought it was good to apply the architectural stack by adding MongoDB as a tool to the project.
+* Docker: this tool is intended to ease the development of the project by avoiding certain repetitive and costly tasks, that is, it was chosen to ease the development of the project.
+* To be able to deploy the application so that it can be used by anyone, a deployment service is required. The one that has been chosen is Heroku, since it supports a large number of programming languages, including TypeScript with React. Furthermore, it is easily usable just by linking the Github repository to said tool.
+* AsciiDoc: it has been chosen to use this tool to ease the elaboration of the documentation throughout the development.
 ****
