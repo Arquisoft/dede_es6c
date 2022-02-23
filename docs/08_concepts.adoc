@@ -1,30 +1,30 @@
 [[section-concepts]]
 == Cross-cutting Concepts
 
-
 [role="arc42help"]
 ****
 .Domain Model
 image:08_domain_model.png["Domain Model"]
 
 .Domain Concepts
-* User: user of the application. They store their data in PODs.
+* SuperUser: user administrator of the application. It has special permissions such as adding or deleting products and viewing the list of all existing users in the database.
+* User: standar user of the application. They store their data in PODs.
 * POD: stores the data of each of the user.
-    - username or email
-    - password
-    - first and last name
-    - address
-* Shopping Cart: virtual shopping cart where products are stored.
+    - username (primary key): user account login name.
+    - password: user's access key to his account.
+    - name: user's real name.
+    - address: user's delivery address.
+* ShoppingCart: virtual shopping cart where products are stored.
     - list of products
     - total price
-* History: list of products and dates on which a user made a purchase.
-    - product purchased
-    - date
+* History: user purchase history.
+    - username: user account login name.
+    - code: product identification.
 * Product: each of the products available in the online store.
-    - product code
-    - brand
-    - model
-    - price
+    - code (primary key): product identification.
+    - type: product category.
+    - name: product designation.
+    - price: total price of the product.
 
 .User Experience Concepts
 This application requires the user to register in order to authenticate and place an order. For this purpose, a registration form will be available, in which the user will have to fill in a series of data including a password that he/she will then have to use in the authentication form to access his/her personal account.
@@ -38,15 +38,17 @@ In addition to this, PODs (Personal Online Datastore) are used to store all user
 SOLID principles are used to store the user data.
 
 .Operational Concepts
-* Shopping cart: you can look at the products you currently have in your shopping cart and delete them from there. 
-* History: it is possible to review the purchase history. It will show the products purchased in each one of them.
+* Shopping cart: you can look at the products you currently have in your shopping cart and delete them from there.
+* History: it is possible to review personal purchase history.
 * Products view: in this view you can see all the available products and add them to the cart from there.
 
 .Usability
 In order to offer a good user experience, the application is designed to be easily navigable and with a friendly interface.
 
 .Sections Under Construction
-* Architecture and Design Patters
+* Architecture and Design Patterns
 * Additional Libraries
 * Acessibility
 * Development Concepts
+
+****
