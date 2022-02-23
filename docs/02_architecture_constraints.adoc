@@ -5,6 +5,21 @@
 [role="arc42help"]
 ****
 
+.Contents
+Any requirement that constrains software architects in their freedom of design and implementation decisions or decision about the development process. These constraints sometimes go beyond individual systems and are valid for whole organizations and companies.
+
+.Motivation
+Architects should know exactly where they are free in their design decisions and where they must adhere to constraints.
+Constraints must always be dealt with; they may be negotiable, though.
+
+.Form
+Simple tables of constraints with explanations.
+If needed you can subdivide them into
+technical constraints, organizational and political constraints and
+conventions (e.g. programming or versioning guidelines, documentation or naming conventions)
+
+****
+
 .Technical Constraints
 
 This are the project constraints that we have and their explanations.
@@ -33,4 +48,3 @@ Decisions about how are we going to document our project and how are we going to
 | _Language_ | _We decided to write the documentation of the project in english because it's a trade-off, its harder to us to do it, but its more professional_
 | _Meetings_ | _We are going to do at least 2 meetings per week, the duration of each, depends on the amount of things we have to speak or decide, and the work we need to do as a team_
 |=== 
-****
