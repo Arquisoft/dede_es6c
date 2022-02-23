@@ -39,3 +39,8 @@ The vehicle is checked to see if it exists in the database, and if it does, it w
 Obviously, you cannot purchase a deleted vehicle.
 
 image::06_productDeletion_runtime_view.png[Product Deletion]
+
+=== Adding a Superuser
+In order to have an administrator, we need to register one in the System. We check if the user exists. If so, we update their status as a superuser on the database. After this, they will have permission to add and delete products. 'Superuser' is the same as 'Administrator'.
+
+image::06_add_superuser.png[Adding a Superuser]
