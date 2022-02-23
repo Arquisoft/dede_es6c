@@ -4,10 +4,43 @@
 
 [role="arc42help"]
 ****
-.Design changes
-The following decisions have been made regarding the design of the application architecture:
-* The decision has been made to use the MERN architectural stack in the project, consisting of MongoDB, Express, React, Node. The reason is that since the use of React, Express and Node is a restriction, we thought it was good to apply the architectural stack by adding MongoDB as a tool to the project.
-* Docker: this tool is intended to ease the development of the project by avoiding certain repetitive and costly tasks, that is, it was chosen to ease the development of the project.
-* To be able to deploy the application so that it can be used by anyone, a deployment service is required. The one that has been chosen is Heroku, since it supports a large number of programming languages, including TypeScript with React. Furthermore, it is easily usable just by linking the Github repository to said tool.
-* AsciiDoc: it has been chosen to use this tool to ease the elaboration of the documentation throughout the development.
+.Contents
+Important, expensive, large scale or risky architecture decisions including rationals.
+With "decisions" we mean selecting one alternative based on given criteria.
+
+Please use your judgement to decide whether an architectural decision should be documented
+here in this central section or whether you better document it locally
+(e.g. within the white box template of one building block).
+
+Avoid redundancy. Refer to section 4, where you already captured the most important decisions of your architecture.
+
+.Motivation
+Stakeholders of your system should be able to comprehend and retrace your decisions.
+
+.Form
+Various options:
+
+* List or table, ordered by importance and consequences or:
+* more detailed in form of separate sections per decision
+* ADR (architecture decision record) for every important decision
 ****
+
+The following key decisions have been made regarding the design of the application architecture throughout the project:
+
+.MERN stack for the project
+* Status: Accepted
+* Context: React, Express and Node are restrictions, so adding MongoDB as a database tool is the most plausible. Other alternatives to consider are SQL Server and HSQLDB for persistence management.
+* Decision: A MongoDB database will be used to store application data such as vehicles for sale.
+* Consequences: you must learn to use MongoDB, as well as include it in the project.
+
+.Docker usage
+* Status: Accepted
+* Context: the teachers have strongly recommended the use of this tool to facilitate the development of the code and deploy the application. Other tools like Heroku or Netlify can be used to deploy the app.
+* Decision: Docker will be used as a tool to avoid certain repetitive and costly tasks, thus speeding up the development of the project.
+* Consequences: We will have to understand how Docker works in the project, but once we do, we hope that it will facilitate long-term development.
+
+.Deployment with Heroku
+* Status: Proposed
+* Context: software is needed to deploy the application once it is finished, and this allows it to be done through a direct link to the Github repository where the project is. In addition, it supports a large number of programming languages, including React and TypeScript, which will be used in the project. Other alternatives are Docker, mentioned above, and Netlify, for example.
+* Decision: by allowing the use of the Github repository to deploy the web application, its use is very practical.
+* Consequences: once the Github repository is synchronized with Heroku, it is expected that we will not have any more concerns about the deployment of the application.
