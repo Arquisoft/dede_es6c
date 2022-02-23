@@ -3,7 +3,9 @@
 
 == 7. Deployment View
 
-
+[caption="Deployment View"]
+:imagesdir: images/ 
+image:DiagrameDeploymentView.drawio.PNG["Fallo imagen"]
 
 === Infrastructure Level 1
 
