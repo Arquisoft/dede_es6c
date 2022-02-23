@@ -5,12 +5,19 @@
 
 [caption="Deployment View"]
 :imagesdir: images/ 
-image:DiagrameDeploymentView.drawio.PNG["Fallo imagen"]
-
-=== Infrastructure Level 1
+image:DiagrameDeploymentView.drawio.png["Fallo imagen"]
 
 
+== Motivation
+The motivation of this deployment structure is the correct understanding of how  components of the project behave and are related in runtime.
 
-=== Infrastructure Level 2
 
-
+== Mapping
+[options="header",cols="1,2"]
+|===
+| Element |Description
+| Dispositivo | For the user it is the way to connect to the internet and use our application.
+| Servidor Web | Serve for the browser. Every Browser can run the aplication
+| Mongo Db | Is the database 
+| Pod | Solid PODs that we create on inrupt server
+|===
