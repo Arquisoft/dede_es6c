@@ -26,6 +26,7 @@ A list of identified technical risks or technical debts, ordered by priority.
 | Tests | Current lack of tests for the project | Thinking and developing tests
 | Documentation | Lack of full documentation | Develop and update current documentation as the project progresses
 | Qualification | Lack of qualification on the part of the team to develop such a large project | Team effort to remedy existing shortcomings
+| Code externalization | High dependence on external code | Try to reduce dependencies to external code
 |=== 
 
 ****
