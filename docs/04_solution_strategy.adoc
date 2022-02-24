@@ -23,7 +23,7 @@ Refer to details in the following sections.
 
 ****
 
-===Technology decisions
+=== Technology decisions
 
 .Libraries
 The main libraries we are going to use in our project are:
