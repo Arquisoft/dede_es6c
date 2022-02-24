@@ -472,6 +472,8 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_registration_product">6.4. Registration Product</a></li>
 <li><a href="#_product_deletion">6.5. Product Deletion</a></li>
 <li><a href="#_adding_a_superuser">6.6. Adding a Superuser</a></li>
+<li><a href="#_deleting_a_superuser">6.7. Deleting a Superuser</a></li>
+<li><a href="#_view_users">6.8. View Users</a></li>
 </ul>
 </li>
 <li><a href="#section-deployment-view">7. 7. Deployment View</a></li>
@@ -1464,6 +1466,28 @@ Obviously, you cannot purchase a deleted vehicle.</p>
 <img src="./images/06_add_superuser.png" alt="Adding a Superuser">
 </div>
 </div>
+</div>
+<div class="sect2">
+<h3 id="_deleting_a_superuser">6.7. Deleting a Superuser</h3>
+<div class="paragraph">
+<p>If the application has too many administrators, it could be an option to delete some from the System. We check if the user exists and it isn&#8217;t the only administrator. If so, the administrator will be deleted. If else, an error will be sent to the System.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/06_delete_superuser.png" alt="Deleting a Superuser">
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="_view_users">6.8. View Users</h3>
+<div class="paragraph">
+<p>We request the users to the database,then we update it.If all was correct the Admin can see the list of users.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/Diagrama_secuencia_ver_usuarios.png" alt="View User">
+</div>
+</div>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
@@ -1968,38 +1992,6 @@ List of risks and/or technical debts, probably including suggested measures to m
 <div class="sect1">
 <h2 id="section-glossary">14. Glossary</h2>
 <div class="sectionbody">
-<div class="sidebarblock arc42help">
-<div class="content">
-<div class="paragraph">
-<div class="title">Contents</div>
-<p>The most important domain and technical terms that your stakeholders use when discussing the system.</p>
-</div>
-<div class="paragraph">
-<p>You can also see the glossary as source for translations if you work in multi-language teams.</p>
-</div>
-<div class="paragraph">
-<div class="title">Motivation</div>
-<p>You should clearly define your terms, so that all stakeholders</p>
-</div>
-<div class="ulist">
-<ul>
-<li>
-<p>have an identical understanding of these terms</p>
-</li>
-<li>
-<p>do not use synonyms and homonyms</p>
-</li>
-</ul>
-</div>
-<div class="paragraph">
-<div class="title">Form</div>
-<p>A table with columns &lt;Term&gt; and &lt;Definition&gt;.</p>
-</div>
-<div class="paragraph">
-<p>Potentially more columns in case you need translations.</p>
-</div>
-</div>
-</div>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 50%;">
@@ -2013,12 +2005,36 @@ List of risks and/or technical debts, probably including suggested measures to m
 </thead>
 <tbody>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;Term-1&gt;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;definition-1&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Solid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Solid (derived from "social linked data") is a proposed set of conventions and tools for building decentralized social applications.</p></td>
 </tr>
 <tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;Term-2&gt;</p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock">&lt;definition-2&gt;</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">React</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">React is a free and open-source front-end JavaScript library for building user interfaces based on UI components.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TypeScript</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">TypeScript is a strongly typed programming language that builds on JavaScript.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Express</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Express is a back end web application framework for Node.js.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node.js</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Node.js is a runtime system used mostly for making server side applications with JavaScript.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MongoDB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MongoDB is an open source NoSQL database management program.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NoSQL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">NoSQL describes the wide variety of database technologies created to address the shortcomings of RDBMS and the demands of modern software development.</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RDBMS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Relational DataBase Management System</p></td>
 </tr>
 </tbody>
 </table>
