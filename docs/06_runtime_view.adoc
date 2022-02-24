@@ -54,3 +54,7 @@ In order to have an administrator, we need to register one in the System. We che
 
 image::06_add_superuser.png[Adding a Superuser]
 
+=== Deleting a Superuser
+If the application has too many administrators, it could be an option to delete some from the System. We check if the user exists and it isn't the only administrator. If so, the administrator will be deleted. If else, an error will be sent to the System.
+
+image::06_delete_superuser.png[Deleting a Superuser]
