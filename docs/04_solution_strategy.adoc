@@ -1,8 +1,6 @@
 [[section-solution-strategy]]
 == Solution Strategy
 
-==Technology decisions
-
 [role="arc42help"]
 ****
 .Contents
@@ -24,6 +22,8 @@ based upon your problem statement, the quality goals and key constraints.
 Refer to details in the following sections.
 
 ****
+
+===Technology decisions
 
 .Libraries
 The main libraries we are going to use in our project are:
