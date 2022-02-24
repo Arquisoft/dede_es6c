@@ -476,19 +476,22 @@ body.book #toc,body.book #preamble,body.book h1.sect0,body.book .sect1>h2{page-b
 <li><a href="#_view_users">6.8. View Users</a></li>
 </ul>
 </li>
-<li><a href="#section-deployment-view">7. 7. Deployment View</a></li>
-<li><a href="#_motivation">8. Motivation</a></li>
-<li><a href="#_mapping">9. Mapping</a></li>
-<li><a href="#section-concepts">10. Cross-cutting Concepts</a></li>
-<li><a href="#section-design-decisions">11. Design Decisions</a></li>
-<li><a href="#section-quality-scenarios">12. 10. Quality Requirements</a>
+<li><a href="#section-deployment-view">7. Deployment View</a>
 <ul class="sectlevel2">
-<li><a href="#_10_1_quality_tree">12.1. 10.1. Quality Tree</a></li>
-<li><a href="#_10_2_quality_scenarios">12.2. 10.2. Quality Scenarios</a></li>
+<li><a href="#_motivation">7.1. Motivation</a></li>
+<li><a href="#_mapping">7.2. Mapping</a></li>
 </ul>
 </li>
-<li><a href="#section-technical-risks">13. Risks and Technical Debts</a></li>
-<li><a href="#section-glossary">14. Glossary</a></li>
+<li><a href="#section-concepts">8. Cross-cutting Concepts</a></li>
+<li><a href="#section-design-decisions">9. Design Decisions</a></li>
+<li><a href="#section-quality-scenarios">10. Quality Requirements</a>
+<ul class="sectlevel2">
+<li><a href="#_quality_tree">10.1. Quality Tree</a></li>
+<li><a href="#_quality_scenarios">10.2. Quality Scenarios</a></li>
+</ul>
+</li>
+<li><a href="#section-technical-risks">11. Risks and Technical Debts</a></li>
+<li><a href="#section-glossary">12. Glossary</a></li>
 </ul>
 </div>
 </div>
@@ -1493,24 +1496,19 @@ Obviously, you cannot purchase a deleted vehicle.</p>
 </div>
 </div>
 <div class="sect1">
-<h2 id="section-deployment-view">7. 7. Deployment View</h2>
+<h2 id="section-deployment-view">7. Deployment View</h2>
 <div class="sectionbody">
 <div class="paragraph">
 <p><span class="image"><img src="./images/DiagrameDeploymentView.drawio.png" alt="Fallo imagen"></span></p>
 </div>
-</div>
-</div>
-<div class="sect1">
-<h2 id="_motivation">8. Motivation</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_motivation">7.1. Motivation</h3>
 <div class="paragraph">
 <p>The motivation of this deployment structure is the correct understanding of how  components of the project behave and are related in runtime.</p>
 </div>
 </div>
-</div>
-<div class="sect1">
-<h2 id="_mapping">9. Mapping</h2>
-<div class="sectionbody">
+<div class="sect2">
+<h3 id="_mapping">7.2. Mapping</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 33.3333%;">
@@ -1544,8 +1542,9 @@ Obviously, you cannot purchase a deleted vehicle.</p>
 <div style="page-break-after: always;"></div>
 </div>
 </div>
+</div>
 <div class="sect1">
-<h2 id="section-concepts">10. Cross-cutting Concepts</h2>
+<h2 id="section-concepts">8. Cross-cutting Concepts</h2>
 <div class="sectionbody">
 <div class="sidebarblock arc42help">
 <div class="content">
@@ -1719,7 +1718,7 @@ In addition to this, PODs (Personal Online Datastore) are used to store all user
 </div>
 </div>
 <div class="sect1">
-<h2 id="section-design-decisions">11. Design Decisions</h2>
+<h2 id="section-design-decisions">9. Design Decisions</h2>
 <div class="sectionbody">
 <div class="sidebarblock arc42help">
 <div class="content">
@@ -1817,16 +1816,16 @@ here in this central section or whether you better document it locally
 </div>
 </div>
 <div class="sect1">
-<h2 id="section-quality-scenarios">12. 10. Quality Requirements</h2>
+<h2 id="section-quality-scenarios">10. Quality Requirements</h2>
 <div class="sectionbody">
 <div class="sect2">
-<h3 id="_10_1_quality_tree">12.1. 10.1. Quality Tree</h3>
+<h3 id="_quality_tree">10.1. Quality Tree</h3>
 <div class="paragraph">
 <p><span class="image"><img src="./images/Docu10_QualityTree.PNG" alt="Fallo imagen"></span></p>
 </div>
 </div>
 <div class="sect2">
-<h3 id="_10_2_quality_scenarios">12.2. 10.2. Quality Scenarios</h3>
+<h3 id="_quality_scenarios">10.2. Quality Scenarios</h3>
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
 <col style="width: 20%;">
@@ -1878,7 +1877,7 @@ here in this central section or whether you better document it locally
 </div>
 </div>
 <div class="sect1">
-<h2 id="section-technical-risks">13. Risks and Technical Debts</h2>
+<h2 id="section-technical-risks">11. Risks and Technical Debts</h2>
 <div class="sectionbody">
 <div class="sidebarblock arc42help">
 <div class="content">
@@ -1990,7 +1989,7 @@ List of risks and/or technical debts, probably including suggested measures to m
 </div>
 </div>
 <div class="sect1">
-<h2 id="section-glossary">14. Glossary</h2>
+<h2 id="section-glossary">12. Glossary</h2>
 <div class="sectionbody">
 <table class="tableblock frame-all grid-all stretch">
 <colgroup>
