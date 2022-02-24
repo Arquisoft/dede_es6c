@@ -16,9 +16,11 @@ and develop a project continuously.
 The application will be an online store of all types of vehicles. 
 Customer data must be secure and only be accessed by its owners, respecting the SOLID principles.
 Within project management, there are two stakeholders:
+
 * On the one hand, the developers, who intend to create a project to match, of a 
 professional nature or, at least, that appears so. In addition, we intend that it 
 meets, at least, the requirements imposed by the teachers.
+
 * On the other hand, the professors, the people who have imposed on us the development of 
 the project together with its restrictions.
 
@@ -46,13 +48,18 @@ This application aims to be a digital store for all kinds of second-hand vehicle
 The store must respect the privacy of customers by complying with the SOLID principles, 
 that is, store customer data through personal web servers (Pods), but only if they allow it.
 The main expected functionality is:
+
 * Show the catalog of available vehicles, in such a way that any user can access any that is 
 for sale, even if they do not register.
+
 * Purchase of vehicles by customers, which can be purchased by anyone as long as it is for 
 sale and they have logged in.
+
 * Modification of the catalog: apart from the clients, there will be an administrator user 
 who will be able to add or remove vehicles from the application's list of vehicles for sale.
+
 * Registration: for a user to be able to buy any vehicle, they must sign up as a client of the application.
+
 * Login: if a user has previously registered, they must be able to log back in with all of 
 their previously saved data.
 Other functional requirements that the application must meet is to calculate the costs of a purchase 
@@ -106,10 +113,12 @@ Table with role names, person names, and their expectations with respect to the 
 
 There are various stakeholders related to the 
 application to be developed. These are the relevant ones:
+
 * Developers: they are the people in charge of developing the 
 project and researching tools to be used in the project, 
 which, in this case, are the members of the 6-c laboratory 
 team.
+
 * Professors: they are the people who “finance” the development 
 of the project. These would be the teachers of the ASW subject, 
 in charge of evaluating the development of the project.
