@@ -62,5 +62,6 @@ image::06_delete_superuser.png[Deleting a Superuser]
 
 === View Users
 We request the users to the database,then we update it.If all was correct the Admin can see the list of users.
+[caption="View Users"]
 :imagesdir: images/ 
 image::Diagrama_secuencia_ver_usuarios.png[View User]
