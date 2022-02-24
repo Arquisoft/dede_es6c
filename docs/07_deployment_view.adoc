@@ -1,18 +1,18 @@
 [[section-deployment-view]]
 
 
-== 7. Deployment View
+==  Deployment View
 
 [caption="Deployment View"]
 :imagesdir: images/ 
 image:DiagrameDeploymentView.drawio.png["Fallo imagen"]
 
 
-== Motivation
+=== Motivation
 The motivation of this deployment structure is the correct understanding of how  components of the project behave and are related in runtime.
 
 
-== Mapping
+=== Mapping
 [options="header",cols="1,2"]
 |===
 | Element |Description
