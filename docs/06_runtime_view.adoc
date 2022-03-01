@@ -43,9 +43,9 @@ Version 2.
 image::Diagrama_secuencia_registro_producto.png[Registration Product]
 
 === Product Deletion
-The administrator is the only user able to delete vehicles by entering the vehicle code.
-The vehicle is checked to see if it exists in the database, and if it does, it will be deleted. The product view is then updated and the deleted product will not appear.
-Obviously, you cannot purchase a deleted vehicle.
+The administrator is the only user able to delete products by entering the product code.
+The product is checked to see if it exists in the database, and if it does, it will be deleted. The product view is then updated and the deleted product will not appear.
+Obviously, you cannot purchase a deleted product.
 
 image::06_productDeletion_runtime_view.png[Product Deletion]
 
