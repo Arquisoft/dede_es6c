@@ -43,19 +43,20 @@ image:08-Crosscutting-Concepts-Structure-EN.png["Possible topics for crosscuttin
 image:08_domain_model.png["Domain Model"]
 
 .Domain Concepts
+* User <interface>: interface that groups the generic behaviors of a user.
 * SuperUser: user administrator of the application. It has special permissions such as adding or deleting products and viewing the list of all existing users in the database.
-* User: standar user of the application. They store their data in PODs.
+* StandardUser: standar user of the application. They store their data in PODs.
 * POD: stores the data of each of the user.
     - username (primary key): user account login name.
     - password: user's access key to his account.
     - name: user's real name.
     - address: user's delivery address.
 * ShoppingCart: virtual shopping cart where products are stored.
-    - list of products
-    - total price
+    - products: list that contains all the existing products in the shopping cart.
+    - totalPrice: cumulative price of all products in the shopping cart.
 * History: user purchase history.
-    - username: user account login name.
-    - code: product identification.
+    - username (foreign key): user account login name.
+    - code (foreign key): product identification.
 * Product: each of the products available in the online store.
     - code (primary key): product identification.
     - type: product category.
