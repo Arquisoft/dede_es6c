@@ -35,12 +35,12 @@ The following key decisions have been made regarding the design of the applicati
 
 .Docker usage
 * Status: Accepted
-* Context: the teachers have strongly recommended the use of this tool to facilitate the development of the code and deploy the application. Other tools like Heroku or Netlify can be used to deploy the app.
+* Context: the teachers have strongly recommended the use of this tool to facilitate the development of the code and deploy the application. Other alternatives are PodMan, and Singularity, for example.
 * Decision: Docker will be used as a tool to avoid certain repetitive and costly tasks, thus speeding up the development of the project.
 * Consequences: We will have to understand how Docker works in the project, but once we do, we hope that it will facilitate long-term development.
 
 .Deployment with Heroku
 * Status: Proposed
-* Context: software is needed to deploy the application once it is finished, and this allows it to be done through a direct link to the Github repository where the project is. In addition, it supports a large number of programming languages, including React and TypeScript, which will be used in the project. Other alternatives are Docker, mentioned above, and Netlify, for example.
+* Context: software is needed to deploy the application once it is finished, and this allows it to be done through a direct link to the Github repository where the project is. In addition, it supports a large number of programming languages, including React and TypeScript, which will be used in the project. Other alternatives are Google App Engine, and Netlify, for example.
 * Decision: by allowing the use of the Github repository to deploy the web application, its use is very practical.
 * Consequences: once the Github repository is synchronized with Heroku, it is expected that we will not have any more concerns about the deployment of the application.
