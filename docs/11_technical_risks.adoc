@@ -3,6 +3,7 @@
 
 [role="arc42help"]
 ****
+
 .Contents
 A list of identified technical risks or technical debts, ordered by priority.
 
@@ -20,6 +21,12 @@ A list of identified technical risks or technical debts, ordered by priority.
 | MongoDB | Lack of knowledge on the use of MongoDB for the development of the database | Research and learn about the use of the database system
 | Express | Lack of knowledge on the use of Express for subdomain routing management | Research and learn about the use of the framework
 | SOLID | It is necessary to seek information on SOLID for the development of the project | Study SOLID principles and how to apply them
+| APIs | Lack of knowledge about the APIs required for the development of the application | Search and learn about the use of APIs
+| Destructuring | Lack of knowledge about the term and what is involved in destructuring | Learn about destructuring and its use in TypeScript
+| Tests | Current lack of tests for the project | Thinking and developing tests
+| Documentation | Lack of full documentation | Develop and update current documentation as the project progresses
+| Qualification | Lack of qualification on the part of the team to develop such a large project | Team effort to remedy existing shortcomings
+| Code externalization | High dependence on external code | Try to reduce dependencies to external code
 |=== 
 
 ****

@@ -1,16 +1,16 @@
 [[section-quality-scenarios]]
-== 10. Quality Requirements
+==  Quality Requirements
 
 
 
 
-=== 10.1. Quality Tree
+===  Quality Tree
 
 [caption="Quality Tree"]
 :imagesdir: images/ 
 image:Docu10_QualityTree.PNG["Fallo imagen"]
 
-=== 10.2. Quality Scenarios
+===  Quality Scenarios
 
 [options="header",cols="1,2,2"]
 |===
