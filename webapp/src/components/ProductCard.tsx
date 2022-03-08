@@ -6,6 +6,7 @@ import CardContent from '@mui/material/CardContent';
 import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import accounting from "accounting";
 
 import coche from '../images/coche.jpg'; // Prueba de visualización del diseño
 
@@ -23,7 +24,8 @@ export default function Product(producto:product) {
       <CardHeader
         action={
           <Typography variant='h5' color='textSecondary'>
-              {producto.price}
+            {accounting.formatMoney(producto.price, "€")}
+              
           </Typography>
         }
       />
