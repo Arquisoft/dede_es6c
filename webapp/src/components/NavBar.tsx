@@ -10,7 +10,7 @@ import Logo from '../images/logo_opt.jpg';
 export default function NavBar() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="fixed">
+      <AppBar id="navBar" position="fixed">
         <Toolbar>
           <IconButton
             size="small"
@@ -19,12 +19,16 @@ export default function NavBar() {
             aria-label="menu"
             sx={{ mr: 2 }}
           >
-            <img src={Logo} />
+            <img src={Logo} alt="logo" id="logo"/>
           </IconButton>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            News
+            DeDe
           </Typography>
-          <Button color="primary">Login</Button>
+          <Button color="inherit">Home</Button>
+          <Button color="inherit">Products</Button>
+          <Button color="inherit">Shopping Cart</Button>
+          <Button color="inherit">History</Button>
+          <Button color="inherit">Login</Button>
         </Toolbar>
       </AppBar>
     </Box>
