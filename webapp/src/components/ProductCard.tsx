@@ -9,13 +9,21 @@ import Typography from '@mui/material/Typography';
 
 import coche from '../images/coche.jpg'; // Prueba de visualización del diseño
 
-export default function ImgMediaCard() {
+
+type product = {
+  id : String;
+  name: String;
+  price: number;
+  type : String;
+}
+
+export default function Product(producto:product) {
   return (
     <Card sx={{ maxWidth: 345 }}>
       <CardHeader
         action={
           <Typography variant='h5' color='textSecondary'>
-              50 €
+              {producto.price}
           </Typography>
         }
       />
@@ -27,10 +35,10 @@ export default function ImgMediaCard() {
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
-            Product name
+            {producto.name}
         </Typography>
         <Typography variant="body2" color="text.secondary">
-            Product explanation
+            {producto.type}
         </Typography>
       </CardContent>
       <CardActions>
