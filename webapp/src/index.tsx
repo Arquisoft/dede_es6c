@@ -3,9 +3,11 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import ProductList from './ProductList';
 import reportWebVitals from './reportWebVitals';
+import NavBar from './components/NavBar';
 
 ReactDOM.render(
   <React.StrictMode>
+    <NavBar></NavBar>
     <ProductList />
   </React.StrictMode>,
   document.getElementById('root')
