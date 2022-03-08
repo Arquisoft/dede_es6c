@@ -1,28 +1,28 @@
 const products = [
-    {
-        id: 1,
-        name: "Maserati",
-        type: "500",
-        price: 100000
-    },
-    {
-        id: 2,
-        name: "fgs",
-        type: "200",
-        price: 200000
-    },
-    {
-        id: 3,
-        name: "gsgfd",
-        type: "300",
-        price: 300000
-    },
-    {
-        id: 4,
-        name: "gsfs",
-        type: "400",
-        price: 400000
-    },
+  {
+    id: 1,
+    name: "Maserati",
+    type: "Grecale",
+    price: 19900,
+  },
+  {
+    id: 2,
+    name: "BMW",
+    type: "320i",
+    price: 4300,
+  },
+  {
+    id: 3,
+    name: "Mercedes",
+    type: "CLK 500",
+    price: 6500,
+  },
+  {
+    id: 4,
+    name: "Seat",
+    type: "Leon",
+    price: 2500,
+  },
 ];
 
 export default products;

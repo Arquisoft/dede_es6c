@@ -11,7 +11,7 @@ import coche from '../images/coche.jpg'; // Prueba de visualización del diseño
 
 
 type product = {
-  id : String;
+  id : Number;
   name: String;
   price: number;
   type : String;
