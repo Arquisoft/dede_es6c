@@ -1,15 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
-import './App.css';
-import ProductList from './ProductList';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
-import NavBar from './components/NavBar';
+import { SessionProvider } from "@inrupt/solid-ui-react";
 
 ReactDOM.render(
   <React.StrictMode>
-    <NavBar></NavBar>
-    <ProductList />
+    <SessionProvider>
+      <App />
+    </SessionProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
