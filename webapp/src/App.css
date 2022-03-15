@@ -32,3 +32,11 @@
     transform: rotate(360deg);
   }
 }
+
+#navbar {
+  color: #863422;
+}
+
+#logo {
+  width: 4em;
+}
