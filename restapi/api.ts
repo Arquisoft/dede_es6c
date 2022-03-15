@@ -67,7 +67,7 @@ mongoose.connect('mongodb+srv://uo269502:mpRh919kQXYXT98r@cluster0.fp7y3.mongodb
      try {
          //var result = await productos.find().exec();
          var result = await Product.find().exec();
-         console.log(result);
+         //console.log(result);
          return res.status(200).json(result);
      } catch (error) {
        return res.status(500).send(error);

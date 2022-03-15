@@ -4,12 +4,11 @@ import './index.css';
 import './App.css';
 import ProductList from './ProductList';
 import reportWebVitals from './reportWebVitals';
-import NavBar from './components/NavBar';
+import App from './App';
 
 ReactDOM.render(
   <React.StrictMode>
-    <NavBar></NavBar>
-    <ProductList />
+    <App />
   </React.StrictMode>,
   document.getElementById('root')
 );
