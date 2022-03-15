@@ -6,14 +6,11 @@ import products from "../testProducts";
 import { getProducts } from "../api/api";
 import { SharedProduct } from '../shared/shareddtypes';
 
-type Prueba = {
+type Productos = {
   productos2:SharedProduct[];
 }
 
-const Products: React.FC<Prueba> = ({ productos2})=> {
-
-
-  
+const Products: React.FC<Productos> = ({ productos2})=> {
 
   return (
     
