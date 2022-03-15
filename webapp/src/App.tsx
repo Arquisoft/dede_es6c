@@ -3,19 +3,27 @@ import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
 import Container from '@mui/material/Container';
 import EmailForm from './components/EmailForm';
-import Welcome from './components/Welcome';
 import UserList from './components/UserList';
 import  {getUsers,getProducts} from './api/api';
 import {User,SharedProduct} from './shared/shareddtypes';
 import Products from './components/Products';
 import './App.css';
+import Header from './components/NavBar';
+import {ProductType} from './shared/shareddtypes';
+import  {getProducts} from './api/api';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import SolidConection from "./SolidConection";
+import Home from "./components/Home";
+import ShoppingCart from "./components/ShoppingCart";
+import History from "./components/History";
+
 
 function App(): JSX.Element {
 
-  const [users,setUsers] = useState<User[]>([]);
+  const [products,setProducts] = useState<ProductType[]>([]);
 
   const refreshUserList = async () => {
-    setUsers(await getUsers());
+    setProducts(await getProducts());
   }
 
   useEffect(()=>{
@@ -35,13 +43,21 @@ function App(): JSX.Element {
 
   return (
     <>
-      <Container maxWidth="sm">
-       
-        
+      <Header />
+        <Container style={{alignContent: "center", marginTop: "5%", minHeight: "50vh"}} maxWidth="lg">
         <Products productos2={products}></Products>
-        <Link href="https://github.com/Arquisoft/dede_es6c">Source code</Link>
-      </Container>
-    </>
+        <Router>
+          <Routes>
+              <Route path="/products" element={products} />
+              <Route path="/home" element={<Home />} />
+              <Route path='/shoppingCart' element={<ShoppingCart/>} />
+              <Route path='/history' element={<History/>} />
+              <Route path='/login' element={<SolidConection/>} />
+              <Route path='/register' element={<SolidConection/>} />
+          </Routes>
+          </Router>
+        </Container>
+      </>
   );
 }
 
