@@ -9,8 +9,6 @@ import {User,SharedProduct} from './shared/shareddtypes';
 import Products from './components/Products';
 import './App.css';
 import Header from './components/NavBar';
-import {ProductType} from './shared/shareddtypes';
-import  {getProducts} from './api/api';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SolidConection from "./SolidConection";
 import Home from "./components/Home";
@@ -20,16 +18,6 @@ import History from "./components/History";
 
 function App(): JSX.Element {
 
-  const [products,setProducts] = useState<ProductType[]>([]);
-
-  const refreshUserList = async () => {
-    setProducts(await getProducts());
-  }
-
-  useEffect(()=>{
-    refreshUserList();
-  },[]);
-//parte de productos
   const [products,setProductos] = useState<SharedProduct[]>([]);
 
   const refreshProductList = async () => {
@@ -45,10 +33,9 @@ function App(): JSX.Element {
     <>
       <Header />
         <Container style={{alignContent: "center", marginTop: "5%", minHeight: "50vh"}} maxWidth="lg">
-        <Products productos2={products}></Products>
         <Router>
           <Routes>
-              <Route path="/products" element={products} />
+              <Route path="/products" element={<Products productos2={products}></Products>} />
               <Route path="/home" element={<Home />} />
               <Route path='/shoppingCart' element={<ShoppingCart/>} />
               <Route path='/history' element={<History/>} />
