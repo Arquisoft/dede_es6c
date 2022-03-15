@@ -1,4 +1,5 @@
-import {User, ProductType} from '../shared/shareddtypes';
+import {User} from '../shared/shareddtypes';
+import {SharedProduct} from  '../shared/shareddtypes';
 
 export async function addUser(user:User):Promise<boolean>{
     const apiEndPoint= process.env.REACT_APP_API_URI || 'http://localhost:5000/api'
@@ -20,8 +21,9 @@ export async function getUsers():Promise<User[]>{
     return response.json()
 }
 
-export async function getProducts():Promise<ProductType[]>{
-  const apiEndPoint = process.env.REACT_APP_API_URI || 'http://localhost:5000/api';
-  let response = await fetch(apiEndPoint+'/products');
-  return response.json();
+export async function getProducts():Promise<SharedProduct[]>{
+    const apiEndPoint = process.env.REACT_APP_API_URI || 'http://localhost:5000/api';
+    let response = await fetch(apiEndPoint+'/productos');
+    console.log('juanito');
+    return response.json();
 }

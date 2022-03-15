@@ -4,9 +4,9 @@ import Link from '@mui/material/Link';
 import Container from '@mui/material/Container';
 import EmailForm from './components/EmailForm';
 import UserList from './components/UserList';
-import  {getUsers} from './api/api';
-import {User} from './shared/shareddtypes';
-import ProductList from './ProductList';
+import  {getUsers,getProducts} from './api/api';
+import {User,SharedProduct} from './shared/shareddtypes';
+import Products from './components/Products';
 import './App.css';
 import Header from './components/NavBar';
 import {ProductType} from './shared/shareddtypes';
@@ -29,16 +29,26 @@ function App(): JSX.Element {
   useEffect(()=>{
     refreshUserList();
   },[]);
+//parte de productos
+  const [products,setProductos] = useState<SharedProduct[]>([]);
+
+  const refreshProductList = async () => {
+    setProductos(await getProducts());
+  }
+
+  useEffect(()=>{
+    refreshProductList();
+  },[]);
+  
 
   return (
     <>
-
-
       <Header />
         <Container style={{alignContent: "center", marginTop: "5%", minHeight: "50vh"}} maxWidth="lg">
+        <Products productos2={products}></Products>
         <Router>
           <Routes>
-              <Route path="/products" element={<ProductList />} />
+              <Route path="/products" element={products} />
               <Route path="/home" element={<Home />} />
               <Route path='/shoppingCart' element={<ShoppingCart/>} />
               <Route path='/history' element={<History/>} />

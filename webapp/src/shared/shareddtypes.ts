@@ -1,12 +1,11 @@
 export type User = {
-  name:string;
-  email:string;
-}
+    name:string;
+    email:string;
+  }
 
-
-export type ProductType = {
-  id : Number;
-  name: String;
-  price: number;
-  type : String;
-}
+export type SharedProduct = {
+    _id: number;
+    name: string;
+    price: number;
+    type: string;
+  }
