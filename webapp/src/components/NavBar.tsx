@@ -28,7 +28,7 @@ export default function NavBar(): JSX.Element{
             DeDe
           </Typography>
           
-          <Button href="http://localhost:3000/home" color="inherit">Home</Button>
+          <Button href="http://localhost:3000/" color="inherit">Home</Button>
           <Button href="http://localhost:3000/products" color="inherit">Products</Button>
           <Button href="http://localhost:3000/shoppingCart" color="inherit">Shopping Cart</Button>
           <Button href="http://localhost:3000/history" color="inherit">History</Button>

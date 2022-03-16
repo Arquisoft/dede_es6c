@@ -36,7 +36,7 @@ function App(): JSX.Element {
         <Router>
           <Routes>
               <Route path="/products" element={<Products productos2={products}></Products>} />
-              <Route path="/home" element={<Home />} />
+              <Route path={"/"} element={<Home />} />
               <Route path='/shoppingCart' element={<ShoppingCart/>} />
               <Route path='/history' element={<History/>} />
               <Route path='/login' element={<SolidConection/>} />
@@ -44,7 +44,7 @@ function App(): JSX.Element {
           </Routes>
           </Router>
         </Container>
-      </>
+    </>
   );
 }
 
