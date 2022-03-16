@@ -13,7 +13,7 @@ import ProductList from '../ProductList';
 export default function NavBar(): JSX.Element{
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar id="navBar">
+      <AppBar id="bar">
         <Toolbar>
           <IconButton
             size="small"
