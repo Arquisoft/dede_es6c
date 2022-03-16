@@ -7,7 +7,6 @@ import UserList from './components/UserList';
 import  {getUsers,getProducts} from './api/api';
 import {User,SharedProduct} from './shared/shareddtypes';
 import Products from './components/Products';
-import './App.css';
 import Header from './components/NavBar';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SolidConection from "./SolidConection";
