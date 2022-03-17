@@ -35,7 +35,7 @@ export default function Product(producto:product) {
         component="img"
         alt="product image"
         height="140"
-        image={producto.imgUrl}
+        image={"./images/" + producto.type + "_" + producto.name + ".png"}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
