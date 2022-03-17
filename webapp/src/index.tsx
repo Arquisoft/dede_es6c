@@ -1,8 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import './App.css';
-import ProductList from './ProductList';
+import './estilos/estilo.css';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
 import App from './App';
 import {QueryClient, QueryClientProvider} from 'react-query';
@@ -11,9 +10,9 @@ const client = new QueryClient();
 
 ReactDOM.render(
   <React.StrictMode>
-    <QueryClientProvider client={client}>
-     <App />
-    </QueryClientProvider>
+    <SessionProvider>
+      <App />
+    </SessionProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
