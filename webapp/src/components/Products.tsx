@@ -19,7 +19,7 @@ const Products: React.FC<Productos> = ({ productos2})=> {
       <Grid container spacing={2}>
         {productos2.map((product) => (
           <Grid item xs={12} sm={6} md={4} lg={3}>
-            <Product key={product._id} id={product._id} name={product.name} type={product.type} price={product.price}/>
+            <Product id={product._id} name={product.name} type={product.type} price={product.price} imgUrl={product.imgUrl}/>
           </Grid>
         ))}
       </Grid>
