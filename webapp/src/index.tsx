@@ -1,12 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
-import ProductList from './ProductList';
+import './estilos/estilo.css';
+import App from './App';
 import reportWebVitals from './reportWebVitals';
+
+import { SessionProvider } from "@inrupt/solid-ui-react";
 
 ReactDOM.render(
   <React.StrictMode>
-    <ProductList />
+    <SessionProvider>
+      <App />
+    </SessionProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

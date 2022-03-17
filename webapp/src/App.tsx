@@ -3,33 +3,48 @@ import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
 import Container from '@mui/material/Container';
 import EmailForm from './components/EmailForm';
-import Welcome from './components/Welcome';
 import UserList from './components/UserList';
-import  {getUsers} from './api/api';
-import {User} from './shared/shareddtypes';
-import './App.css';
+import  {getUsers,getProducts} from './api/api';
+import {User,SharedProduct} from './shared/shareddtypes';
+import Products from './components/Products';
+import Header from './components/NavBar';
+import Footer from './components/Footer';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import SolidConection from "./SolidConection";
+import Home from "./components/Home";
+import ShoppingCart from "./components/ShoppingCart";
+import History from "./components/History";
+
 
 function App(): JSX.Element {
 
-  const [users,setUsers] = useState<User[]>([]);
+  const [products,setProductos] = useState<SharedProduct[]>([]);
 
-  const refreshUserList = async () => {
-    setUsers(await getUsers());
+  const refreshProductList = async () => {
+    setProductos(await getProducts());
   }
 
   useEffect(()=>{
-    refreshUserList();
+    refreshProductList();
   },[]);
+  
 
   return (
     <>
-      <Container maxWidth="sm">
-        <Welcome message="ASW students"/>
-        <Box component="div" sx={{ py: 2}}>This is a basic example of a React application using Typescript. You can add your email to the list filling the form below.</Box>
-        <EmailForm OnUserListChange={refreshUserList}/>        
-        <UserList users={users}/>
-        <Link href="https://github.com/Arquisoft/dede_es6c">Source code</Link>
-      </Container>
+      <Header />
+        <Container style={{alignContent: "center", marginTop: "5%", minHeight: "50vh"}} maxWidth="lg">
+        <Router>
+          <Routes>
+              <Route path="/products" element={<Products productos2={products}></Products>} />
+              <Route path={"/"} element={<Home />} />
+              <Route path='/shoppingCart' element={<ShoppingCart/>} />
+              <Route path='/history' element={<History/>} />
+              <Route path='/login' element={<SolidConection/>} />
+              <Route path='/register' element={<SolidConection/>} />
+          </Routes>
+          </Router>
+        </Container>
+      <Footer />
     </>
   );
 }
