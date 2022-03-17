@@ -98,3 +98,17 @@ h1 {
 p.principal {
     font-size: 1.5em;
 }
+
+#solidLogin, #help {
+    margin-top: 2.5em;
+    margin-bottom: 1em;
+}
+
+#loginButton, #cancelButton {
+    margin: 1.3em;
+}
+
+#solidButtons {
+    margin: 1.5em auto;
+    justify-content: right;
+}
