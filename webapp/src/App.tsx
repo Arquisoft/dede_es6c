@@ -1,4 +1,15 @@
 import React, { useState, useEffect } from 'react';
+import  { useQuery} from 'react-query';
+import Drawer from '@material-ui/core/Drawer';
+import LinearProgress from '@material-ui/core/LinearProgress';
+import Grid from '@material-ui/core/Grid';
+import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
+import Badge from '@material-ui/core/Badge';
+
+//styles
+import {Wrapper} from './App.styles';
+
+
 import Box from '@mui/material/Box';
 import Link from '@mui/material/Link';
 import Container from '@mui/material/Container';
@@ -9,6 +20,10 @@ import  {getUsers,getProducts} from './api/api';
 import {User,SharedProduct} from './shared/shareddtypes';
 import Products from './components/Products';
 import './App.css';
+
+
+
+
 
 function App(): JSX.Element {
 
@@ -21,7 +36,7 @@ function App(): JSX.Element {
   useEffect(()=>{
     refreshUserList();
   },[]);
-//parte de productos
+//Listado de productos
   const [products,setProductos] = useState<SharedProduct[]>([]);
 
   const refreshProductList = async () => {
@@ -43,6 +58,13 @@ function App(): JSX.Element {
       </Container>
     </>
   );
+
+
+
+  const handleAddToCart = (clickedItem: SharedProduct) => null;
+  const handleRemoveFromCart = () => null;
 }
+
+
 
 export default App;

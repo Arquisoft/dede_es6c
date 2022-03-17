@@ -5,10 +5,15 @@ import './App.css';
 import ProductList from './ProductList';
 import reportWebVitals from './reportWebVitals';
 import App from './App';
+import {QueryClient, QueryClientProvider} from 'react-query';
+
+const client = new QueryClient();
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <QueryClientProvider client={client}>
+     <App />
+    </QueryClientProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );
