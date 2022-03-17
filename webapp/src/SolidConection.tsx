@@ -45,7 +45,7 @@ export default function SolidConection() {
     <Container id="mainLoginDiv">
       {/* {!session.info.isLoggedIn ? ( */}
         <>
-          <Typography id="pageTitle" variant="h3">
+          <Typography id="solidLogin" variant="h3">
             SOLID Login
           </Typography>
           <Autocomplete
@@ -59,11 +59,8 @@ export default function SolidConection() {
                 setOidcIssuer(value.url)
             }}
           />
-          <Grid container spacing={2}>
-            <Grid item xs={6}>
-              <Button href="/" variant="contained" id="cancelButton" >Cancel</Button>
-            </Grid>
-            <Grid item xs={6}>
+          <Grid id="solidButtons" container>
+            <Grid item>
               <LoginButton
                 oidcIssuer={oidcIssuer}
                 redirectUrl={window.location.href}
@@ -71,8 +68,11 @@ export default function SolidConection() {
                 <Button id="loginButton" data-testid="button" color="primary" variant="contained">CONNECT</Button>
               </LoginButton>
             </Grid>
+            <Grid item>
+              <Button href="/" variant="contained" id="cancelButton" >Cancel</Button>
+            </Grid>
           </Grid>
-          <Typography variant="body1" component="p" className="help">
+          <Typography variant="body1" component="p" id="help">
             Don't have a POD? Get one here: <Link id="inrupt" href="https://inrupt.com/" target="_blank">Inrupt</Link>
           </Typography>
         </>
