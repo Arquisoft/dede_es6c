@@ -47,7 +47,7 @@ code {
     }
 }
 
-#navBar {
+#bar {
     background-color: #6D6875;
     position: fixed;
 }
@@ -115,7 +115,6 @@ p.principal {
 
 footer {
     margin-top: 3em;
-	padding: 0.1em 2em;
     background-color: #6D6875;
     padding: 2em 2em 0.5em;
 }
