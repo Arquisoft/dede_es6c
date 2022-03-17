@@ -61,7 +61,7 @@ function App(): JSX.Element {
 
 
 
-  const handleAddToCart = (clickedItem: SharedProduct) => null;
+   const handleAddToCart = (clickedItem: SharedProduct) => null;
   const handleRemoveFromCart = () => null;
 }
 
