@@ -7,15 +7,17 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import accounting from "accounting";
+import { ObjectId } from 'mongodb';
 
 import coche from '../images/coche.jpg'; // Prueba de visualización del diseño
 
 
 type product = {
-  id : Number;
+  id : ObjectId;
   name: String;
   price: number;
   type : String;
+  imgUrl: string;
 }
 
 export default function Product(producto:product) {
@@ -33,7 +35,7 @@ export default function Product(producto:product) {
         component="img"
         alt="product image"
         height="140"
-        image={coche}
+        image={"./images/" + producto.type + "_" + producto.name + ".png"}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">
