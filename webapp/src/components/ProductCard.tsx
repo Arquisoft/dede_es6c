@@ -45,7 +45,7 @@ export default function Product(producto:product) {
       </CardContent>
       <CardActions>
         <Button size="small">Add to cart</Button>
-      </CardActions>
+       </CardActions>
     </Card>
   );
 }
