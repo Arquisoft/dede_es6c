@@ -38,6 +38,7 @@ This are the constraints that affect the develop, organization and enviroment of
 | _Team members_ | _Our team is formed by 6 software engineering students, we all have other subjects, and work, we need to work together and smart to get a good result_
 | _Time limit_ | _We have aproximately 2 months and a half to end the project, that is the end of the course, when the 'Architecture of Software' subject ends_
 | _Sprints_ | _We have 4 deadlines or sprints in the course. We have some objectives to achieve in each of those sprints_
+| _Meetings_ | _We are going to do at least 2 meetings per week, the duration of each, depends on the amount of things we have to speak or decide, and the work we need to do as a team_
 |=== 
 
 .Conventions
@@ -46,5 +47,4 @@ Decisions about how are we going to document our project and how are we going to
 |Constraint|Explanation
 | _Arc42_ | _We have to use Arc42 to document out project because it's used professionally and it's clear and simple_
 | _Language_ | _We decided to write the documentation of the project in english because it's a trade-off, its harder to us to do it, but its more professional_
-| _Meetings_ | _We are going to do at least 2 meetings per week, the duration of each, depends on the amount of things we have to speak or decide, and the work we need to do as a team_
 |=== 
