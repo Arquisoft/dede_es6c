@@ -831,6 +831,10 @@ conventions (e.g. programming or versioning guidelines, documentation or naming 
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>Sprints</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>We have 4 deadlines or sprints in the course. We have some objectives to achieve in each of those sprints</em></p></td>
 </tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Meetings</em></p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock"><em>We are going to do at least 2 meetings per week, the duration of each, depends on the amount of things we have to speak or decide, and the work we need to do as a team</em></p></td>
+</tr>
 </tbody>
 </table>
 <div class="paragraph">
@@ -854,10 +858,6 @@ conventions (e.g. programming or versioning guidelines, documentation or naming 
 <tr>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>Language</em></p></td>
 <td class="tableblock halign-left valign-top"><p class="tableblock"><em>We decided to write the documentation of the project in english because it&#8217;s a trade-off, its harder to us to do it, but its more professional</em></p></td>
-</tr>
-<tr>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>Meetings</em></p></td>
-<td class="tableblock halign-left valign-top"><p class="tableblock"><em>We are going to do at least 2 meetings per week, the duration of each, depends on the amount of things we have to speak or decide, and the work we need to do as a team</em></p></td>
 </tr>
 </tbody>
 </table>
@@ -928,8 +928,17 @@ The title of the table is the name of your system, the three columns contain the
 <p>We have clients who want to buy used vehicles. The clients need to sign up in order to use the application. The vehicles are registered into the database by Administrator users. They can also remove said vehicles. Orders are used to link a buyer with the vehicle, or products that they are buying, and will be shipped to their home.</p>
 </div>
 <div class="paragraph">
+<p>We also have an administrator, or superuser, who will be able to add new products to the database, remove old ones.</p>
+</div>
+<div class="paragraph">
 <p>The data in exchange is simple. The client will be able to see information about the vehicle and products, they will be able to see a representative name, price and images. The store will need the clients' full name, billing address, age, username and a password to store their information. At least a payment mean will be needed for the client to be able to make purchases.
-The seller (the application, in this case), on the other hand, will receive the client&#8217;s billing address, so as to be able to ship the package, as well as their full name in order to recognize them.</p>
+The seller (the application, in this case), on the other hand, will receive the client&#8217;s billing address from his Solid POD, so as to be able to ship the package, as well as their full name in order to recognize them.</p>
+</div>
+<div class="paragraph">
+<p>The Solid POD allows us to receive information  from the client relevant to the store and its shipping methods.</p>
+</div>
+<div class="paragraph">
+<p>The database (MongoDB) stores information about past orders, current products (such as vehicles or accesories), and products that have been in stock on the past.</p>
 </div>
 <div class="imageblock">
 <div class="content">
@@ -1628,10 +1637,13 @@ on this list.
 <div class="title">Domain Concepts</div>
 <ul>
 <li>
+<p>User &lt;interface&gt;: interface that groups the generic behaviors of a user.</p>
+</li>
+<li>
 <p>SuperUser: user administrator of the application. It has special permissions such as adding or deleting products and viewing the list of all existing users in the database.</p>
 </li>
 <li>
-<p>User: standar user of the application. They store their data in PODs.</p>
+<p>StandardUser: standar user of the application. They store their data in PODs.</p>
 </li>
 <li>
 <p>POD: stores the data of each of the user.</p>
@@ -1657,10 +1669,10 @@ on this list.
 <div class="ulist">
 <ul>
 <li>
-<p>list of products</p>
+<p>products: list that contains all the existing products in the shopping cart.</p>
 </li>
 <li>
-<p>total price</p>
+<p>totalPrice: cumulative price of all products in the shopping cart.</p>
 </li>
 </ul>
 </div>
@@ -1670,10 +1682,10 @@ on this list.
 <div class="ulist">
 <ul>
 <li>
-<p>username: user account login name.</p>
+<p>username (foreign key): user account login name.</p>
 </li>
 <li>
-<p>code: product identification.</p>
+<p>code (foreign key): product identification.</p>
 </li>
 </ul>
 </div>
@@ -1819,7 +1831,7 @@ here in this central section or whether you better document it locally
 <p>Status: Accepted</p>
 </li>
 <li>
-<p>Context: the teachers have strongly recommended the use of this tool to facilitate the development of the code and deploy the application. Other tools like Heroku or Netlify can be used to deploy the app.</p>
+<p>Context: the teachers have strongly recommended the use of this tool to facilitate the development of the code and deploy the application. Other alternatives are PodMan, and Singularity, for example.</p>
 </li>
 <li>
 <p>Decision: Docker will be used as a tool to avoid certain repetitive and costly tasks, thus speeding up the development of the project.</p>
@@ -1836,7 +1848,7 @@ here in this central section or whether you better document it locally
 <p>Status: Proposed</p>
 </li>
 <li>
-<p>Context: software is needed to deploy the application once it is finished, and this allows it to be done through a direct link to the Github repository where the project is. In addition, it supports a large number of programming languages, including React and TypeScript, which will be used in the project. Other alternatives are Docker, mentioned above, and Netlify, for example.</p>
+<p>Context: software is needed to deploy the application once it is finished, and this allows it to be done through a direct link to the Github repository where the project is. In addition, it supports a large number of programming languages, including React and TypeScript, which will be used in the project. Other alternatives are Google App Engine, and Netlify, for example.</p>
 </li>
 <li>
 <p>Decision: by allowing the use of the Github repository to deploy the web application, its use is very practical.</p>
@@ -2096,7 +2108,7 @@ Created by Dr. Peter Hruschka &amp; Dr. Gernot Starke.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-02-19 11:51:10 +0100
+Last updated 2022-03-11 09:32:15 +0100
 </div>
 </div>
 </body>
