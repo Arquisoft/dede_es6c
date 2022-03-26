@@ -10,11 +10,10 @@ import Products from './components/Products';
 import Header from './components/NavBar';
 import Footer from './components/Footer';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import SolidConection from "./SolidConection";
 import Home from "./components/Home";
 import ShoppingCart from "./components/ShoppingCart";
 import History from "./components/History";
-
+import { SolidConnection, SolidDisconnection } from './SolidConection';
 
 function App(): JSX.Element {
 
@@ -39,8 +38,9 @@ function App(): JSX.Element {
               <Route path={"/"} element={<Home />} />
               <Route path='/shoppingCart' element={<ShoppingCart/>} />
               <Route path='/history' element={<History/>} />
-              <Route path='/login' element={<SolidConection/>} />
-              <Route path='/register' element={<SolidConection/>} />
+              <Route path='/login' element={<SolidConnection/>} />
+              <Route path='/logout' element={<SolidDisconnection/>} />
+              <Route path='/register' element={<SolidConnection/>} />
           </Routes>
           </Router>
         </Container>

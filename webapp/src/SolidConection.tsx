@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { Autocomplete, Button, Container, Grid, Link, TextField, Typography } from "@mui/material";
-import { LoginButton, useSession } from "@inrupt/solid-ui-react";
-import { useNavigate } from "react-router-dom";
+import { LoginButton, LogoutButton, useSession } from "@inrupt/solid-ui-react";
+import { Navigate, useNavigate } from "react-router-dom";
 
 //import "../css/SOLIDLogin.css";
 
@@ -15,14 +15,11 @@ const authOptions = {
   clientName: "DedEx: Decentralized Delivery",
 };
 
-export default function SolidConection() {
+export function SolidConnection() {
 
   const navigate = useNavigate();
-
   const [oidcIssuer, setOidcIssuer] = useState("https://broker.pod.inrupt.com/");
-
   const providers = [{ displayName: "Broker Inrupt", url: "https://broker.pod.inrupt.com/" }, { displayName: "Inrupt", url: "https://inrupt.net/" }]
-
   const { session } = useSession();
 
   onSessionRestore((url) => {
@@ -36,7 +33,7 @@ export default function SolidConection() {
       restorePreviousSession: true
     }).then(() => {
       if (session.info.isLoggedIn) {
-        navigate("/profile");
+        navigate("/");
       }
     })
   }, []);
@@ -83,4 +80,24 @@ export default function SolidConection() {
       )} */}
     </Container>
   );
+}
+
+export function SolidDisconnection() {
+    const navigate = useNavigate();
+    const [oidcIssuer, setOidcIssuer] = useState("https://broker.pod.inrupt.com/");
+    const providers = [
+        {
+            displayName: "Broker Inrupt",
+            url: "https://broker.pod.inrupt.com/"
+        }, {
+            displayName: "Inrupt",
+            url: "https://inrupt.net/"
+        }
+    ]
+    const {session} = useSession();
+
+    session.logout();
+
+    console.log("retornamos a home");
+    return (<Navigate to="/"/>);
 }
