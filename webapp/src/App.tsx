@@ -14,6 +14,7 @@ import SolidConection from "./SolidConection";
 import Home from "./components/Home";
 import ShoppingCart from "./components/ShoppingCart";
 import History from "./components/History";
+import Profile from "./profile";
 
 
 function App(): JSX.Element {
@@ -41,6 +42,7 @@ function App(): JSX.Element {
               <Route path='/history' element={<History/>} />
               <Route path='/login' element={<SolidConection/>} />
               <Route path='/register' element={<SolidConection/>} />
+              <Route path='/profile' element={<Profile/>} />
           </Routes>
           </Router>
         </Container>
