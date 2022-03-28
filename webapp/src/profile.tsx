@@ -33,7 +33,7 @@ const Profile = () => {
                 
 
         <LogoutButton >
-            <Button style={{ marginTop: 500 }} variant="contained" color="inherit">
+            <Button style={{ marginTop: 500 }} href="http://localhost:3000" variant="contained" color="inherit">
             Logout
             </Button>
         </LogoutButton>

@@ -2,7 +2,6 @@ import {
     getSolidDataset,
     getThing,
     getStringNoLocale,
-    getUrl,
     Thing,
 } from "@inrupt/solid-client";
 import { VCARD } from "@inrupt/vocab-common-rdf";

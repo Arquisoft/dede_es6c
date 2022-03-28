@@ -41,6 +41,7 @@ function App(): JSX.Element {
               <Route path='/shoppingCart' element={<ShoppingCart/>} />
               <Route path='/history' element={<History/>} />
               <Route path='/login' element={<SolidConection/>} />
+              <Route path='/logout' element={<SolidConection/>} />
               <Route path='/register' element={<SolidConection/>} />
               <Route path='/profile' element={<Profile/>} />
           </Routes>
