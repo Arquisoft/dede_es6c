@@ -7,7 +7,6 @@ var solid = require('solid-auth-client')
 const Profile = () => {
     const { session } = useSession();
     const webid = "" + session.info.webId;
-    
 
     return (
         <Container fixed>
