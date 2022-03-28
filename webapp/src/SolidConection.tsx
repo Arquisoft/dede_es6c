@@ -10,6 +10,7 @@ import { userInfo } from "os";
 import { dirname } from "path";
 import { dirxml } from "console";
 import { Directions } from "@mui/icons-material";
+import { FOAF,RDF, VCARD } from "@inrupt/lit-generated-vocab-common";
 
 const authOptions = {
 clientName: "DedEx: Decentralized Delivery",
@@ -36,7 +37,7 @@ export default function SolidConection() {
       if (session.info.isLoggedIn) {
         var solid = require('solid-auth-client')
         const dir = "https://uo258472.inrupt.net/direcciones/";
-        console.log("Holi" + solid.vcard);
+        console.log("Holi" + VCARD.Address);
         profile(session.info.webId).catch();
         navigate("/profile");
       }
