@@ -6,11 +6,9 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import Logo from '../images/logo.png';
-import SolidConection from "../SolidConection";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ProductList from '../ProductList';
-import { SessionProvider, useSession, LogoutButton } from "@inrupt/solid-ui-react";
-import Disconection from "./SolidDisconection"
+import { SessionProvider, useSession } from "@inrupt/solid-ui-react";
 import { useState } from "react";
 
 export default function NavBar(): JSX.Element{
@@ -56,7 +54,7 @@ export default function NavBar(): JSX.Element{
           <Button href="http://localhost:3000/products" color="inherit">Products</Button>
           <Button href="http://localhost:3000/shoppingCart" color="inherit">Shopping Cart</Button>
           <Button href="http://localhost:3000/history" color="inherit">History</Button>
-          {(isLoggedIn) ? <LogoutButton><Button href="http://localhost:3000/logout" color="inherit">Logout</Button></LogoutButton> : <Button href="http://localhost:3000/login" color="inherit">Login</Button>} 
+          <Button href="http://localhost:3000/login" color="inherit">Profile</Button>
         </Toolbar>
       </AppBar>
     </Box>

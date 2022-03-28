@@ -14,9 +14,9 @@ const Profile = () => {
             <CombinedDataProvider 
             datasetUrl={session.info.webId} 
             thingUrl={session.info.webId}>
-            <Card style={{ maxWidth: 480 }}>
+            <Card style={{ maxWidth: 1300 }}>
             <CardContent>
-                <Typography gutterBottom variant="h5" component="h2">
+                <Typography gutterBottom variant="h4" component="h1">
                 <Text property={FOAF.name.iri.value} />
                 </Typography>
                 <Typography variant="body2" color="textSecondary" component="p" style={{ display: "flex", alignItems: "center" }}>
@@ -33,7 +33,7 @@ const Profile = () => {
                 
 
         <LogoutButton >
-            <Button style={{ marginTop: 500 }} href="http://localhost:3000" variant="contained" color="inherit">
+            <Button style={{ marginTop: 500 }} href="http://localhost:3000" variant="contained" color="primary">
             Logout
             </Button>
         </LogoutButton>

@@ -15,8 +15,7 @@ import Home from "./components/Home";
 import ShoppingCart from "./components/ShoppingCart";
 import History from "./components/History";
 import Profile from "./profile";
-import { useSession } from '@inrupt/solid-ui-react';
-import Disconection from "./SolidDisconection"
+import SolidDisconection from "./SolidDisconection"
 
 
 function App(): JSX.Element {
@@ -42,7 +41,7 @@ function App(): JSX.Element {
               <Route path='/shoppingCart' element={<ShoppingCart/>} />
               <Route path='/history' element={<History/>} />
               <Route path='/login' element={<SolidConection/>} />
-              <Route path='/logout' element={<Disconection/>} />
+              <Route path='/logout' element={<SolidDisconection/>} />
               <Route path='/register' element={<SolidConection/>} />
               <Route path='/profile' element={<Profile/>} />
           </Routes>
