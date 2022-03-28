@@ -1,5 +1,4 @@
 import * as React from 'react';
-import { useState } from "react";
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -10,21 +9,31 @@ import Logo from '../images/logo.png';
 import SolidConection from "../SolidConection";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import ProductList from '../ProductList';
-import { LogoutButton, SessionProvider, useSession } from "@inrupt/solid-ui-react";
-import Profile from '../profile';
+import { SessionProvider, useSession, LogoutButton } from "@inrupt/solid-ui-react";
+import Disconection from "./SolidDisconection"
+import { useState } from "react";
 
 export default function NavBar(): JSX.Element{
-  const { session } = useSession();
-
+  const {session} = useSession();
   const [isLoggedIn, setIsLoggedIn] = useState(false);
 
   session.onLogin(() => {
+    if(session.info.isLoggedIn){
       setIsLoggedIn(true)
+    } else {
+      setIsLoggedIn(false)
+    }
   })
 
   session.onLogout(() => {
+    if(session.info.isLoggedIn){
+      setIsLoggedIn(true)
+    } else {
       setIsLoggedIn(false)
+    }
   })
+
+  console.log(session.info.isLoggedIn);
 
   return (
     <Box sx={{ flexGrow: 1 }}>
@@ -47,7 +56,7 @@ export default function NavBar(): JSX.Element{
           <Button href="http://localhost:3000/products" color="inherit">Products</Button>
           <Button href="http://localhost:3000/shoppingCart" color="inherit">Shopping Cart</Button>
           <Button href="http://localhost:3000/history" color="inherit">History</Button>
-          {(!isLoggedIn) ? <LogoutButton><Button href="http://localhost:3000/logout" color="inherit">Logout</Button></LogoutButton> : <Button href="http://localhost:3000/login" color="inherit">Login</Button>}
+          {(isLoggedIn) ? <LogoutButton><Button href="http://localhost:3000/logout" color="inherit">Logout</Button></LogoutButton> : <Button href="http://localhost:3000/login" color="inherit">Login</Button>} 
         </Toolbar>
       </AppBar>
     </Box>
