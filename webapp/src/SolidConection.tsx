@@ -5,6 +5,11 @@ import { useNavigate } from "react-router-dom";
 import { handleIncomingRedirect,  onSessionRestore } from "@inrupt/solid-client-authn-browser";
 import { useEffect } from 'react';
 import profile from "./profile";
+import { ConsoleMessage } from "puppeteer";
+import { userInfo } from "os";
+import { dirname } from "path";
+import { dirxml } from "console";
+import { Directions } from "@mui/icons-material";
 
 const authOptions = {
 clientName: "DedEx: Decentralized Delivery",
@@ -29,7 +34,10 @@ export default function SolidConection() {
       restorePreviousSession: true
     }).then(() => {
       if (session.info.isLoggedIn) {
-        profile(session.info.webId);
+        var solid = require('solid-auth-client')
+        const dir = "https://uo258472.inrupt.net/direcciones/";
+        console.log("Holi" + solid.vcard);
+        profile(session.info.webId).catch();
         navigate("/profile");
       }
     })
