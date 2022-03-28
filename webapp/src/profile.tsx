@@ -1,10 +1,13 @@
 import { useSession, CombinedDataProvider, LogoutButton, Text  } from "@inrupt/solid-ui-react";
 import { Button, Card, CardContent, Container, Typography } from "@material-ui/core";
 import { FOAF, VCARD } from "@inrupt/lit-generated-vocab-common";
+import getAddress from "./getAddress";
 var solid = require('solid-auth-client')
 
 const Profile = () => {
     const { session } = useSession();
+    const webid = "" + session.info.webId;
+    
 
     return (
         <Container fixed>
@@ -31,7 +34,7 @@ const Profile = () => {
                 
 
         <LogoutButton >
-            <Button style={{ marginTop: 20 }} variant="contained" color="primary">
+            <Button style={{ marginTop: 500 }} variant="contained" color="inherit">
             Logout
             </Button>
         </LogoutButton>

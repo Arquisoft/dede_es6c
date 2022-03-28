@@ -4,7 +4,6 @@ import { LoginButton, useSession } from "@inrupt/solid-ui-react";
 import { useNavigate } from "react-router-dom";
 import { handleIncomingRedirect,  onSessionRestore } from "@inrupt/solid-client-authn-browser";
 import { useEffect } from 'react';
-import Profile from "./profile";
 
 const authOptions = {
 clientName: "DedEx: Decentralized Delivery",
