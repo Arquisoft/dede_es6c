@@ -22,7 +22,7 @@ function degreesToRadians(degrees: number) : number {
     return degrees * Math.PI / 180;
 }
 
-function distanceInKmBetweenEarthCoordinates(lat1: number, lon1: number, lat2: number, lon2: number) : number {
+export function distanceInKmBetweenEarthCoordinates(lat1: number, lon1: number, lat2: number, lon2: number) : number {
     let earthRadiusKm:number = 6371;
 
     let dLat : number = degreesToRadians(lat2-lat1);

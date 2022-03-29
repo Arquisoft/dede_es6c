@@ -6,7 +6,10 @@ var solid = require('solid-auth-client')
 
 const Profile = () => {
     const { session } = useSession();
-    const webid = "" + session.info.webId;
+
+    getAddress(session.info.webId+"").then((result) => {
+        localStorage.setItem("address", result);
+    });
 
     return (
         <Container fixed>
