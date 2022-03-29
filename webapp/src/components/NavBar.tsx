@@ -53,7 +53,9 @@ const NavBar:React.FC<Props>= ({cartItems,handleAddToCart,handleRemoveFromCart})
           cartItems={cartItems}
            addToCart={handleAddToCart} 
            removeFromCart={handleRemoveFromCart}
+           
            />
+           
           </Drawer>
           
           <Button onClick={() => setCartOpen(true)} color="inherit">Shopping Cart</Button>
