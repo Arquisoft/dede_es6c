@@ -5,7 +5,9 @@ export type User = {
 
 export type SharedProduct = {
     _id: number;
-    name: string;
+    name: String;
     price: number;
-    type: string;
+    type: String;
+    //Pra ver cuando veeces esta en el carrito creo
+    amount: number;
   }

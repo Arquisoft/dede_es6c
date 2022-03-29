@@ -3,8 +3,8 @@ import ReactDOM from 'react-dom';
 import './estilos/estilo.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-import App from './App';
 import {QueryClient, QueryClientProvider} from 'react-query';
+import { SessionProvider } from "@inrupt/solid-ui-react";
 
 const client = new QueryClient();
 

@@ -7,7 +7,7 @@ import AddShoppingCartIcon from '@material-ui/icons/AddShoppingCart';
 import Badge from '@material-ui/core/Badge';
 
 //styles
-import {Wrapper} from './App.styles';
+import {Wrapper,StyledButton} from './App.styles';
 
 
 import Box from '@mui/material/Box';
@@ -25,9 +25,12 @@ import SolidConection from "./SolidConection";
 import Home from "./components/Home";
 import ShoppingCart from "./components/ShoppingCart";
 import History from "./components/History";
+import {product} from './components/ProductCard';
 
 
 function App(): JSX.Element {
+
+
 
   const [products,setProductos] = useState<SharedProduct[]>([]);
 
@@ -39,30 +42,61 @@ function App(): JSX.Element {
     refreshProductList();
   },[]);
   
+  
+  const [cartItems, setCartItems] = useState([] as SharedProduct[])
+
+
+  const handleRemoveFromCart = (id: number) => null; 
+
+  const handleAddToCart = (clikedItem: SharedProduct) => {
+    setCartItems(prev => {
+      //1.is the item in cart?
+      const isItemInCart = prev.find(item => item._id === clikedItem._id)
+      if(isItemInCart){
+        console.log("+1");
+        return prev.map(item => (
+          item._id === clikedItem._id
+          ?{...item, amount : item.amount + 1}
+          : item
+        ))
+      }
+      //first apereance
+      console.log("Entra aqui");
+      return[...prev, {...clikedItem, amount:1}];
+      
+      
+    })
+  };
 
   return (
     <>
-      <Header />
+      
+      
+     
         <Container style={{alignContent: "center", marginTop: "5%", minHeight: "50vh"}} maxWidth="lg">
+        <Header cartItems = {cartItems} handleAddToCart={handleAddToCart} handleRemoveFromCart={handleRemoveFromCart} />
         <Router>
+       
           <Routes>
-              <Route path="/products" element={<Products productos2={products}></Products>} />
+              <Route path="/products" element={<Products productos2={products} handleAddToCart={handleAddToCart}></Products>} />
               <Route path={"/"} element={<Home />} />
-              <Route path='/shoppingCart' element={<ShoppingCart/>} />
               <Route path='/history' element={<History/>} />
               <Route path='/login' element={<SolidConection/>} />
               <Route path='/register' element={<SolidConection/>} />
           </Routes>
           </Router>
+          <Footer />
         </Container>
-      <Footer />
+        
+      
+     
     </>
   );
 
 
+ 
 
-   const handleAddToCart = (clickedItem: SharedProduct) => null;
-  const handleRemoveFromCart = () => null;
+  
 }
 
 
