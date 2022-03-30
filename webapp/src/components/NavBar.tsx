@@ -6,33 +6,8 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import Logo from '../images/logo.png';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ProductList from '../ProductList';
-import { SessionProvider, useSession } from "@inrupt/solid-ui-react";
-import { useState } from "react";
 
 export default function NavBar(): JSX.Element{
-  const {session} = useSession();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
-
-  session.onLogin(() => {
-    if(session.info.isLoggedIn){
-      setIsLoggedIn(true)
-    } else {
-      setIsLoggedIn(false)
-    }
-  })
-
-  session.onLogout(() => {
-    if(session.info.isLoggedIn){
-      setIsLoggedIn(true)
-    } else {
-      setIsLoggedIn(false)
-    }
-  })
-
-  console.log(session.info.isLoggedIn);
-
   return (
     <Box sx={{ flexGrow: 1 }}>
       <AppBar id="bar">

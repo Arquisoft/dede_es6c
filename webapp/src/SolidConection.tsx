@@ -30,7 +30,7 @@ export default function SolidConection() {
         navigate("/profile");
       }
     })
-  }, []);
+  });
 
   return (
     <Container id="mainLoginDiv">

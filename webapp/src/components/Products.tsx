@@ -1,9 +1,6 @@
-import React, {Fragment, useState} from 'react';
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
 import Product from "./ProductCard";
-import products from "../testProducts";
-import { getProducts } from "../api/api";
 import { SharedProduct } from '../shared/shareddtypes';
 
 type Productos = {
