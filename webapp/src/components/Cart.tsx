@@ -1,10 +1,6 @@
 import Cartitem  from "./Cartitem";
-import React, { useState, useEffect } from 'react';
-import { Drawer } from "@mui/material";
 import {SharedProduct} from '../shared/shareddtypes';
 import Grid from "@mui/material/Grid";
-import Product from "./ProductCard";
-
 
 type Props = {
     cartItems: SharedProduct[];
@@ -26,16 +22,8 @@ const Cart: React.FC<Props> = ({cartItems, addToCart, removeFromCart}) =>{
                 addToCart={addToCart}
                 removeFromCart={removeFromCart}
             />
-        ))}
-        
-
-
-
-
-        
-       
+        ))}   
         </Grid>
-       
     )
 }
 

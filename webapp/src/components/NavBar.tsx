@@ -1,4 +1,3 @@
-
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -6,14 +5,9 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import Logo from '../images/logo.png';
-import SolidConection from "../SolidConection";
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ProductList from '../ProductList';
-import React, { useState, useEffect } from 'react';
-import {User,SharedProduct} from '../shared/shareddtypes';
-import {Wrapper,StyledButton} from '../App.styles';
+import React, { useState } from 'react';
+import {SharedProduct} from '../shared/shareddtypes';
 import { Drawer } from "@mui/material";
-import ShoppingCart from './ShoppingCart';
 import Cart from './Cart';
 
 type Props= {
@@ -30,8 +24,6 @@ const NavBar:React.FC<Props>= ({cartItems,handleAddToCart,handleRemoveFromCart})
     <Box sx={{ flexGrow: 1 }}>
       <AppBar id="bar">
         <Toolbar>
-
-          
           <IconButton
             size="small"
             edge="start"
@@ -52,11 +44,8 @@ const NavBar:React.FC<Props>= ({cartItems,handleAddToCart,handleRemoveFromCart})
           cartItems={cartItems}
            addToCart={handleAddToCart} 
            removeFromCart={handleRemoveFromCart}
-           
            />
-           
           </Drawer>
-          
           <Button onClick={() => setCartOpen(true)} color="inherit">Shopping Cart</Button>
           <Button href="http://localhost:3000/history" color="inherit">History</Button>
           <Button href="http://localhost:3000/login" color="inherit">Profile</Button>

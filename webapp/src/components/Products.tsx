@@ -3,7 +3,6 @@ import Grid from "@mui/material/Grid";
 import Product from "./ProductCard";
 import { SharedProduct } from '../shared/shareddtypes';
 
-
 type Productos = {
   productos2:SharedProduct[];
   handleAddToCart: (clikedItem: SharedProduct) => void;

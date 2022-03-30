@@ -1,9 +1,8 @@
-import { ObjectId } from 'mongodb';
 import moongose, { Schema,model } from 'mongoose';
 
 const ProductSchema = new Schema({
     _id: {
-        type: ObjectId,
+        type: Number,
         required: true
     },
     name: {
@@ -24,7 +23,7 @@ const ProductSchema = new Schema({
 });
 
 export interface Product extends moongose.Document {
-    id: ObjectId;
+    id: string;
     name: string;
     description: string;
     price: number;

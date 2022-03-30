@@ -1,4 +1,3 @@
-import { ObjectId } from "mongodb";
 
 export type User = {
     name:string;
@@ -6,7 +5,7 @@ export type User = {
   }
 
 export type SharedProduct = {
-    _id: ObjectId;
+    _id: number;
     name: string;
     price: number;
     type: string;
