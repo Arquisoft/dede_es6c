@@ -5,11 +5,13 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import {QueryClient, QueryClientProvider} from 'react-query';
 import { SessionProvider } from "@inrupt/solid-ui-react";
+import ResumenCompra from './components/ResumenCompra';
 
 const client = new QueryClient();
 
 ReactDOM.render(
   <React.StrictMode>
+    <ResumenCompra></ResumenCompra>
     <SessionProvider>
       <App />
     </SessionProvider>

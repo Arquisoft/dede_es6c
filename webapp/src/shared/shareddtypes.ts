@@ -1,13 +1,15 @@
+import { ObjectId } from "mongodb";
+
 export type User = {
     name:string;
     email:string;
   }
 
 export type SharedProduct = {
-    _id: number;
-    name: String;
+    _id: ObjectId;
+    name: string;
     price: number;
-    type: String;
-    //Pra ver cuando veeces esta en el carrito creo
+    type: string;
+    imgUrl: string;
     amount: number;
   }

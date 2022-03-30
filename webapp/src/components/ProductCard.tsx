@@ -8,17 +8,17 @@ import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import accounting from "accounting";
 import  handleAddToCart from '../App';
+import { ObjectId } from 'mongodb';
 import coche from '../images/coche.jpg'; // Prueba de visualización del diseño
 import { SharedProduct } from '../shared/shareddtypes';
 
 
-
-
 export type product = {
-  id : Number;
+  id : ObjectId;
   name: String;
   price: number;
   type : String;
+  imgUrl: string;
 }
 
 type Props = {
@@ -43,7 +43,7 @@ const Product:React.FC<Props> = ({producto,handleAddToCart}) => (
         component="img"
         alt="product image"
         height="140"
-        image={coche}
+        image={"./images/" + producto.type + "_" + producto.name + ".png"}
       />
       <CardContent>
         <Typography gutterBottom variant="h5" component="div">

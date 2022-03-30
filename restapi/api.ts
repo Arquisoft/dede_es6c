@@ -1,10 +1,7 @@
-import { Console } from 'console';
 import express, { Request, Response, Router } from 'express';
 import {check} from 'express-validator';
-import { getSystemErrorMap } from 'util';
-import {​​​​​​model, Schema, Model, Document}​​​​​​ from 'mongoose';
+import {​​​​​​Document}​​​​​​ from 'mongoose';
 import Product from './models/Product';
-import { ProductType } from './types';
 
 const api:Router = express.Router()
 

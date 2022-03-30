@@ -23,7 +23,6 @@ type Props= {
 
 }
 
-
 const NavBar:React.FC<Props>= ({cartItems,handleAddToCart,handleRemoveFromCart}) => {
 
   const [cartOpen,setCartOpen] = useState(false);
@@ -60,7 +59,7 @@ const NavBar:React.FC<Props>= ({cartItems,handleAddToCart,handleRemoveFromCart})
           
           <Button onClick={() => setCartOpen(true)} color="inherit">Shopping Cart</Button>
           <Button href="http://localhost:3000/history" color="inherit">History</Button>
-          <Button href="http://localhost:3000/login" color="inherit">Login</Button>
+          <Button href="http://localhost:3000/login" color="inherit">Profile</Button>
         </Toolbar>
 
         

@@ -44,3 +44,9 @@ The following key decisions have been made regarding the design of the applicati
 * Context: software is needed to deploy the application once it is finished, and this allows it to be done through a direct link to the Github repository where the project is. In addition, it supports a large number of programming languages, including React and TypeScript, which will be used in the project. Other alternatives are Google App Engine, and Netlify, for example.
 * Decision: by allowing the use of the Github repository to deploy the web application, its use is very practical.
 * Consequences: once the Github repository is synchronized with Heroku, it is expected that we will not have any more concerns about the deployment of the application.
+
+.Deployment with AWS
+* Status: Proposed
+* Context: software is needed to deploy the application once finished, and this allows you to deploy any application professionally. Other alternatives are Netlify and Heroku, for example.
+* Decision: this software allows you to professionally deploy any web application using virtual machines.
+* Consequences: the application may need to be maintained frequently.

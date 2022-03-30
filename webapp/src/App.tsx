@@ -25,13 +25,12 @@ import SolidConection from "./SolidConection";
 import Home from "./components/Home";
 import ShoppingCart from "./components/ShoppingCart";
 import History from "./components/History";
+import Profile from "./profile";
+import SolidDisconection from "./SolidDisconection"
 import {product} from './components/ProductCard';
 
 
 function App(): JSX.Element {
-
-
-
   const [products,setProductos] = useState<SharedProduct[]>([]);
 
   const refreshProductList = async () => {
@@ -94,7 +93,9 @@ function App(): JSX.Element {
               <Route path={"/"} element={<Home />} />
               <Route path='/history' element={<History/>} />
               <Route path='/login' element={<SolidConection/>} />
+              <Route path='/logout' element={<SolidDisconection/>} />
               <Route path='/register' element={<SolidConection/>} />
+              <Route path='/profile' element={<Profile/>} />
           </Routes>
           </Router>
           <Footer />
