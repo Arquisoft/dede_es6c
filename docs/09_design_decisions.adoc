@@ -47,6 +47,6 @@ The following key decisions have been made regarding the design of the applicati
 
 .Deployment with AWS
 * Status: Proposed
-* Context: se necesita de un software para desplegar la aplicación una vez terminada, y este permite desplegar cualquier aplicación de forma profesional. Otras alternativas son Netlify y Heroku, por ejemplo.
+* Context: software is needed to deploy the application once finished, and this allows you to deploy any application professionally. Other alternatives are Netlify and Heroku, for example.
 * Decision: this software allows you to professionally deploy any web application using virtual machines.
 * Consequences: the application may need to be maintained frequently.
