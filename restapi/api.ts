@@ -1,11 +1,7 @@
-import { Console } from 'console';
 import express, { Request, Response, Router } from 'express';
 import {check} from 'express-validator';
-import { getSystemErrorMap } from 'util';
-import {​​​​​​model, Schema, Model, Document}​​​​​​ from 'mongoose';
+import {​​​​​​Document}​​​​​​ from 'mongoose';
 import Product from './models/Product';
-import { ProductType } from './types';
-import { getPriceFromAddress } from './geocoder/Geocoder';
 
 const api:Router = express.Router()
 
@@ -135,18 +131,5 @@ mongoose.connect('mongodb+srv://uo269502:mpRh919kQXYXT98r@cluster0.fp7y3.mongodb
      return res.sendStatus(200);
    }
  );
-
- api.get("/geocode/:address", async (req: Request, res: Response) => {
-  getPriceFromAddress(req.params.address)
-      .then((response : any) => {
-          res.status(200).send(response);
-          console.log(response)
-      }).catch((error : any) => {
-          res.status(500).json({
-              message: error.message,
-              error
-          })
-      })
-});
 
 export default api;

@@ -2,7 +2,6 @@ import { useSession, CombinedDataProvider, LogoutButton, Text  } from "@inrupt/s
 import { Button, Card, CardContent, Container, Typography } from "@material-ui/core";
 import { FOAF, VCARD } from "@inrupt/lit-generated-vocab-common";
 import getAddress from "./getAddress";
-var solid = require('solid-auth-client')
 
 const Profile = () => {
     const { session } = useSession();

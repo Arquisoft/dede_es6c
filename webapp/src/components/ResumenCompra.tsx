@@ -1,10 +1,5 @@
-import { useSession } from '@inrupt/solid-ui-react';
 import axios from 'axios';
-import { useEffect, useState } from 'react'
-import getAddress from '../getAddress';
-//import {calculateTotal, calculateTotalPlusShiping, getTotalItems} from '../../helpers/calculate';
-const Nominatim = require('nominatim-geocoder')
-const geocoder = new Nominatim();
+import { useEffect } from 'react'
 
 const ResumenCompra = () => {
     const PRICE = 10.0;
@@ -16,25 +11,25 @@ const ResumenCompra = () => {
                 let long:number = response.data.features[0].center[1]
                 let lat:number = response.data.features[0].center[0]
                 console.log(long+", "+lat)
-                let distancia:number = distanceInKmBetweenEarthCoordinates(43.354688, -5.851250, long, lat);
-                console.log(distancia)
+                let distancia:number = distanciaEnKm(43.354688, -5.851250, long, lat);
+                console.log("distancia: " + distancia)
                 let precioEnvio:number = distancia * PRICE;
-                console.log(precioEnvio);
+                console.log("precio: " + precioEnvio);
             }
         );
-    }, []);
+    });
 
     return (<div></div>);
 }
 
-function distanceInKmBetweenEarthCoordinates(lat1: number, lon1: number, lat2: number, lon2: number) : number {
+function distanciaEnKm(lat1: number, lon1: number, lat2: number, lon2: number) : number {
     let earthRadiusKm:number = 6371;
 
-    let dLat : number = degreesToRadians(lat2-lat1);
-    let dLon : number = degreesToRadians(lon2-lon1);
+    let dLat : number = gradosARadianes(lat2-lat1);
+    let dLon : number = gradosARadianes(lon2-lon1);
 
-    lat1 = degreesToRadians(lat1);
-    lat2 = degreesToRadians(lat2);
+    lat1 = gradosARadianes(lat1);
+    lat2 = gradosARadianes(lat2);
 
     let a : number = Math.sin(dLat/2) * Math.sin(dLat/2) + Math.sin(dLon/2) * Math.sin(dLon/2) * Math.cos(lat1) * Math.cos(lat2); 
     let c : number  = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1-a)); 
@@ -42,7 +37,7 @@ function distanceInKmBetweenEarthCoordinates(lat1: number, lon1: number, lat2: n
     return earthRadiusKm * c;
 }
 
-function degreesToRadians(degrees: number) : number {
+function gradosARadianes(degrees: number) : number {
     return degrees * Math.PI / 180;
 }
 
