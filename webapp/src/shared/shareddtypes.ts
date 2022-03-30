@@ -11,4 +11,5 @@ export type SharedProduct = {
     price: number;
     type: string;
     imgUrl: string;
+    amount: number;
   }
