@@ -1,4 +1,3 @@
-import * as React from 'react';
 import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
@@ -6,34 +5,22 @@ import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import IconButton from '@mui/material/IconButton';
 import Logo from '../images/logo.png';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import ProductList from '../ProductList';
-import { SessionProvider, useSession } from "@inrupt/solid-ui-react";
-import { useState } from "react";
+import React, { useState } from 'react';
+import {SharedProduct} from '../shared/shareddtypes';
+import { Drawer } from "@mui/material";
+import Cart from './Cart';
 
-export default function NavBar(): JSX.Element{
-  const {session} = useSession();
-  const [isLoggedIn, setIsLoggedIn] = useState(false);
+type Props= {
+  cartItems:SharedProduct[];
+  handleAddToCart: (clikedItem: SharedProduct) => void;
+  handleRemoveFromCart: (id: number) => void;
 
-  session.onLogin(() => {
-    if(session.info.isLoggedIn){
-      setIsLoggedIn(true)
-    } else {
-      setIsLoggedIn(false)
-    }
-  })
+}
 
-  session.onLogout(() => {
-    if(session.info.isLoggedIn){
-      setIsLoggedIn(true)
-    } else {
-      setIsLoggedIn(false)
-    }
-  })
+const NavBar:React.FC<Props>= ({cartItems,handleAddToCart,handleRemoveFromCart}) => {
 
-  console.log(session.info.isLoggedIn);
-
-  return (
+  const [cartOpen,setCartOpen] = useState(false);
+  return(
     <Box sx={{ flexGrow: 1 }}>
       <AppBar id="bar">
         <Toolbar>
@@ -52,11 +39,23 @@ export default function NavBar(): JSX.Element{
           
           <Button href="http://localhost:3000/" color="inherit">Home</Button>
           <Button href="http://localhost:3000/products" color="inherit">Products</Button>
-          <Button href="http://localhost:3000/shoppingCart" color="inherit">Shopping Cart</Button>
+          <Drawer anchor='right' open={cartOpen} onClose={() => setCartOpen(false)}>
+          <Cart 
+          cartItems={cartItems}
+           addToCart={handleAddToCart} 
+           removeFromCart={handleRemoveFromCart}
+           />
+          </Drawer>
+          <Button onClick={() => setCartOpen(true)} color="inherit">Shopping Cart</Button>
           <Button href="http://localhost:3000/history" color="inherit">History</Button>
           <Button href="http://localhost:3000/login" color="inherit">Profile</Button>
         </Toolbar>
+
+        
       </AppBar>
+   
     </Box>
   );
+ 
 }
+export default NavBar;

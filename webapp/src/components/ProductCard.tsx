@@ -7,21 +7,22 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import accounting from "accounting";
-import { ObjectId } from 'mongodb';
+import { SharedProduct } from '../shared/shareddtypes';
 
-import coche from '../images/coche.jpg'; // Prueba de visualización del diseño
-
-
-type product = {
-  id : ObjectId;
+export type product = {
+  id : Number;
   name: String;
   price: number;
   type : String;
   imgUrl: string;
 }
 
-export default function Product(producto:product) {
-  return (
+type Props = {
+  producto: SharedProduct;
+  handleAddToCart: (clikedItem: SharedProduct) => void;
+}
+
+const Product:React.FC<Props> = ({producto,handleAddToCart}) => (
     <Card sx={{ maxWidth: 345 }}>
       <CardHeader
         action={
@@ -46,8 +47,9 @@ export default function Product(producto:product) {
         </Typography>
       </CardContent>
       <CardActions>
-        <Button size="small">Add to cart</Button>
-      </CardActions>
+        <Button  onClick={() => handleAddToCart(producto)}  size="small">Add to cart</Button>
+       </CardActions>
     </Card>
-  );
-}
+)
+
+export default Product;

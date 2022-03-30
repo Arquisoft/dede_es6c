@@ -27,10 +27,11 @@ export default function SolidConection() {
       restorePreviousSession: true
     }).then(() => {
       if (session.info.isLoggedIn) {
+        localStorage.setItem("sessionID", session.info.sessionId);
         navigate("/profile");
       }
     })
-  }, []);
+  });
 
   return (
     <Container id="mainLoginDiv">
