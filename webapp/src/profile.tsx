@@ -1,13 +1,15 @@
 import { useSession, CombinedDataProvider, LogoutButton, Text  } from "@inrupt/solid-ui-react";
 import { Button, Card, CardContent, Container, Typography } from "@material-ui/core";
 import { FOAF, VCARD } from "@inrupt/lit-generated-vocab-common";
-import getAddress from "./getAddress";
+import getInfo from "./profileInfo";
 
 const Profile = () => {
     const { session } = useSession();
 
-    getAddress(session.info.webId+"").then((result) => {
-        localStorage.setItem("address", result);
+    getInfo(session.info.webId+"").then((result) => {
+        localStorage.setItem("username", result[0]);
+        localStorage.setItem("organization", result[1]);
+        localStorage.setItem("address", result[2]);
     });
 
     return (

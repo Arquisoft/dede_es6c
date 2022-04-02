@@ -2,6 +2,7 @@ import express, { Request, Response, Router } from 'express';
 import {check} from 'express-validator';
 import {​​​​​​Document}​​​​​​ from 'mongoose';
 import Product from './models/Product';
+import History from './models/History';
 
 const api:Router = express.Router()
 
@@ -32,6 +33,18 @@ mongoose.connect('mongodb+srv://uo269502:mpRh919kQXYXT98r@cluster0.fp7y3.mongodb
        return res.status(500).send(error);
      }
    });
+
+   api.get("/historiales", async (req: Request, res: Response): Promise<Response> => {
+    try {
+      console.log("request" + req.body.username);
+        var result = await History.find({'username':'elxokas'}).exec();
+        //console.log("username restapi" + localStorage.getItem("username"));
+        //var result = await History.find({'username':localStorage.getItem("username")}).exec();
+        return res.status(200).json(result);
+    } catch (error) {
+      return res.status(500).send(error);
+    }
+  });
 
    api.post(
     "/productos/add",

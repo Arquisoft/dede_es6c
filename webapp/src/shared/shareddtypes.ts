@@ -12,3 +12,11 @@ export type SharedProduct = {
     imgUrl: string;
     amount: number;
   }
+
+  export type SharedHistory = {
+    _id: number;
+    username: string;
+    product_name: string;
+    product_type: string;
+    product_price: number;
+  }
