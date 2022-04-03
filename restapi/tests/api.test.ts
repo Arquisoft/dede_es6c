@@ -4,6 +4,7 @@ import * as http from 'http';
 import bp from 'body-parser';
 import cors from 'cors';
 import api from '../api';
+import mongoose from 'mongoose';
 
 let app:Application;
 let server:http.Server;
@@ -27,9 +28,31 @@ beforeAll(async () => {
 
 afterAll(async () => {
     server.close() //close the server
+    mongoose.connection.close(); //close database
 })
 
 describe('user ', () => {
+    /**
+   * Test that we can get a user without error
+   */
+  it("Can get a user", async () => {
+    const response: Response = await request(app).get(
+      "/users/findByEmail/uo269502@uniovi.es"
+    );
+
+    console.log("Prueba 01 - USER: " + response);
+    console.log("Prueba 01 - STATUS: " + response.statusCode);
+
+    expect(response.statusCode).toBe(200);
+    expect(response.body).toEqual(
+      expect.objectContaining({
+        name: "Luis Manuel Gonzalez Baizan",
+        webId: "https://luismanuel186.inrupt.net/profile/card#me",
+        email: "uo269502@uniovi.es",
+        verified: true,
+      })
+    );
+  });
     /**
      * Test that we can list users without any error.
      */
@@ -42,8 +65,8 @@ describe('user ', () => {
      * Tests that a user can be created through the productService without throwing any errors.
      */
     it('can be created correctly', async () => {
-        let username:string = 'Pablo'
-        let email:string = 'gonzalezgpablo@uniovi.es'
+        let username:string = 'LuisManuel'
+        let email:string = 'uo269502@prueba.es'
         const response:Response = await request(app).post('/api/users/add').send({name: username,email: email}).set('Accept', 'application/json')
         expect(response.statusCode).toBe(200);
     });
