@@ -28,7 +28,10 @@ export async function getProducts():Promise<SharedProduct[]>{
 
 export async function getHistory():Promise<SharedHistory[]>{
   const apiEndPoint = process.env.REACT_APP_API_URI || 'http://localhost:5000/api';
-  let response = await fetch(apiEndPoint+'/historiales');
-  //console.log(response.json());
+  let response = await fetch(apiEndPoint+'/historiales', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({'username':localStorage.getItem("username")})
+  });
   return response.json()
 }
