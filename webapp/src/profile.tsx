@@ -5,6 +5,7 @@ import getInfo from "./profileInfo";
 
 const Profile = () => {
     const { session } = useSession();
+    
 
     getInfo(session.info.webId+"").then((result) => {
         localStorage.setItem("username", result[0]);

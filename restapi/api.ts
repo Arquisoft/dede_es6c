@@ -36,7 +36,7 @@ mongoose.connect('mongodb+srv://uo269502:mpRh919kQXYXT98r@cluster0.fp7y3.mongodb
 
    api.get("/historiales", async (req: Request, res: Response): Promise<Response> => {
     try {
-      console.log("request" + req.body.username);
+        //console.log("request " + req.body);
         var result = await History.find({'username':'elxokas'}).exec();
         //console.log("username restapi" + localStorage.getItem("username"));
         //var result = await History.find({'username':localStorage.getItem("username")}).exec();

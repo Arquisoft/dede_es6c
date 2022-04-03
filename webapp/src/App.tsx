@@ -15,14 +15,14 @@ import SolidDisconection from "./SolidDisconection"
 
 function App(): JSX.Element {
   const [products,setProductos] = useState<SharedProduct[]>([]);
-
+  
   const refreshProductList = async () => {
     setProductos(await getProducts());
   }
 
   useEffect(()=>{
     refreshProductList();
-  },[]);
+  });
 
   const [cartItems, setCartItems] = useState([] as SharedProduct[])
 

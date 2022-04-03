@@ -4,24 +4,28 @@ const { Schema } = mongoose;
 
 const historySchema  = new Schema({
   _id: {
-      type: String,
-      required: true
-  },
-  username:{
     type: String,
     required: true
   },
-  product_name:{
+  username: {
     type: String,
     required: true
   },
-  product_type:{
+  product_name: {
+    type: String,
+    required: true
+  },
+  product_type: {
     type:String,
     required :false
   },
   product_price: {
-      type: Number,
-      required: true
+    type: Number,
+    required: true
+  },
+  id: {
+    type: Number,
+    required: true
   }
 });
 
