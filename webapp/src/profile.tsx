@@ -2,8 +2,9 @@ import { useSession, CombinedDataProvider, LogoutButton, Text  } from "@inrupt/s
 import { Button, Card, CardContent, Container, Typography } from "@material-ui/core";
 import { FOAF, VCARD } from "@inrupt/lit-generated-vocab-common";
 import getAddress from "./getAddress";
+import { Grid } from "@mui/material";
 
-const Profile = () => {
+export default function Profile() {
     const { session } = useSession();
 
     getAddress(session.info.webId+"").then((result) => {
@@ -11,16 +12,20 @@ const Profile = () => {
     });
 
     return (
-        <Container fixed>
+        <body>
+        <Container id="profileCard" fixed>
         {session.info.webId ? (
             <CombinedDataProvider 
             datasetUrl={session.info.webId} 
             thingUrl={session.info.webId}>
             <Card style={{ maxWidth: 1300 }}>
             <CardContent>
-                <Typography gutterBottom variant="h4" component="h1">
+                <div className="cardContent">
+                <Typography gutterBottom variant="h4" component="h1" id="solidName">
                 <Text property={FOAF.name.iri.value} />
                 </Typography>
+                </div>
+                <div className="cardContent">
                 <Typography variant="body2" color="textSecondary" component="p" style={{ display: "flex", alignItems: "center" }}>
                 <Text property={VCARD.organization_name.iri.value} />
                 </Typography>
@@ -28,22 +33,22 @@ const Profile = () => {
                 {/* Para obtener la direccion */}
                 <Text id= "direction" property={VCARD.note.iri.value} />
                 </Typography>
+                </div>
             </CardContent>
             </Card>
-        </CombinedDataProvider>
+            </CombinedDataProvider>
         ): null } 
                 
-
-        <LogoutButton >
-            <Button style={{ marginTop: 500 }} href="http://localhost:3000" variant="contained" color="primary">
-            Logout
-            </Button>
-        </LogoutButton>
-
-
+        <Grid id="solidButtons" container>
+            <Grid item>
+            <LogoutButton >
+                <Button id="logoutButton" href="http://localhost:3000" variant="contained" color="primary">
+                Logout
+                </Button>
+            </LogoutButton>
+            </Grid>
+        </Grid>
         </Container>
+        </body>
     );
 }
-
-
-export default Profile

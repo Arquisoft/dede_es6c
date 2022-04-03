@@ -14,11 +14,9 @@ type Props= {
   cartItems:SharedProduct[];
   handleAddToCart: (clikedItem: SharedProduct) => void;
   handleRemoveFromCart: (id: number) => void;
-
 }
 
 const NavBar:React.FC<Props>= ({cartItems,handleAddToCart,handleRemoveFromCart}) => {
-
   const [cartOpen,setCartOpen] = useState(false);
   return(
     <Box sx={{ flexGrow: 1 }}>
@@ -50,12 +48,9 @@ const NavBar:React.FC<Props>= ({cartItems,handleAddToCart,handleRemoveFromCart})
           <Button href="http://localhost:3000/history" color="inherit">History</Button>
           <Button href="http://localhost:3000/login" color="inherit">Profile</Button>
         </Toolbar>
-
-        
       </AppBar>
-   
     </Box>
-  );
- 
+  ); 
 }
+
 export default NavBar;

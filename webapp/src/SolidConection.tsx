@@ -5,9 +5,7 @@ import { useNavigate } from "react-router-dom";
 import { handleIncomingRedirect,  onSessionRestore } from "@inrupt/solid-client-authn-browser";
 import { useEffect } from 'react';
 
-const authOptions = {
-clientName: "DedEx: Decentralized Delivery",
-};
+const authOptions = { clientName: "DedEx: Decentralized Delivery", };
 
 export default function SolidConection() {
 
@@ -36,7 +34,7 @@ export default function SolidConection() {
   return (
     <Container id="mainLoginDiv">
       {/* {!session.info.isLoggedIn ? ( */}
-        <>
+        <body>
           <Typography id="solidLogin" variant="h3">
             SOLID Login
           </Typography>
@@ -67,7 +65,7 @@ export default function SolidConection() {
           <Typography variant="body1" component="p" id="help">
             Don't have a POD? Get one here: <Link id="inrupt" href="https://inrupt.com/" target="_blank">Inrupt</Link>
           </Typography>
-        </>
+        </body>
       {/* ) : (
         <Typography id="pageTitle" variant="h3">
           Oops! Something went wrong...

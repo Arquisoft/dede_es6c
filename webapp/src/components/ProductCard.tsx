@@ -35,7 +35,7 @@ const Product:React.FC<Props> = ({producto,handleAddToCart}) => (
       <CardMedia
         component="img"
         alt="product image"
-        height="140"
+        height="250"
         image={"./images/" + producto.type + "_" + producto.name + ".png"}
       />
       <CardContent>
