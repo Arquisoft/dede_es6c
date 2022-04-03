@@ -12,8 +12,8 @@ const Cart: React.FC<Props> = ({cartItems, addToCart, removeFromCart}) =>{
     return(
         
         <Grid  sx={{width: 600}} container direction="column" justifyContent="flex-end" alignItems="center">
-        <h2>Grua</h2>
-        {cartItems.length === 0 ? <p>No hay coches pa remolcar.</p>: <p>Productos</p>}
+        <h2>Grúa</h2>
+        {cartItems.length === 0 ? <p>No hay coches pa' remolcar.</p>: <p>Productos</p>}
         
         {cartItems.map(item=> (
             <Cartitem 
