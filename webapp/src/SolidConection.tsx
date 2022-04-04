@@ -25,6 +25,7 @@ export default function SolidConection() {
       restorePreviousSession: true
     }).then(() => {
       if (session.info.isLoggedIn) {
+        localStorage.setItem("webID", session.info.webId+"");
         localStorage.setItem("sessionID", session.info.sessionId);
         navigate("/profile");
       }
