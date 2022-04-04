@@ -2,7 +2,6 @@ import { useSession, CombinedDataProvider, LogoutButton, Text  } from "@inrupt/s
 import { Button, Card, CardContent, Container, Typography } from "@material-ui/core";
 import { FOAF, VCARD } from "@inrupt/lit-generated-vocab-common";
 import getInfo from "./profileInfo";
-import getAddress from "./getAddress";
 import { Grid } from "@mui/material";
 
 export default function Profile() {
