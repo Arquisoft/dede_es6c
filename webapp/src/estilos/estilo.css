@@ -104,7 +104,7 @@ p.principal {
     margin-bottom: 1em;
 }
 
-#loginButton, #cancelButton {
+#loginButton, #cancelButton, #logoutButton {
     margin: 1.3em;
 }
 
@@ -121,4 +121,13 @@ footer {
 
 footer p:last-child {
     text-align: right;  
+}
+
+#profileCard {
+    border: #282c34 solid 1em;
+    padding: 3em;
+}
+
+.cardContent {
+    margin: 2em;
 }
