@@ -2,27 +2,16 @@ import { useState } from "react";
 import { Autocomplete, Button, Container, Grid, Link, TextField, Typography } from "@mui/material";
 import { LoginButton, useSession } from "@inrupt/solid-ui-react";
 import { useNavigate } from "react-router-dom";
-
-//import "../css/SOLIDLogin.css";
-
-import {
-  handleIncomingRedirect, 
-  onSessionRestore
-} from "@inrupt/solid-client-authn-browser";
+import { handleIncomingRedirect,  onSessionRestore } from "@inrupt/solid-client-authn-browser";
 import { useEffect } from 'react';
 
-const authOptions = {
-  clientName: "DedEx: Decentralized Delivery",
-};
+const authOptions = { clientName: "DedEx: Decentralized Delivery", };
 
 export default function SolidConection() {
 
   const navigate = useNavigate();
-
   const [oidcIssuer, setOidcIssuer] = useState("https://broker.pod.inrupt.com/");
-
   const providers = [{ displayName: "Broker Inrupt", url: "https://broker.pod.inrupt.com/" }, { displayName: "Inrupt", url: "https://inrupt.net/" }]
-
   const { session } = useSession();
 
   onSessionRestore((url) => {
@@ -36,15 +25,17 @@ export default function SolidConection() {
       restorePreviousSession: true
     }).then(() => {
       if (session.info.isLoggedIn) {
+        localStorage.setItem("webID", session.info.webId+"");
+        localStorage.setItem("sessionID", session.info.sessionId);
         navigate("/profile");
       }
     })
-  }, []);
+  });
 
   return (
     <Container id="mainLoginDiv">
       {/* {!session.info.isLoggedIn ? ( */}
-        <>
+        <body>
           <Typography id="solidLogin" variant="h3">
             SOLID Login
           </Typography>
@@ -75,7 +66,7 @@ export default function SolidConection() {
           <Typography variant="body1" component="p" id="help">
             Don't have a POD? Get one here: <Link id="inrupt" href="https://inrupt.com/" target="_blank">Inrupt</Link>
           </Typography>
-        </>
+        </body>
       {/* ) : (
         <Typography id="pageTitle" variant="h3">
           Oops! Something went wrong...

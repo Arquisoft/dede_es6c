@@ -1,5 +1,4 @@
-import {User} from '../shared/shareddtypes';
-import {SharedProduct} from  '../shared/shareddtypes';
+import {SharedHistory, SharedProduct, User} from '../shared/shareddtypes';
 
 export async function addUser(user:User):Promise<boolean>{
     const apiEndPoint= process.env.REACT_APP_API_URI || 'http://localhost:5000/api'
@@ -25,4 +24,14 @@ export async function getProducts():Promise<SharedProduct[]>{
     const apiEndPoint = process.env.REACT_APP_API_URI || 'http://localhost:5000/api';
     let response = await fetch(apiEndPoint+'/productos');
     return response.json()
+}
+
+export async function getHistory():Promise<SharedHistory[]>{
+  const apiEndPoint = process.env.REACT_APP_API_URI || 'http://localhost:5000/api';
+  let response = await fetch(apiEndPoint+'/historiales', {
+    method: 'POST',
+    headers: {'Content-Type':'application/json'},
+    body: JSON.stringify({'username':localStorage.getItem("username")})
+  });
+  return response.json()
 }
