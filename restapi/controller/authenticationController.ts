@@ -1,7 +1,7 @@
 import { Request, Response } from 'express';
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
-import User from '../schemas/userSchema';
+import {User} from '../schemas/userSchema';
 
 
     module.exports = {
@@ -24,11 +24,10 @@ import User from '../schemas/userSchema';
     
     },
 
-
     login: async(req: Request, res: Response) => {
         const { email, password } = req.body;
         const user = await User.findOne({email});
-
+        
         if(!user) {
             return res.status(404).send('User not found');
         }

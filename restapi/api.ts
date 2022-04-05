@@ -38,12 +38,12 @@ mongoose.connect('mongodb+srv://uo269502:mpRh919kQXYXT98r@cluster0.fp7y3.mongodb
    api.post(
     "/productos/add",
     async (req: Request, res: Response): Promise<Response> => {
-      let _id = "12";
+      //let _id = "12";
       let name = req.body.name;
-      let price = 45;
+      let price = req.body.price;
       let type = req.body.type;
       let producto: Producto = new Product({
-      _id: _id,
+      //_id: _id,
       name: name,
       price: price,
       type: type

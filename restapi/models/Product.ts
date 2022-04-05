@@ -3,10 +3,10 @@ import mongoose from 'mongoose';
 const { Schema } = mongoose;
 
 const productoSchema  = new Schema({
-  _id: {
+  /*_id: {
       type: String,
       required: true
-  },
+  },*/
   name:{
     type: String,
     required: false

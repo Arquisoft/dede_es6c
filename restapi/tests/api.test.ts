@@ -1,10 +1,11 @@
 import request, {Response} from 'supertest';
-import express, { Application } from 'express';
+import express, { Application, RequestHandler } from 'express';
 import * as http from 'http';
 import bp from 'body-parser';
 import cors from 'cors';
 import api from '../api';
 import apiUser from '../routes/userRoutes';
+import apiProduct from '../routes/productRoutes';
 import mongoose from 'mongoose';
 
 let app:Application;
@@ -20,6 +21,7 @@ beforeAll(async () => {
     app.use(bp.json());
     app.use("/api", api);
     app.use("/apiUser", apiUser);
+    app.use('/apiProduct', apiProduct);
 
     server = app.listen(port, ():void => {
         console.log('Restapi server for testing listening on '+ port);
@@ -34,6 +36,8 @@ afterAll(async () => {
 })
 
 describe('user ', () => {
+
+    jest.setTimeout(15000);
 
     /**
      * Test that we can list users without any error.
@@ -65,31 +69,41 @@ describe('user ', () => {
     expect(response.statusCode).toBe(500);
     });
 
-    it('correct login', async () => {
+    it('login with an unregistered user', async () => {
         const response:Response = await request(app).post('/apiUser/login').send({
-            username:"uo269502@uniovi.es",
-            password: "Luisma@186"
+            username:"prueba1@gmail.es",
+            password: "123456"
         }).set('Accept', 'application/json');
-        expect(response.statusCode).toBe(205);
+        expect(response.statusCode).toBe(404);
     });
 
-    /*it('logout', async () => {
-        const response:Response = await request(app).get("/logout");
-        expect(response.statusCode).toBe(200);
+    /*it('login with a registered user', async () => {
+        const response:Response = await request(app).post('/apiUser/login').send({
+            email:"luismanuelglezbaizan@gmail.com",
+            password: "ASWtrabaj01"
+        }).set('Accept', 'application/json');
+        expect(response.statusCode).toBe(205);
     });*/
 
 });
 
-function beforeAll(arg0: () => Promise<void>) {
-    throw new Error('Function not implemented.');
-}
+describe('product ', () => {
 
+    it('list products',async () => {
+        const response:Response = await request(app).get("/apiProduct/products");
+        expect(response.statusCode).toBe(200);
+    });
 
-function afterAll(arg0: () => Promise<void>) {
-    throw new Error('Function not implemented.');
-}
+    it('can be created correctly', async () => {
+        let name:string = 'Sandero';
+        let price:number = 5500;
+        let type:string = 'Dacia';
+        const response:Response = await request(app).post('/api/productos/add').send({   
+                name:name, 
+                type: type, 
+                price: price
+            }).set('Accept', 'application/json');
+        expect(response.statusCode).toBe(200);
+    });
 
-
-function expect(statusCode: number) {
-    throw new Error('Function not implemented.');
-}
+});
