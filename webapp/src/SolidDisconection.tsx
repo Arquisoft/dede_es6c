@@ -9,7 +9,8 @@ const Disconection = () => {
   useEffect(() => {
     localStorage.removeItem("webID");
     localStorage.removeItem("sessionID");
-    localStorage.removeItem("name");
+    localStorage.removeItem("username");
+    localStorage.removeItem("organization");
     localStorage.removeItem("address");
     navigate("/");
   });

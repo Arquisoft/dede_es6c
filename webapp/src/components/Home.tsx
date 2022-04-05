@@ -5,7 +5,7 @@ export default function Home() {
     return (
         <body>
             <div>
-                <h1>Welcome to Dede</h1>
+                <h1>Welcome to DeDe</h1>
                 <p className="principal">Sale of used vehicles, spare parts and accessories related to the automotive industry</p>
             </div>
             <div className="contenedor">

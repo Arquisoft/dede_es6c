@@ -1,9 +1,5 @@
-
-
 import {SharedProduct} from '../shared/shareddtypes';
-import React, { useState, useEffect } from 'react';
-
-import {Wrapper} from './Cartitem.styles';
+import React, {  } from 'react';
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import Button from '@mui/material/Button';

@@ -7,14 +7,10 @@ import CardMedia from '@mui/material/CardMedia';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
 import accounting from "accounting";
-import  handleAddToCart from '../App';
-import { ObjectId } from 'mongodb';
-import coche from '../images/coche.jpg'; // Prueba de visualización del diseño
 import { SharedProduct } from '../shared/shareddtypes';
 
-
 export type product = {
-  id : ObjectId;
+  id : Number;
   name: String;
   price: number;
   type : String;
@@ -26,10 +22,7 @@ type Props = {
   handleAddToCart: (clikedItem: SharedProduct) => void;
 }
 
-
-
 const Product:React.FC<Props> = ({producto,handleAddToCart}) => (
-  
     <Card sx={{ maxWidth: 345 }}>
       <CardHeader
         action={
@@ -42,7 +35,7 @@ const Product:React.FC<Props> = ({producto,handleAddToCart}) => (
       <CardMedia
         component="img"
         alt="product image"
-        height="140"
+        height="250"
         image={"./images/" + producto.type + "_" + producto.name + ".png"}
       />
       <CardContent>
@@ -57,7 +50,6 @@ const Product:React.FC<Props> = ({producto,handleAddToCart}) => (
         <Button  onClick={() => handleAddToCart(producto)}  size="small">Add to cart</Button>
        </CardActions>
     </Card>
-  
 )
 
 export default Product;

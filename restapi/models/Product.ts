@@ -1,11 +1,10 @@
-import { ObjectId } from 'mongodb';
 import mongoose from 'mongoose';
 
 const { Schema } = mongoose;
 
 const productoSchema  = new Schema({
   _id: {
-      type: ObjectId,
+      type: String,
       required: true
   },
   name:{
