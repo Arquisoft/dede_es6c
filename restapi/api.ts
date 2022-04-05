@@ -3,6 +3,7 @@ import {check} from 'express-validator';
 import {​​​​​​Document}​​​​​​ from 'mongoose';
 import Product from './models/Product';
 import History from './models/History';
+import ProductPedido from './models/Product';
 
 const api:Router = express.Router()
 
@@ -50,7 +51,7 @@ mongoose.connect('mongodb+srv://uo269502:mpRh919kQXYXT98r@cluster0.fp7y3.mongodb
       let name = req.body.name;
       let price = 45;
       let type = req.body.type;
-      let producto: Producto = new Product({
+      let producto: Producto = new ProductPedido({
       _id: _id,
       name: name,
       price: price,
@@ -73,5 +74,31 @@ mongoose.connect('mongodb+srv://uo269502:mpRh919kQXYXT98r@cluster0.fp7y3.mongodb
      return res.sendStatus(200);
    }
  );
+
+
+ api.post(
+  "/carrito/add",
+  async (req: Request, res: Response): Promise<Response> => {
+
+    var UID = "componente-" + Math.floor(Math.random() * 999999);
+    
+
+    let _id = UID;
+    let name = req.body.name;
+    let price = req.body.price;
+    let type = req.body.type;
+    let username = req.body.username;
+    let producto: History = new History({
+      _id: _id,
+      name: name,
+      price: price,
+      type: type,
+      username: username
+      })
+
+    await producto.save();
+    return res.sendStatus(200);
+  }
+);
 
 export default api;

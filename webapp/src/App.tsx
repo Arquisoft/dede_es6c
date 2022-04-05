@@ -40,7 +40,7 @@ function App(): JSX.Element {
   const [cartItems, setCartItems] = useState([] as SharedProduct[])
 
   const handleRemoveFromCart = (id: number) => {
-    localStorage.setItem("cart", JSON.stringify(cartItems));
+    
     setCartItems(prev => (
         prev.reduce((ack,item) => {
           if(item._id ===id){
@@ -51,10 +51,11 @@ function App(): JSX.Element {
           }
         },[] as SharedProduct[])
       ));
+      localStorage.setItem("cart", JSON.stringify(cartItems));
   } ;
 
   const handleAddToCart = (clikedItem: SharedProduct) => {
-    localStorage.setItem("cart", JSON.stringify(cartItems));
+   
     setCartItems(prev => {
       //1.is the item in cart?
       const isItemInCart = prev.find(item => item._id === clikedItem._id)
@@ -69,6 +70,7 @@ function App(): JSX.Element {
       }
       
     })
+    localStorage.setItem("cart", JSON.stringify(cartItems));
   };
 
   return (
@@ -84,7 +86,7 @@ function App(): JSX.Element {
               <Route path='/logout' element={<SolidDisconection/>} />
               <Route path='/register' element={<SolidConection/>} />
               <Route path='/profile' element={<Profile/>} />
-              <Route path='/checkout' element={<ShoppingList cartItems = {cartItems}/>}/>
+              <Route path='/checkout' element={<ShoppingList cart = {cartItems}/>}/>
           </Routes>
           </Router>
           <Footer />
