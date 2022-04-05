@@ -28,6 +28,7 @@ import User from '../schemas/userSchema';
     login: async(req: Request, res: Response) => {
         const { email, password } = req.body;
         const user = await User.findOne({email});
+
         if(!user) {
             return res.status(404).send('User not found');
         }
@@ -45,6 +46,7 @@ import User from '../schemas/userSchema';
             error: null,
             data: {token}
         }).send();
+        return res.status(205);
     }
 }
 

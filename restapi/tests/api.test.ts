@@ -4,6 +4,7 @@ import * as http from 'http';
 import bp from 'body-parser';
 import cors from 'cors';
 import api from '../api';
+import apiUser from '../routes/userRoutes';
 import mongoose from 'mongoose';
 
 let app:Application;
@@ -17,7 +18,8 @@ beforeAll(async () => {
     };
     app.use(cors(options));
     app.use(bp.json());
-    app.use("/api", api)
+    app.use("/api", api);
+    app.use("/apiUser", apiUser);
 
     server = app.listen(port, ():void => {
         console.log('Restapi server for testing listening on '+ port);
@@ -63,4 +65,31 @@ describe('user ', () => {
     expect(response.statusCode).toBe(500);
     });
 
+    it('correct login', async () => {
+        const response:Response = await request(app).post('/apiUser/login').send({
+            username:"uo269502@uniovi.es",
+            password: "Luisma@186"
+        }).set('Accept', 'application/json');
+        expect(response.statusCode).toBe(205);
+    });
+
+    /*it('logout', async () => {
+        const response:Response = await request(app).get("/logout");
+        expect(response.statusCode).toBe(200);
+    });*/
+
 });
+
+function beforeAll(arg0: () => Promise<void>) {
+    throw new Error('Function not implemented.');
+}
+
+
+function afterAll(arg0: () => Promise<void>) {
+    throw new Error('Function not implemented.');
+}
+
+
+function expect(statusCode: number) {
+    throw new Error('Function not implemented.');
+}
