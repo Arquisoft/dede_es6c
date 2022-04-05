@@ -5,12 +5,14 @@ import {SharedProduct} from './shared/shareddtypes';
 import Products from './components/Products';
 import Header from './components/NavBar';
 import Footer from './components/Footer';
+import ShoppingList from "./components/ShoppingList";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SolidConection from "./SolidConection";
 import Home from "./components/Home";
 import History from "./components/History";
 import Profile from "./profile";
-import SolidDisconection from "./SolidDisconection"
+import SolidDisconection from "./SolidDisconection";
+
 
 
 function App(): JSX.Element {
@@ -24,9 +26,21 @@ function App(): JSX.Element {
     refreshProductList();
   });
 
+  useEffect(() => {
+    const memoryCart = localStorage.getItem("cart");
+    if (memoryCart) {
+      let cart: SharedProduct[] = JSON.parse(memoryCart);
+      setCartItems(cart);
+    } else {
+      localStorage.setItem("cart", JSON.stringify([]));
+    }
+  }, []); 
+
+
   const [cartItems, setCartItems] = useState([] as SharedProduct[])
 
   const handleRemoveFromCart = (id: number) => {
+    localStorage.setItem("cart", JSON.stringify(cartItems));
     setCartItems(prev => (
         prev.reduce((ack,item) => {
           if(item._id ===id){
@@ -40,6 +54,7 @@ function App(): JSX.Element {
   } ;
 
   const handleAddToCart = (clikedItem: SharedProduct) => {
+    localStorage.setItem("cart", JSON.stringify(cartItems));
     setCartItems(prev => {
       //1.is the item in cart?
       const isItemInCart = prev.find(item => item._id === clikedItem._id)
@@ -69,6 +84,7 @@ function App(): JSX.Element {
               <Route path='/logout' element={<SolidDisconection/>} />
               <Route path='/register' element={<SolidConection/>} />
               <Route path='/profile' element={<Profile/>} />
+              <Route path='/checkout' element={<ShoppingList cartItems = {cartItems}/>}/>
           </Routes>
           </Router>
           <Footer />
