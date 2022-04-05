@@ -3,6 +3,7 @@ import {check} from 'express-validator';
 import {​​​​​​Document}​​​​​​ from 'mongoose';
 import Product from './models/Product';
 import User from './models/users';
+import {ProductType, UserType} from './types';
 
 const api:Router = express.Router()
 
@@ -61,7 +62,7 @@ mongoose.connect('mongodb+srv://uo269502:mpRh919kQXYXT98r@cluster0.fp7y3.mongodb
     }
 );
 
-  api.post(
+  /*api.post(
     "/users/add",[
       check('name').isLength({ min: 1 }).trim().escape(),
       check('email').isEmail().normalizeEmail(),
@@ -78,6 +79,25 @@ mongoose.connect('mongodb+srv://uo269502:mpRh919kQXYXT98r@cluster0.fp7y3.mongodb
       
       return res.sendStatus(200);
     }
-  );
+  );*/
+
+  api.post("/users/add", async (req: Request, res: Response): Promise<Response> => {
+    let name = req.body.name;
+    let email = req.body.email;
+    if(name == null || name.trim() == '' || email == null || email.trim() == '' ){
+      return res.sendStatus(500);
+    }
+    const user = new User(
+      {
+        'name' : name,
+        'email': email,
+      }
+    );
+    
+    await user.save();
+
+    return res.sendStatus(200);
+  }
+);
 
 export default api;

@@ -32,27 +32,7 @@ afterAll(async () => {
 })
 
 describe('user ', () => {
-    /**
-   * Test that we can get a user without error
-   */
-  it("Can get a user", async () => {
-    const response: Response = await request(app).get(
-      "/users/findByEmail/uo269502@uniovi.es"
-    );
 
-    console.log("Prueba 01 - USER: " + response);
-    console.log("Prueba 01 - STATUS: " + response.statusCode);
-
-    expect(response.statusCode).toBe(200);
-    expect(response.body).toEqual(
-      expect.objectContaining({
-        name: "Luis Manuel Gonzalez Baizan",
-        webId: "https://luismanuel186.inrupt.net/profile/card#me",
-        email: "uo269502@uniovi.es",
-        verified: true,
-      })
-    );
-  });
     /**
      * Test that we can list users without any error.
      */
@@ -65,9 +45,22 @@ describe('user ', () => {
      * Tests that a user can be created through the productService without throwing any errors.
      */
     it('can be created correctly', async () => {
-        let username:string = 'LuisManuel'
+        let username:string = 'Luis Manuel'
         let email:string = 'uo269502@prueba.es'
         const response:Response = await request(app).post('/api/users/add').send({name: username,email: email}).set('Accept', 'application/json')
         expect(response.statusCode).toBe(200);
     });
+
+    it('cant be created correctly due to empty email', async () => {
+      let username:string = 'prueba';
+      const response:Response = await request(app).post('/api/users/add').send({name: username,email: ''}).set('Accept', 'application/json');
+      expect(response.statusCode).toBe(500);
+    });
+
+    it('cant be created correctly due to empty name', async () => {
+    let email:string = 'prueba@gmail.com';
+    const response:Response = await request(app).post('/api/users/add').send({name: '',email: email}).set('Accept', 'application/json');
+    expect(response.statusCode).toBe(500);
+    });
+
 });
