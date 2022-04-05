@@ -13,8 +13,11 @@ if (memoryCart) {
 }
 
 type Props = {
-  
   cart : SharedProduct[];
+}
+
+const completeOrder = () => {
+
 }
 
 const ShoppingList : React.FC<Props> = ({cart}) => {

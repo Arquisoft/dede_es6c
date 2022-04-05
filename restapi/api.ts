@@ -18,6 +18,13 @@ interface User extends Document{
     type: string;
   }
 
+  interface Historial extends Document {
+    price: number;
+    name: string;
+    model: string;
+    username: string;
+  }
+
 const mongoose = require('mongoose');
 mongoose.connect('mongodb+srv://uo269502:mpRh919kQXYXT98r@cluster0.fp7y3.mongodb.net/Tienda?retryWrites=true&w=majority')
     .then(() => {
@@ -88,7 +95,7 @@ mongoose.connect('mongodb+srv://uo269502:mpRh919kQXYXT98r@cluster0.fp7y3.mongodb
     let price = req.body.price;
     let type = req.body.type;
     let username = req.body.username;
-    let producto: History = new History({
+    let producto: Historial = new History({
       _id: _id,
       name: name,
       price: price,

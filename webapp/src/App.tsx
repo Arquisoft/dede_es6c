@@ -39,6 +39,7 @@ function App(): JSX.Element {
 
   const [cartItems, setCartItems] = useState([] as SharedProduct[])
 
+
   const handleRemoveFromCart = (id: number) => {
     
     setCartItems(prev => (
@@ -86,7 +87,7 @@ function App(): JSX.Element {
               <Route path='/logout' element={<SolidDisconection/>} />
               <Route path='/register' element={<SolidConection/>} />
               <Route path='/profile' element={<Profile/>} />
-              <Route path='/checkout' element={<ShoppingList cart = {cartItems}/>}/>
+              <Route path='/checkout' element={<ShoppingList cart = {cartItems} completeOrder = {completeOrder}/>}/>
           </Routes>
           </Router>
           <Footer />
