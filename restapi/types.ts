@@ -4,3 +4,9 @@ export type ProductType = {
     type: string;
     price: number;
 }
+
+export type UserType = {
+    name: string;
+    email: string;
+    password: string;
+}
