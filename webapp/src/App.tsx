@@ -37,8 +37,13 @@ function App(): JSX.Element {
   }, []);
 
 
+
+
   const [cartItems, setCartItems] = useState([] as SharedProduct[])
 
+  useEffect(() => {
+    localStorage.setItem("cart", JSON.stringify(cartItems));
+  }, [cartItems]);
 
   const handleRemoveFromCart = (id: number) => {
     
