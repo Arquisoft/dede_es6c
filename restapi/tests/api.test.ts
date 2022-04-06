@@ -76,15 +76,6 @@ describe('user ', () => {
         }).set('Accept', 'application/json');
         expect(response.statusCode).toBe(404);
     });
-
-    /*it('login with a registered user', async () => {
-        const response:Response = await request(app).post('/apiUser/login').send({
-            email:"luismanuelglezbaizan@gmail.com",
-            password: "ASWtrabaj01"
-        }).set('Accept', 'application/json');
-        expect(response.statusCode).toBe(205);
-    });*/
-
 });
 
 describe('product ', () => {
