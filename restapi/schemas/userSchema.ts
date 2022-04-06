@@ -26,7 +26,12 @@ const UserSchema = new Schema({
     timestamps: true
 });
 
-export interface UserModel extends moongose.Document {
+export const User = model(
+    "UserVerification",
+    UserSchema
+  );
+
+/*export interface UserModel extends moongose.Document {
     email: string;
     name: string;
     lastName: string;
@@ -34,4 +39,4 @@ export interface UserModel extends moongose.Document {
     PODUrl: string;
 }
 
-export default model<UserModel>('User', UserSchema);
+export default model<UserModel>('User', UserSchema);*/
