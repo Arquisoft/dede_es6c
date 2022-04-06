@@ -3,6 +3,13 @@
 
 [role="arc42help"]
 ****
+A list of identified technical risks or technical debts, ordered by priority
+.Motivation
+“Risk management is project management for grown-ups” (Tim Lister, Atlantic Systems Guild.)
+This should be your motto for systematic detection and evaluation of risks and technical debts in the architecture, which will be needed by management stakeholders (e.g. project managers, product owners) as part of the overall risk analysis and measurement planning.
+.Form
+List of risks and/or technical debts, probably including suggested measures to minimize, mitigate or avoid risks or reduce technical debts.
+****
 
 .Contents
 A list of identified technical risks or technical debts, ordered by priority.
@@ -28,5 +35,3 @@ A list of identified technical risks or technical debts, ordered by priority.
 | Qualification | Lack of qualification on the part of the team to develop such a large project | Team effort to remedy existing shortcomings
 | Code externalization | High dependence on external code | Try to reduce dependencies to external code
 |=== 
-
-****
