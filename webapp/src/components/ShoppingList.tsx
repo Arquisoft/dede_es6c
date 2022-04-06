@@ -3,6 +3,7 @@ import Item from "./ShoppingListItems";
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid"
 import Button from '@mui/material/Button';
+import {addHistory} from '../api/api';
 
 
 
@@ -16,8 +17,12 @@ type Props = {
   cart : SharedProduct[];
 }
 
-const completeOrder = () => {
-
+const completeOrder = (cart: SharedProduct[]) => {
+    cart.forEach(element => {
+      addHistory(element);
+    });
+    
+    //window.location.href = "http://localhost:3000/history"
 }
 
 const ShoppingList : React.FC<Props> = ({cart}) => {
@@ -32,7 +37,7 @@ const ShoppingList : React.FC<Props> = ({cart}) => {
         ))}
       </Grid>
 
-      <Button onClick={() =>  window.location.href = "http://localhost:3000/products" } 
+      <Button onClick={() =>  completeOrder(cart) } 
       color="inherit"> Finalizar Compra
       </Button>
     </Box>

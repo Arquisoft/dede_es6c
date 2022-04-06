@@ -87,7 +87,7 @@ function App(): JSX.Element {
               <Route path='/logout' element={<SolidDisconection/>} />
               <Route path='/register' element={<SolidConection/>} />
               <Route path='/profile' element={<Profile/>} />
-              <Route path='/checkout' element={<ShoppingList cart = {cartItems} completeOrder = {completeOrder}/>}/>
+              <Route path='/checkout' element={<ShoppingList cart = {cartItems} />}/>
           </Routes>
           </Router>
           <Footer />

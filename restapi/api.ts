@@ -19,10 +19,9 @@ interface User extends Document{
   }
 
   interface Historial extends Document {
-    price: number;
-    name: string;
-    model: string;
-    username: string;
+    product_name: string;
+    product_type: string;
+    product_price: number;
   }
 
 const mongoose = require('mongoose');
@@ -51,8 +50,7 @@ mongoose.connect('mongodb+srv://uo269502:mpRh919kQXYXT98r@cluster0.fp7y3.mongodb
     }
   });
 
-   api.post(
-    "/productos/add",
+   api.post("/productos/add",
     async (req: Request, res: Response): Promise<Response> => {
       let _id = "12";
       let name = req.body.name;
@@ -83,24 +81,21 @@ mongoose.connect('mongodb+srv://uo269502:mpRh919kQXYXT98r@cluster0.fp7y3.mongodb
  );
 
 
- api.post(
-  "/carrito/add",
-  async (req: Request, res: Response): Promise<Response> => {
+ api.post("/carrito/add", async (req: Request, res: Response): Promise<Response> => {
 
-    var UID = "componente-" + Math.floor(Math.random() * 999999);
-    
+    var UID = Math.floor(Math.random() * 999999);
 
-    let _id = UID;
-    let name = req.body.name;
-    let price = req.body.price;
-    let type = req.body.type;
-    let username = req.body.username;
+
+    console.log("name "+ req.body.name)
+
     let producto: Historial = new History({
-      _id: _id,
-      name: name,
-      price: price,
-      type: type,
-      username: username
+      _id: UID,
+      product_name: req.body.name,
+      product_type: req.body.type,
+      product_price: req.body.price,
+      username: req.body.username,
+      amount: req.body.amount,
+      id: 7
       })
 
     await producto.save();
