@@ -5,28 +5,24 @@ import Grid from "@mui/material/Grid"
 import Button from '@mui/material/Button';
 import {addHistory} from '../api/api';
 
-
-
-const memoryCart = localStorage.getItem("cart");
-if (memoryCart) {
-  let cart: SharedProduct[] = JSON.parse(memoryCart);
-
-}
-
 type Props = {
   cart : SharedProduct[];
+  removeFromCart : (id : number, amount: number) => void;
 }
 
-const completeOrder = (cart: SharedProduct[]) => {
+
+
+const ShoppingList : React.FC<Props> = ({cart, removeFromCart}) => {
+    
+  const completeOrder = (cart: SharedProduct[]) => {
     cart.forEach(element => {
       addHistory(element);
+      removeFromCart(element._id, element.amount);
     });
     
-    //window.location.href = "http://localhost:3000/history"
+    window.location.href = "http://localhost:3000/history"
 }
-
-const ShoppingList : React.FC<Props> = ({cart}) => {
-    return(
+  return(
      
 
         <Box sx={{ flexGrow: 1 }}>

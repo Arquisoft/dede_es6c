@@ -36,7 +36,7 @@ export async function addHistory(cartItem: SharedProduct):Promise<boolean>{
       method: 'POST',
       headers: {'Content-Type':'application/json'},
       body: JSON.stringify({'name':cartItem.name, 'type':cartItem.type,
-    'price':cartItem.price, 'username':localStorage.getItem('sessionID'), 'amount':cartItem.amount})
+    'price':cartItem.price, 'username':localStorage.getItem('username'), 'amount':cartItem.amount})
   });
   
     

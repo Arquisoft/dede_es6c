@@ -34,7 +34,7 @@ function App(): JSX.Element {
     } else {
       localStorage.setItem("cart", JSON.stringify([]));
     }
-  }, []); 
+  }, []);
 
 
   const [cartItems, setCartItems] = useState([] as SharedProduct[])
@@ -53,6 +53,24 @@ function App(): JSX.Element {
         },[] as SharedProduct[])
       ));
       localStorage.setItem("cart", JSON.stringify(cartItems));
+  } ;
+
+  const removeCartItemWithAmount = (id: number, amount: number) => {
+    let i = amount;
+    while(i>0) {
+    setCartItems(prev => (
+        prev.reduce((ack,item) => {
+          if(item._id ===id){
+            if(item.amount===1) return ack;
+            return [...ack, {...item,amount: item.amount -1}];
+          }else{
+            return [...ack,item];
+          }
+        },[] as SharedProduct[])
+      ));
+      i--;
+    }
+      //localStorage.setItem("cart", JSON.stringify(cartItems));
   } ;
 
   const handleAddToCart = (clikedItem: SharedProduct) => {
@@ -87,7 +105,7 @@ function App(): JSX.Element {
               <Route path='/logout' element={<SolidDisconection/>} />
               <Route path='/register' element={<SolidConection/>} />
               <Route path='/profile' element={<Profile/>} />
-              <Route path='/checkout' element={<ShoppingList cart = {cartItems} />}/>
+              <Route path='/checkout' element={<ShoppingList cart = {cartItems} removeFromCart ={removeCartItemWithAmount}/>}/>
           </Routes>
           </Router>
           <Footer />
