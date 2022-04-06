@@ -70,7 +70,7 @@ function App(): JSX.Element {
       ));
       i--;
     }
-      //localStorage.setItem("cart", JSON.stringify(cartItems));
+      localStorage.setItem("cart", JSON.stringify(cartItems));
   } ;
 
   const handleAddToCart = (clikedItem: SharedProduct) => {
