@@ -23,6 +23,10 @@ const historySchema  = new Schema({
     type: Number,
     required: true
   },
+  amount: {
+    type: Number,
+    required: true
+  },
   id: {
     type: Number,
     required: true
