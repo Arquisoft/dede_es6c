@@ -12,6 +12,7 @@ const Disconection = () => {
     localStorage.removeItem("username");
     localStorage.removeItem("organization");
     localStorage.removeItem("address");
+    localStorage.removeItem("cart");
     navigate("/");
   });
 
