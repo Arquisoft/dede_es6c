@@ -14,6 +14,7 @@ const ResumenCompra = () => {
                 let distancia:number = distanciaEnKm(43.354688, -5.851250, long, lat);
                 console.log("distancia: " + distancia)
                 let precioEnvio:number = distancia * PRICE;
+                localStorage.setItem("precioEnvio", JSON.stringify(precioEnvio));
                 console.log("precio: " + precioEnvio);
             }
         );
