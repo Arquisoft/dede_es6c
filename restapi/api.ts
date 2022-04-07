@@ -92,8 +92,6 @@ mongoose.connect('mongodb+srv://uo269502:mpRh919kQXYXT98r@cluster0.fp7y3.mongodb
  api.post("/carrito/add", async (req: Request, res: Response): Promise<Response> => {
 
     var UID = Math.floor(Math.random() * 999999);
-
-
     console.log("name "+ req.body.name)
 
     let producto: Historial = new History({
