@@ -61,6 +61,7 @@ image:08_domain_model.png["Domain Model"]
     - product_name: product designation.
     - product_type: product category.
     - product_price: price of the product.
+    - amount: quantity of purchased product.
 * Product: each of the products available in the online store.
     - name: product designation.
     - type: product category.
