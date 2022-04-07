@@ -17,7 +17,7 @@ const historySchema  = new Schema({
   },
   product_type: {
     type:String,
-    required :false
+    required: true
   },
   product_price: {
     type: Number,

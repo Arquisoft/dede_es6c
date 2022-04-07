@@ -51,7 +51,6 @@ mongoose.connect('mongodb+srv://uo269502:mpRh919kQXYXT98r@cluster0.fp7y3.mongodb
       let price = req.body.price;
       let type = req.body.type;
       let producto: Producto = new ProductPedido({
-      _id: _id,
       name: name,
       price: price,
       type: type
@@ -104,7 +103,7 @@ mongoose.connect('mongodb+srv://uo269502:mpRh919kQXYXT98r@cluster0.fp7y3.mongodb
       product_price: req.body.price,
       username: req.body.username,
       amount: req.body.amount,
-      id: 7
+      id: UID
       })
 
     await producto.save();
