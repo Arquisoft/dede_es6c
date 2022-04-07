@@ -29,6 +29,23 @@ export async function getProducts():Promise<SharedProduct[]>{
     return response.json()
 }
 
+export async function addHistory(cartItem: SharedProduct):Promise<boolean>{
+    const apiEndPoint= process.env.REACT_APP_API_URI || 'http://localhost:5000/api';
+    
+    let response = await fetch(apiEndPoint+'/carrito/add', {
+      method: 'POST',
+      headers: {'Content-Type':'application/json'},
+      body: JSON.stringify({'name':cartItem.name, 'type':cartItem.type,
+    'price':cartItem.price, 'username':localStorage.getItem('username'), 'amount':cartItem.amount})
+  });
+  
+    
+  if (response.status===200)
+    return true;
+  else
+    return false;
+}
+
 export async function getHistory():Promise<SharedHistory[]>{
   const apiEndPoint = process.env.REACT_APP_API_URI || 'http://localhost:5000/api';
   let response = await fetch(apiEndPoint+'/historiales', {

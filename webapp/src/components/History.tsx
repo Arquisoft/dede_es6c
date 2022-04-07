@@ -4,7 +4,7 @@ import { SharedHistory } from "../shared/shareddtypes";
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 
 export default function History() {
-    const [history,setHistory] = React.useState<SharedHistory[]>([]);
+    const [history, setHistory] = React.useState<SharedHistory[]>([]);
     const [pageSize, setPageSize] = React.useState<number>(5);
 
     let columns: GridColDef[] = [

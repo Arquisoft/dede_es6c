@@ -21,3 +21,12 @@ export type SharedProduct = {
     product_price: number;
     id: number;
   }
+
+  export type ProductoPedido = {
+    
+    username: string;
+    product_name: string;
+    product_type: string;
+    product_price: number;
+    id: number;
+  }

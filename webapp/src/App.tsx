@@ -5,12 +5,14 @@ import {SharedProduct} from './shared/shareddtypes';
 import Products from './components/Products';
 import Header from './components/NavBar';
 import Footer from './components/Footer';
+import ShoppingList from "./components/ShoppingList";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SolidConection from "./SolidConection";
 import Home from "./components/Home";
 import History from "./components/History";
 import Profile from "./profile";
-import SolidDisconection from "./SolidDisconection"
+import SolidDisconection from "./SolidDisconection";
+
 
 
 function App(): JSX.Element {
@@ -24,9 +26,22 @@ function App(): JSX.Element {
     refreshProductList();
   });
 
+  useEffect(() => {
+    const memoryCart = localStorage.getItem("cart");
+    if (memoryCart) {
+      let cart: SharedProduct[] = JSON.parse(memoryCart);
+      setCartItems(cart);
+    } else {
+      localStorage.setItem("cart", JSON.stringify([]));
+    }
+  }, []);
+
+
   const [cartItems, setCartItems] = useState([] as SharedProduct[])
 
+
   const handleRemoveFromCart = (id: number) => {
+    
     setCartItems(prev => (
         prev.reduce((ack,item) => {
           if(item._id ===id){
@@ -37,9 +52,29 @@ function App(): JSX.Element {
           }
         },[] as SharedProduct[])
       ));
+      localStorage.setItem("cart", JSON.stringify(cartItems));
+  } ;
+
+  const removeCartItemWithAmount = (id: number, amount: number) => {
+    let i = amount;
+    while(i>0) {
+    setCartItems(prev => (
+        prev.reduce((ack,item) => {
+          if(item._id ===id){
+            if(item.amount===1) return ack;
+            return [...ack, {...item,amount: item.amount -1}];
+          }else{
+            return [...ack,item];
+          }
+        },[] as SharedProduct[])
+      ));
+      i--;
+    }
+      //localStorage.setItem("cart", JSON.stringify(cartItems));
   } ;
 
   const handleAddToCart = (clikedItem: SharedProduct) => {
+   
     setCartItems(prev => {
       //1.is the item in cart?
       const isItemInCart = prev.find(item => item._id === clikedItem._id)
@@ -54,6 +89,7 @@ function App(): JSX.Element {
       }
       
     })
+    localStorage.setItem("cart", JSON.stringify(cartItems));
   };
 
   return (
@@ -69,6 +105,7 @@ function App(): JSX.Element {
               <Route path='/logout' element={<SolidDisconection/>} />
               <Route path='/register' element={<SolidConection/>} />
               <Route path='/profile' element={<Profile/>} />
+              <Route path='/checkout' element={<ShoppingList cart = {cartItems} removeFromCart ={removeCartItemWithAmount}/>}/>
           </Routes>
           </Router>
           <Footer />

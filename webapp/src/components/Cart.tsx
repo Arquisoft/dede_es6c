@@ -1,6 +1,7 @@
 import Cartitem  from "./Cartitem";
 import {SharedProduct} from '../shared/shareddtypes';
 import Grid from "@mui/material/Grid";
+import Button from '@mui/material/Button';
 
 type Props = {
     cartItems: SharedProduct[];
@@ -17,12 +18,18 @@ const Cart: React.FC<Props> = ({cartItems, addToCart, removeFromCart}) =>{
         
         {cartItems.map(item=> (
             <Cartitem 
-                
                 item={item}
                 addToCart={addToCart}
                 removeFromCart={removeFromCart}
             />
         ))}   
+
+        <Button onClick={() => {localStorage.getItem("sessionID")!=null ? 
+        window.location.href = "http://localhost:3000/checkout" : 
+        window.location.href = "http://localhost:3000/login" }} 
+        color="inherit">Pagar
+        </Button>
+
         </Grid>
     )
 }
