@@ -3,6 +3,7 @@ import {​​​​​​Document}​​​​​​ from 'mongoose';
 import Product from './models/Product';
 import User from './models/users';
 import History from './models/History';
+import ProductPedido from './models/Product';
 
 const api:Router = express.Router()
 
@@ -10,6 +11,12 @@ const api:Router = express.Router()
     name: string;
     price: number;
     type: string;
+  }
+
+  interface Historial extends Document {
+    product_name: string;
+    product_type: string;
+    product_price: number;
   }
 
 const mongoose = require('mongoose');
@@ -38,13 +45,12 @@ mongoose.connect('mongodb+srv://uo269502:mpRh919kQXYXT98r@cluster0.fp7y3.mongodb
     }
   });
 
-   api.post(
-    "/productos/add",
+   api.post("/productos/add",
     async (req: Request, res: Response): Promise<Response> => {
       let name = req.body.name;
       let price = req.body.price;
       let type = req.body.type;
-      let producto: Producto = new Product({
+      let producto: Producto = new ProductPedido({
       name: name,
       price: price,
       type: type
@@ -78,6 +84,26 @@ mongoose.connect('mongodb+srv://uo269502:mpRh919kQXYXT98r@cluster0.fp7y3.mongodb
     
     await user.save();
 
+    return res.sendStatus(200);
+  }
+);
+
+
+ api.post("/carrito/add", async (req: Request, res: Response): Promise<Response> => {
+
+    var UID = Math.floor(Math.random() * 999999);
+
+    let producto: Historial = new History({
+      _id: UID,
+      product_name: req.body.name,
+      product_type: req.body.type,
+      product_price: req.body.price,
+      username: req.body.username,
+      amount: req.body.amount,
+      id: UID
+      })
+
+    await producto.save();
     return res.sendStatus(200);
   }
 );

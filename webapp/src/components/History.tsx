@@ -4,13 +4,14 @@ import { SharedHistory } from "../shared/shareddtypes";
 import { DataGrid, GridColDef } from '@mui/x-data-grid';
 
 export default function History() {
-    const [history,setHistory] = React.useState<SharedHistory[]>([]);
+    const [history, setHistory] = React.useState<SharedHistory[]>([]);
     const [pageSize, setPageSize] = React.useState<number>(5);
 
     let columns: GridColDef[] = [
         { field: 'product_name', headerName: 'Product', flex: 1 },
         { field: 'product_type', headerName: 'Type', flex: 1 },
         { field: 'product_price', headerName: 'Price', flex: 1 },
+        { field: 'amount', headerName: 'Amount', flex: 1 },
       ];
 
     const refreshHistory = async () => {
