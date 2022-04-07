@@ -23,8 +23,6 @@ const ShoppingList : React.FC<Props> = ({cart, removeFromCart}) => {
     window.location.href = "http://localhost:3000/history"
 }
   return(
-     
-
         <Box sx={{ flexGrow: 1 }}>
       <h1>Checkout</h1>
       <Grid  sx={{width: 600}} container direction="column" justifyContent="center" alignItems="center">
@@ -34,21 +32,11 @@ const ShoppingList : React.FC<Props> = ({cart, removeFromCart}) => {
       </Grid>
 
       <Button onClick={() =>  completeOrder(cart) } 
-      color="inherit"> Finalizar Compra
+      color="inherit"> Create order
       </Button>
     </Box>
-
-
-
-
-
-
-
     );
-
    
 }
-
-
 
 export default ShoppingList;
