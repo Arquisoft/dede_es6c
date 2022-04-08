@@ -44,7 +44,8 @@ We have clients who want to buy used vehicles. The clients need to sign up in or
 
 We also have an administrator, or superuser, who will be able to add new products to the database, remove old ones.
 
-The data in exchange is simple. The client will be able to see information about the vehicle and products, they will be able to see a representative name, price and images. The store will need the clients' full name, billing address, age, username and a password to store their information. At least a payment mean will be needed for the client to be able to make purchases.
+The data in exchange is simple. The client will be able to see information about the vehicle and products, they will be able to see a representative name, price and images. They will add the items they wish to purchase to the shopping cart.
+The store will need the clients' full name, billing address, age, username and a password to store their information. At least a payment mean will be needed for the client to be able to make purchases.
 The seller (the application, in this case), on the other hand, will receive the client's billing address from his Solid POD, so as to be able to ship the package, as well as their full name in order to recognize them.
 
 The Solid POD allows us to receive information  from the client relevant to the store and its shipping methods.
@@ -82,4 +83,5 @@ The main objective of this system is to provide users who want to buy used vehic
 | TypeScript | The language chosen to code the system and give it all its functionality.
 | Express |JavaScript library that allows us to link the database with the frontend.
 | React | JavaScript library used to create the frontend. It is based on components.
+| Mapbox | API used to manage addresses and calculate shipping costs.
 |===
