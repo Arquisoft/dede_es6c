@@ -1,7 +1,6 @@
 [[section-concepts]]
 == Cross-cutting Concepts
 
-
 [role="arc42help"]
 ****
 .Content
@@ -9,32 +8,25 @@ This section describes overall, principal regulations and solution ideas that ar
 relevant in multiple parts (= cross-cutting) of your system.
 Such concepts are often related to multiple building blocks.
 They can include many different topics, such as
-
 * domain models
 * architecture patterns or design patterns
 * rules for using specific technology
 * principal, often technical decisions of overall decisions
 * implementation rules
-
 .Motivation
 Concepts form the basis for _conceptual integrity_ (consistency, homogeneity)
 of the architecture. Thus, they are an important contribution to achieve inner qualities of your system.
-
 Some of these concepts cannot be assigned to individual building blocks
 (e.g. security or safety). This is the place in the template that we provided for a
 cohesive specification of such concepts.
-
 .Form
 The form can be varied:
-
 * concept papers with any kind of structure
 * cross-cutting model excerpts or scenarios using notations of the architecture views
 * sample implementations, especially for technical concepts
 * reference to typical usage of standard frameworks (e.g. using Hibernate for object/relational mapping)
-
 .Structure
 A potential (but not mandatory) structure for this section could be:
-
 * Domain concepts
 * User Experience concepts (UX)
 * Safety and security concepts
@@ -42,26 +34,60 @@ A potential (but not mandatory) structure for this section could be:
 * "Under-the-hood"
 * development concepts
 * operational concepts
-
 Note: it might be difficult to assign individual concepts to one specific topic
 on this list.
-
 image:08-Crosscutting-Concepts-Structure-EN.png["Possible topics for crosscutting concepts"]
 ****
 
+.Domain Model
+image:08_domain_model.png["Domain Model"]
 
-=== Domain model
+.Domain Concepts
+* User: interface that groups the generic behaviors of a user.
+* SuperUser: user administrator of the application. It has special permissions such as adding or deleting products and viewing the list of all existing users in the database.
+* StandardUser: standar user of the application. They store their data in PODs.
+* POD: stores the data of each of the user.
+    - username (primary key): user account login name.
+    - password: user's access key to his account.
+    - organization: organization to which the user belongs.
+    - name: user's real name.
+    - address: user's delivery address.
+* ShoppingCart: virtual shopping cart where products are stored.
+    - products: list that contains all the existing products in the shopping cart.
+    - totalPrice: cumulative price of all products in the shopping cart.
+* History: user purchase history.
+    - id (primary key): identification of the product in relation to the user. Necessary to add to the history table.
+    - username: user account login name.
+    - product_name: product designation.
+    - product_type: product category.
+    - product_price: price of the product.
+    - amount: quantity of purchased product.
+* Product: each of the products available in the online store.
+    - name: product designation.
+    - type: product category.
+    - price: total price of the product.
 
-image:UmlDiagram.png["Example UML Diagram"]
+.User Experience Concepts
+This application requires the user to register in order to authenticate and place an order. For this purpose, a registration form will be available, in which the user will have to fill in a series of data including a password that he/she will then have to use in the authentication form to access his/her personal account.
+Once authenticated the user will be able to access the list of products that can be added to the cart and then make the purchase.
 
+.Security Concepts
+One of the objectives of the application, since it is an online sales system, is customer security. In order to guarantee this aspect, a procedure is used in which each user will have a password with which he/she can access his/her account.
+In addition to this, PODs (Personal Online Datastore) are used to store all user data, so they are in a trusted environment.
 
+."Under-the-hood" Concepts
+SOLID principles are used to store the user data.
 
-=== _<Concept 2>_
+.Operational Concepts
+* Shopping cart: you can look at the products you currently have in your shopping cart and delete them from there.
+* History: it is possible to review personal purchase history.
+* Products view: in this view you can see all the available products and add them to the cart from there.
 
-_<explanation>_
+.Usability
+In order to offer a good user experience, the application is designed to be easily navigable and with a friendly interface.
 
-...
-
-=== _<Concept n>_
-
-_<explanation>_
+.Sections Under Construction
+* Architecture and Design Patterns
+* Additional Libraries
+* Acessibility
+* Development Concepts

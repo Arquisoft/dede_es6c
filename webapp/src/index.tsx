@@ -1,12 +1,17 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
+import './estilos/estilo.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+import { SessionProvider } from "@inrupt/solid-ui-react";
+import ResumenCompra from './components/ResumenCompra';
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
+    <ResumenCompra></ResumenCompra>
+    <SessionProvider>
+      <App />
+    </SessionProvider>
   </React.StrictMode>,
   document.getElementById('root')
 );

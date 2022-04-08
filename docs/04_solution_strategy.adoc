@@ -1,7 +1,6 @@
 [[section-solution-strategy]]
 == Solution Strategy
 
-
 [role="arc42help"]
 ****
 .Contents
@@ -21,4 +20,31 @@ Keep the explanation of these key decisions short.
 Motivate what you have decided and why you decided that way,
 based upon your problem statement, the quality goals and key constraints.
 Refer to details in the following sections.
+
 ****
+
+=== Technology decisions
+
+.Libraries
+The main libraries we are going to use in our project are:
+
+* React: The main library for the front-end of the app.
+* TypeScript: JavaScript but with types, its usefull for programming.
+* Node.js: Package manager for the project.
+* SOLID Pods: For descentraliced data usage.
+* MongoDB: Database for the different items in our project.
+
+.Development tools
+
+* GitHub: For source control.
+* GitKraken: Simplifies the use of Git.
+* Docker: For encapsulate and deploy the code in an easier way.
+* Heroku: For the webApp deployment.
+* AsciiDoc: For an easier way to document the project.
+
+.Organizational decisions
+
+* We will use the issues system to comunicate with the other developers, to leave a register of what its happening in our project continously.
+* Another way to communicate and work will be the face to face meetings and the online meetings, in this meeting we will argue the problems and the progress in our individual, and collective work.
+* We will use the GitHub tool that let us create a project to work like an agile methodology. With this we will add the product backlog user stories that we can asign to team members.
+

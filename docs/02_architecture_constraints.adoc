@@ -4,6 +4,7 @@
 
 [role="arc42help"]
 ****
+
 .Contents
 Any requirement that constrains software architects in their freedom of design and implementation decisions or decision about the development process. These constraints sometimes go beyond individual systems and are valid for whole organizations and companies.
 
@@ -16,4 +17,34 @@ Simple tables of constraints with explanations.
 If needed you can subdivide them into
 technical constraints, organizational and political constraints and
 conventions (e.g. programming or versioning guidelines, documentation or naming conventions)
+
 ****
+
+.Technical Constraints
+
+This are the project constraints that we have and their explanations.
+|===
+|Constraint|Explanation
+| _SOLID and the PODs_ | _We want to introduce in our project the principles of SOLID, and for this we will use the PODs system, which gives us a descentralized architecture for the app_
+| _Node.js_ | _Node it's designed to build scalable network applications_
+| _GitHub_ | _For Source Control we use GitHub this will help us to resolve conflicts and manage changes in the project_
+| _Docker_ | _We need to encapsulate and deploy the code anywhere so we will use Docker for this_
+|=== 
+
+.Organizational Constraints
+This are the constraints that affect the develop, organization and enviroment of the project. 
+|===
+|Constraint|Explanation
+| _Team members_ | _Our team is formed by 6 software engineering students, we all have other subjects, and work, we need to work together and smart to get a good result_
+| _Time limit_ | _We have aproximately 2 months and a half to end the project, that is the end of the course, when the 'Architecture of Software' subject ends_
+| _Sprints_ | _We have 4 deadlines or sprints in the course. We have some objectives to achieve in each of those sprints_
+| _Meetings_ | _We are going to do at least 2 meetings per week, the duration of each, depends on the amount of things we have to speak or decide, and the work we need to do as a team_
+|=== 
+
+.Conventions
+Decisions about how are we going to document our project and how are we going to work in general.
+|===
+|Constraint|Explanation
+| _Arc42_ | _We have to use Arc42 to document out project because it's used professionally and it's clear and simple_
+| _Language_ | _We decided to write the documentation of the project in english because it's a trade-off, its harder to us to do it, but its more professional_
+|=== 
