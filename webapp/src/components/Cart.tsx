@@ -10,9 +10,6 @@ type Props = {
 };
 
 const Cart: React.FC<Props> = ({cartItems, addToCart, removeFromCart}) =>{
-    let precio = localStorage.getItem("precioEnvio");
-
-    let precio2 = precio + "";
 
     return(
         
@@ -27,7 +24,6 @@ const Cart: React.FC<Props> = ({cartItems, addToCart, removeFromCart}) =>{
                 removeFromCart={removeFromCart}
             />
         ))}   
-        <div>Precio envío: {parseFloat(precio2).toFixed(2)}</div>
         <Button onClick={() => {localStorage.getItem("sessionID")!=null ? 
         window.location.href = "http://localhost:3000/checkout" : 
         window.location.href = "http://localhost:3000/login" }} 
