@@ -23,7 +23,6 @@ const ShoppingList : React.FC<Props> = ({cart, removeFromCart}) => {
       removeFromCart(element._id, element.amount);
     });
     
-    
 
     window.location.href = "http://localhost:3000/history"
 }
