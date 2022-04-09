@@ -72,7 +72,7 @@ describe('user ', () => {
     it('login with an unregistered user', async () => {
         const response:Response = await request(app).post('/apiUser/login').send({
             username:"prueba1@gmail.es",
-            password: "123456"
+            password: process.env.passwordTest!
         }).set('Accept', 'application/json');
         expect(response.statusCode).toBe(404);
     });
