@@ -6,6 +6,7 @@ body {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     background-color: #cfc0bd;
+    margin-bottom: 40px;
 }
 
 code {
@@ -63,6 +64,39 @@ code {
     margin-bottom: 2em;
 }
 
+#Pagar {
+    border: #61dafb;
+    border-style: dashed;
+    border-width: 0.2em;
+    margin-top: 1%;
+    font-size: 1.3em;
+}
+
+#Cart {
+    background-color: #8d9cba;
+    font-size: 1.3em;
+}
+
+#item {
+    border: #0b0b0c;
+    border-style: groove;
+    text-align: center;
+    font-size: 1.2em;
+}
+
+#cartaResumen {
+    column-count: 2;
+    display: ;
+    padding: 20px;
+    height: 220px;
+    width: 400px;
+}
+
+.Item{
+    background-color: #0b0b0c;
+    column-count: 2;
+}
+
 h1, p {
     text-align: center;
 }
@@ -114,13 +148,22 @@ p.principal {
 }
 
 footer {
+    bottom:10px;
     margin-top: 3em;
-    background-color: #6D6875;
-    padding: 2em 2em 0.5em;
+    background-color: #bdbcc0;
+    padding: 1em 1em 0.5em;
+    column-count: 3;
+    position: static;
 }
 
-footer p:last-child {
-    text-align: right;  
+footer p {
+    text-align-last: center;
+    font-size: 1.2em;
+}
+
+footer #ButtonDoc {
+    text-align-last: center;
+    font-size: 1em;
 }
 
 #profileCard {

@@ -1,3 +1,4 @@
+import React from "react";
 import {SharedProduct} from "../shared/shareddtypes";
 import Item from "./ShoppingListItems";
 import Box from "@mui/material/Box";
@@ -9,6 +10,7 @@ type Props = {
   cart : SharedProduct[];
   removeFromCart : (id : number, amount: number) => void;
 }
+
 
 const ShoppingList : React.FC<Props> = ({cart, removeFromCart}) => {
   let precioTotal = JSON.parse(localStorage.getItem('precioEnvio') || '{}');
@@ -29,7 +31,7 @@ const ShoppingList : React.FC<Props> = ({cart, removeFromCart}) => {
   return(
         <Box sx={{ flexGrow: 1 }}>
       <h1>Checkout</h1>
-      <Grid  sx={{width: 600}} container direction="column" justifyContent="center" alignItems="center">
+      <Grid sx={{width: 600}} container direction="column" justifyContent="center" alignItems="center">
         {cart.map((product) => (
             <Item item={product}/>
             
@@ -38,11 +40,11 @@ const ShoppingList : React.FC<Props> = ({cart, removeFromCart}) => {
           precioTotal = precioTotal + e.price
         })}
       </Grid>
-      <div>Precio envío: {parseFloat(precio2).toFixed(2)}</div>
-      <div>Precio con envío e IVA: {((precioTotal/0.79).toFixed(2))}</div>
-      <Button onClick={() =>  completeOrder(cart) } 
+      <p>Precio envío: {parseFloat(precio2).toFixed(2)}</p>
+      <p>Precio con envío e IVA: {((precioTotal/0.79).toFixed(2))}</p>
+      <p><Button onClick={() =>  completeOrder(cart) } 
       color="inherit"> Create order
-      </Button>
+      </Button></p>
     </Box>
     );
    
