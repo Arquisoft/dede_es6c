@@ -23,7 +23,7 @@ export type SharedProduct = {
     id: number;
     order_id: number;
     state: string;
-    date: Date;
+    date: string;
   }
 
   export type ProductoPedido = {
