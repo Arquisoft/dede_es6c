@@ -100,7 +100,10 @@ mongoose.connect('mongodb+srv://uo269502:mpRh919kQXYXT98r@cluster0.fp7y3.mongodb
       product_price: req.body.price,
       username: req.body.username,
       amount: req.body.amount,
-      id: UID
+      id: UID,
+      order_id: req.body.order_id,
+      state: 'PENDING',
+      date: new Date(),
       })
 
     await producto.save();

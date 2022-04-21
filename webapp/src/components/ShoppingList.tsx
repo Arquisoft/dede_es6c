@@ -20,8 +20,9 @@ const ShoppingList : React.FC<Props> = ({cart, removeFromCart}) => {
   let precio2 = precio + "";
     
   const completeOrder = (cart: SharedProduct[]) => {
+    let order = Math.floor(Math.random() * 999999);
     cart.forEach(element => {
-      addHistory(element);
+      addHistory(element, order);
       removeFromCart(element._id, element.amount);
     });
     

@@ -31,7 +31,7 @@ const historySchema  = new Schema({
     type: Number,
     required: true
   },
-  orderId: {
+  order_id: {
     type: Number,
     required: true
   },
