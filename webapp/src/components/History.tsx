@@ -12,6 +12,9 @@ export default function History() {
         { field: 'product_type', headerName: 'Type', flex: 1 },
         { field: 'product_price', headerName: 'Price', flex: 1 },
         { field: 'amount', headerName: 'Amount', flex: 1 },
+        { field: 'order_id', headerName: 'Order', flex: 1 },
+        { field: 'state', headerName: 'State', flex: 1 },
+        { field: 'date', headerName: 'Date', flex: 1 },
       ];
 
     const refreshHistory = async () => {

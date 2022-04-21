@@ -16,7 +16,7 @@ const historySchema  = new Schema({
     required: true
   },
   product_type: {
-    type:String,
+    type: String,
     required: true
   },
   product_price: {
@@ -29,6 +29,18 @@ const historySchema  = new Schema({
   },
   id: {
     type: Number,
+    required: true
+  },
+  orderId: {
+    type: Number,
+    required: true
+  },
+  state: {
+    type: String,
+    required: true
+  },
+  date: {
+    type: Date,
     required: true
   }
 });
