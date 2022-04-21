@@ -4,6 +4,7 @@ import Product from './models/Product';
 import User from './models/users';
 import History from './models/History';
 import ProductPedido from './models/Product';
+import moment from 'moment';
 
 const api:Router = express.Router()
 
@@ -38,6 +39,13 @@ mongoose.connect('mongodb+srv://uo269502:mpRh919kQXYXT98r@cluster0.fp7y3.mongodb
 
    api.post("/historiales", async (req: Request, res: Response): Promise<Response> => {
     try {
+        var currentDate = new Date();
+        //var comparisonDate = currentDate.setDate(currentDate.getHours() + 24);
+        var comparisonDate = currentDate.setMinutes(currentDate.getMinutes() + 1);
+        await History.updateMany(
+          {'username':req.body.username, 'date':{ $lt : comparisonDate }},
+          {$set: { "state" : 'DELIVERED' }}
+        );
         var result = await History.find({'username':req.body.username}).exec();
         return res.status(200).json(result);
     } catch (error) {
@@ -103,7 +111,7 @@ mongoose.connect('mongodb+srv://uo269502:mpRh919kQXYXT98r@cluster0.fp7y3.mongodb
       id: UID,
       order_id: req.body.order_id,
       state: 'PENDING',
-      date: new Date(),
+      date: (moment(new Date())).format('DD/MM/YYYY HH:mm'),
       })
 
     await producto.save();
