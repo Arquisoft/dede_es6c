@@ -37,13 +37,13 @@ mongoose.connect('mongodb+srv://uo269502:mpRh919kQXYXT98r@cluster0.fp7y3.mongodb
      }
    });
 
-   api.post("/historiales", async (req: Request, res: Response): Promise<Response> => {
+  api.post("/historiales", async (req: Request, res: Response): Promise<Response> => {
     try {
         var currentDate = new Date();
-        //var comparisonDate = currentDate.setDate(currentDate.getHours() + 24);
-        var comparisonDate = currentDate.setMinutes(currentDate.getMinutes() + 1);
+        //var comparisonDate = (moment(new Date().setHours(currentDate.getHours() - 24))).format('DD/MM/YYYY HH:mm');
+        var comparisonDate = (moment(new Date().setMinutes(currentDate.getMinutes() - 1))).format('DD/MM/YYYY HH:mm');
         await History.updateMany(
-          {'username':req.body.username, 'date':{ $lt : comparisonDate }},
+          {'username':req.body.username, "state":'PENDING', 'date':{ $lt : comparisonDate }},
           {$set: { "state" : 'DELIVERED' }}
         );
         var result = await History.find({'username':req.body.username}).exec();
