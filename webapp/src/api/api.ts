@@ -26,12 +26,12 @@ export async function getProducts():Promise<SharedProduct[]>{
     return response.json()
 }
 
-export async function addHistory(cartItem: SharedProduct):Promise<boolean>{
+export async function addHistory(cartItem: SharedProduct, order: Number):Promise<boolean>{
     let response = await fetch(apiEndPoint+'/carrito/add', {
       method: 'POST',
       headers: {'Content-Type':'application/json'},
       body: JSON.stringify({'name':cartItem.name, 'type':cartItem.type,
-    'price':cartItem.price, 'username':localStorage.getItem('username'), 'amount':cartItem.amount})
+    'price':cartItem.price, 'username':localStorage.getItem('username'), 'amount':cartItem.amount, 'order_id': order})
   });
   
     

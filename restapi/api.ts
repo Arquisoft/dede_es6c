@@ -4,6 +4,7 @@ import Product from './models/Product';
 import User from './models/users';
 import History from './models/History';
 import ProductPedido from './models/Product';
+import moment from 'moment';
 
 const api:Router = express.Router()
 
@@ -36,8 +37,15 @@ mongoose.connect('mongodb+srv://uo269502:mpRh919kQXYXT98r@cluster0.fp7y3.mongodb
      }
    });
 
-   api.post("/historiales", async (req: Request, res: Response): Promise<Response> => {
+  api.post("/historiales", async (req: Request, res: Response): Promise<Response> => {
     try {
+        var currentDate = new Date();
+        //var comparisonDate = (moment(new Date().setHours(currentDate.getHours() - 24))).format('DD/MM/YYYY HH:mm');
+        var comparisonDate = (moment(new Date().setMinutes(currentDate.getMinutes() - 1))).format('DD/MM/YYYY HH:mm');
+        await History.updateMany(
+          {'username':req.body.username, "state":'PENDING', 'date':{ $lt : comparisonDate }},
+          {$set: { "state" : 'DELIVERED' }}
+        );
         var result = await History.find({'username':req.body.username}).exec();
         return res.status(200).json(result);
     } catch (error) {
@@ -100,7 +108,10 @@ mongoose.connect('mongodb+srv://uo269502:mpRh919kQXYXT98r@cluster0.fp7y3.mongodb
       product_price: req.body.price,
       username: req.body.username,
       amount: req.body.amount,
-      id: UID
+      id: UID,
+      order_id: req.body.order_id,
+      state: 'PENDING',
+      date: (moment(new Date())).format('DD/MM/YYYY HH:mm'),
       })
 
     await producto.save();
