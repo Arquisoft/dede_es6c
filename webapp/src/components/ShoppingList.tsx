@@ -27,7 +27,7 @@ const ShoppingList : React.FC<Props> = ({cart, removeFromCart}) => {
     });
     
 
-    window.location.href = "http://localhost:3000/history"
+    window.location.href = "/history"
 }
   return(
         <Box sx={{ flexGrow: 1 }}>

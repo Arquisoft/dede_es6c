@@ -45,7 +45,7 @@ export default function Profile() {
         <Grid id="solidButtons" container>
             <Grid item>
             <LogoutButton >
-                <Button id="logoutButton" href="http://localhost:3000" variant="contained" color="primary">
+                <Button id="logoutButton" href="/" variant="contained" color="primary">
                 Logout
                 </Button>
             </LogoutButton>
