@@ -1,3 +1,4 @@
+import React from "react";
 import {SharedProduct} from "../shared/shareddtypes";
 import Item from "./ShoppingListItems";
 import Box from "@mui/material/Box";
@@ -10,23 +11,28 @@ type Props = {
   removeFromCart : (id : number, amount: number) => void;
 }
 
+
 const ShoppingList : React.FC<Props> = ({cart, removeFromCart}) => {
   let precioTotal = JSON.parse(localStorage.getItem('precioEnvio') || '{}');
+
+  let precio = localStorage.getItem("precioEnvio");
+
+  let precio2 = precio + "";
     
   const completeOrder = (cart: SharedProduct[]) => {
+    let order = Math.floor(Math.random() * 999999);
     cart.forEach(element => {
-      addHistory(element);
+      addHistory(element, order);
       removeFromCart(element._id, element.amount);
     });
     
-    
 
-    window.location.href = "http://localhost:3000/history"
+    window.location.href = "/history"
 }
   return(
         <Box sx={{ flexGrow: 1 }}>
       <h1>Checkout</h1>
-      <Grid  sx={{width: 600}} container direction="column" justifyContent="center" alignItems="center">
+      <Grid sx={{width: 600}} container direction="column" justifyContent="center" alignItems="center">
         {cart.map((product) => (
             <Item item={product}/>
             
@@ -35,10 +41,11 @@ const ShoppingList : React.FC<Props> = ({cart, removeFromCart}) => {
           precioTotal = precioTotal + e.price
         })}
       </Grid>
-      <div>Precio con envío {(precioTotal).toFixed(2)}</div>
-      <Button onClick={() =>  completeOrder(cart) } 
+      <p>Precio envío: {parseFloat(precio2).toFixed(2)}</p>
+      <p>Precio con envío e IVA: {((precioTotal/0.79).toFixed(2))}</p>
+      <p><Button onClick={() =>  completeOrder(cart) } 
       color="inherit"> Create order
-      </Button>
+      </Button></p>
     </Box>
     );
    

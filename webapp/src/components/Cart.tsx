@@ -10,15 +10,12 @@ type Props = {
 };
 
 const Cart: React.FC<Props> = ({cartItems, addToCart, removeFromCart}) =>{
-    let precio = localStorage.getItem("precioEnvio");
-
-    let precio2 = precio + "";
 
     return(
         
-        <Grid  sx={{width: 600}} container direction="column" justifyContent="flex-end" alignItems="center">
+        <Grid id="Cart" sx={{width: 600}} container direction="column" justifyContent="flex-end" alignItems="center">
         <h2>Tow truck</h2>
-        {cartItems.length === 0 ? <p>No cars to tow.</p>: <p>Products</p>}
+        {cartItems.length === 0 ? <p>No cars to show.</p>: <p>Products</p>}
         
         {cartItems.map(item=> (
             <Cartitem 
@@ -27,10 +24,13 @@ const Cart: React.FC<Props> = ({cartItems, addToCart, removeFromCart}) =>{
                 removeFromCart={removeFromCart}
             />
         ))}   
-        <div>Precio envío: {parseFloat(precio2).toFixed(2)}</div>
-        <Button onClick={() => {localStorage.getItem("sessionID")!=null ? 
-        window.location.href = "http://localhost:3000/checkout" : 
-        window.location.href = "http://localhost:3000/login" }} 
+        <Button id="Pagar" onClick={() => {
+            if (localStorage.getItem("sessionID")==null)
+                window.location.href = "/login"
+            else if (cartItems.length === 0)
+                window.location.href = "/products"
+            else
+                window.location.href = "/checkout" }}
         color="inherit">Pay
         </Button>
 

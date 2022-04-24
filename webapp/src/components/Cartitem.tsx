@@ -11,7 +11,7 @@ type Props = {
 };
 
 const CartItem: React.FC<Props> = ({item,addToCart,removeFromCart}) => (
-    <Card sx={{width: 600}} >
+    <Card id="item" sx={{width: 600}} >
           <Grid container direction="column" justifyContent="flex-end" alignItems="center" >
         <div>
             <h3> {item.type}</h3>
