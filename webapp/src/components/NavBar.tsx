@@ -35,8 +35,18 @@ const NavBar:React.FC<Props>= ({cartItems,handleAddToCart,handleRemoveFromCart})
             DeDe
           </Typography>
           
-          <Button href="http://localhost:3000/" color="inherit">Home</Button>
-          <Button href="http://localhost:3000/products" color="inherit">Products</Button>
+          <Button href="/" onClick={() => {
+                                window.location.assign('/');
+                                window.location.reload();
+                                }} color="inherit">
+              Home
+          </Button>
+          <Button href="/products" onClick={() => {
+                                window.location.assign('/products');
+                                window.location.reload();
+                                }} color="inherit">
+              Products
+          </Button>
           <Drawer anchor='right' open={cartOpen} onClose={() => setCartOpen(false)}>
           <Cart 
           cartItems={cartItems}
@@ -45,8 +55,18 @@ const NavBar:React.FC<Props>= ({cartItems,handleAddToCart,handleRemoveFromCart})
            />
           </Drawer>
           <Button onClick={() => setCartOpen(true)} color="inherit">Shopping Cart</Button>
-          <Button href="http://localhost:3000/history" color="inherit">History</Button>
-          <Button href="http://localhost:3000/login" color="inherit">Profile</Button>
+          <Button href="/history" onClick={() => {
+                                window.location.assign('/history');
+                                window.location.reload();
+                                }} color="inherit">
+              History
+          </Button>
+          <Button href="/login" onClick={() => {
+                                window.location.assign('/login');
+                                window.location.reload();
+                                }} color="inherit">
+              Profile
+          </Button>
         </Toolbar>
       </AppBar>
     </Box>
