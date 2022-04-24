@@ -24,9 +24,13 @@ const Cart: React.FC<Props> = ({cartItems, addToCart, removeFromCart}) =>{
                 removeFromCart={removeFromCart}
             />
         ))}   
-        <Button id="Pagar" onClick={() => {localStorage.getItem("sessionID")!=null ? 
-        window.location.href = "http://localhost:3000/checkout" : 
-        window.location.href = "http://localhost:3000/login" ; cartItems.length === 0 ? window.location.href = "http://localhost:3000/products" : window.location.href = "http://localhost:3000/checkout" }}
+        <Button id="Pagar" onClick={() => {
+            if (localStorage.getItem("sessionID")==null)
+                window.location.href = "http://localhost:3000/login"
+            else if (cartItems.length === 0)
+                window.location.href = "http://localhost:3000/products"
+            else
+                window.location.href = "http://localhost:3000/checkout" }}
         color="inherit">Pay
         </Button>
 
