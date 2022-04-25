@@ -7,7 +7,7 @@ import ProductPedido from './models/Product';
 import moment from 'moment';
 
 const api:Router = express.Router();
-const crypto = require('crypto');
+const crypto = require('crypto').webcrypto;
 
   interface Producto extends Document{
     name: string;
@@ -99,7 +99,6 @@ mongoose.connect('mongodb+srv://uo269502:mpRh919kQXYXT98r@cluster0.fp7y3.mongodb
 
 
  api.post("/carrito/add", async (req: Request, res: Response): Promise<Response> => {
-
     var UID = Math.floor(crypto.getRandomValues(new Uint32Array(1))[0]);
 
     let producto: Historial = new History({

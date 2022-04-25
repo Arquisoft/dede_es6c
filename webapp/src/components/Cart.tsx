@@ -25,7 +25,7 @@ const Cart: React.FC<Props> = ({cartItems, addToCart, removeFromCart}) =>{
             />
         ))}   
         <Button id="Pagar" onClick={() => {
-            if (localStorage.getItem("sessionID")==null)
+            if (localStorage.getItem("sessionID") === null)
                 window.location.href = "/login"
             else if (cartItems.length === 0)
                 window.location.href = "/products"
