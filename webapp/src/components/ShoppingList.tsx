@@ -11,7 +11,7 @@ type Props = {
   removeFromCart : (id : number, amount: number) => void;
 }
 
-
+const crypto = window.crypto;
 const ShoppingList : React.FC<Props> = ({cart, removeFromCart}) => {
   let precioTotal = JSON.parse(localStorage.getItem('precioEnvio') || '{}');
 
@@ -20,7 +20,7 @@ const ShoppingList : React.FC<Props> = ({cart, removeFromCart}) => {
   let precio2 = precio + "";
     
   const completeOrder = (cart: SharedProduct[]) => {
-    let order = Math.floor(Math.random() * 999999);
+    let order = Math.floor(crypto.getRandomValues(new Uint32Array(1))[0]);
     cart.forEach(element => {
       addHistory(element, order);
       removeFromCart(element._id, element.amount);
