@@ -7,7 +7,7 @@ import ProductPedido from './models/Product';
 import moment from 'moment';
 
 const api:Router = express.Router();
-const crypto = window.crypto;
+const crypto = require('crypto');
 
   interface Producto extends Document{
     name: string;
