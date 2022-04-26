@@ -43,11 +43,12 @@ mongoose.connect('mongodb+srv://uo269502:mpRh919kQXYXT98r@cluster0.fp7y3.mongodb
         var currentDate = new Date();
         //var comparisonDate = (moment(new Date().setHours(currentDate.getHours() - 24))).format('DD/MM/YYYY HH:mm');
         var comparisonDate = (moment(new Date().setMinutes(currentDate.getMinutes() - 1))).format('DD/MM/YYYY HH:mm');
+        let username = String(req.body.username);
         await History.updateMany(
-          {'username':req.body.username, "state":'PENDING', 'date':{ $lt : comparisonDate }},
+          {'username': username, "state":'PENDING', 'date':{ $lt : comparisonDate }},
           {$set: { "state" : 'DELIVERED' }}
         );
-        var result = await History.find({'username':req.body.username}).exec();
+        var result = await History.find({'username': username}).exec();
         return res.status(200).json(result);
     } catch (error) {
       return res.status(500).send(error);
