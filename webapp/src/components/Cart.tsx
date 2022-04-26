@@ -11,14 +11,13 @@ type Props = {
 
 const Cart: React.FC<Props> = ({cartItems, addToCart, removeFromCart}) =>{
 
-    return(
-        
+    const topCart = (
         <Grid id="Cart" sx={{width: 600}} container direction="column" justifyContent="flex-end" alignItems="center">
         <h2>Tow truck</h2>
         {cartItems.length === 0 ? <p>No cars to show.</p>: <p>Products</p>}
         
         {cartItems.map(item=> (
-            <Cartitem 
+            <Cartitem key={item._id}
                 item={item}
                 addToCart={addToCart}
                 removeFromCart={removeFromCart}
@@ -35,6 +34,12 @@ const Cart: React.FC<Props> = ({cartItems, addToCart, removeFromCart}) =>{
         </Button>
 
         </Grid>
+    );
+
+    return(
+        <div>
+            {topCart}
+        </div>
     )
 }
 
