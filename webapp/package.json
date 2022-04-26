@@ -24,6 +24,7 @@
     "@types/styled-components": "^5.1.24",
     "@uirouter/react": "^1.0.7",
     "accounting": "^0.4.1",
+    "enzyme": "^3.11.0",
     "express": "^4.17.2",
     "mongodb": "^4.4.1",
     "mongoose": "^6.2.6",
@@ -66,6 +67,7 @@
   },
   "devDependencies": {
     "@types/accounting": "^0.4.2",
+    "@types/enzyme": "^3.10.12",
     "@types/expect-puppeteer": "^4.4.7",
     "@types/express": "^4.17.13",
     "@types/jest": "^27.4.0",

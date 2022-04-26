@@ -41,12 +41,10 @@ const NavBar:React.FC<Props>= ({cartItems,handleAddToCart,handleRemoveFromCart})
                                 }} color="inherit">
               Home
           </Button>
-          <Button href="/products" onClick={() => {
+          <Button id="btProductos" href="/products" onClick={() => {
                                 window.location.assign('/products');
                                 window.location.reload();
-                                }} color="inherit">
-              Products
-          </Button>
+                                }} color="inherit">Products</Button>
           <Drawer anchor='right' open={cartOpen} onClose={() => setCartOpen(false)}>
           <Cart 
           cartItems={cartItems}
