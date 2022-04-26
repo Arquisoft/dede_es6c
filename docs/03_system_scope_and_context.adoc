@@ -48,9 +48,11 @@ The data in exchange is simple. The client will be able to see information about
 The store will need the clients' full name, billing address, age, username and a password to store their information. At least a payment mean will be needed for the client to be able to make purchases.
 The seller (the application, in this case), on the other hand, will receive the client's billing address from his Solid POD, so as to be able to ship the package, as well as their full name in order to recognize them.
 
-The Solid POD allows us to receive information  from the client relevant to the store and its shipping methods.
+The Solid POD allows us to receive information from the client relevant to the store and its shipping methods.
 
-The database (MongoDB) stores information about past orders, current products (such as vehicles or accesories), and products that have been in stock on the past.
+In order to calculate shipping costs, we use an API called Geocoding, which receives the client's address from their Solid POD and uses it, along with the shop's address to obtain said price. 
+
+The database (MongoDB) stores information about past orders, current products (such as vehicles or accesories).
 
 image::03_business_context.png[Business Context]
 
@@ -70,11 +72,11 @@ together with a mapping table showing the relationships between channels and inp
 
 ****
 
-The application will be deployed online, and will be accessible through any modern web browser. To develop its frontend we will be using React. We will use MongoDB as our database, and we will link the backend and frontend with Express. The application will be writen in TypeScript, a JavaScript extension, so to speak, that lets programmers use a very similar syntax to that of JS, but will allow us to avoid common mistakes through the use of static type checking. 
+The application will be deployed online, and will be accessible through any modern web browser. To develop its frontend we will be using React. We will use MongoDB as our database, and we will link the backend and frontend with Express. The application will be writen in TypeScript, a JavaScript extension, that lets programmers use a very similar syntax to that of JS, but will allow us to avoid common mistakes through the use of static type checking. 
 
 We will be using the Solid architecture, with the objective of protecting our users' information, only giving access to the data they want to provide us, which will be necessary for us to process their purchases.
 
-The main objective of this system is to provide users who want to buy used vehicles a safe space to use for this purpose, where only the information they want to share is used, and especially not taken from them. Every purchase they make will be stored in our database, but is not our property. This means, if at any given time a client decides to hide this information from us, they are in their right.
+The main objective of this system is to provide users who want to buy used vehicles a safe space to use for this purpose, where only the information they want to share is used, and, especially, not taken from them. Every purchase they make will be stored in our database, but is not our property. This means, if at any given time a client decides to hide this information from us, they are in their right.
 
 |===
 |*System* |*Utility*
@@ -83,5 +85,5 @@ The main objective of this system is to provide users who want to buy used vehic
 | TypeScript | The language chosen to code the system and give it all its functionality.
 | Express |JavaScript library that allows us to link the database with the frontend.
 | React | JavaScript library used to create the frontend. It is based on components.
-| Mapbox | API used to manage addresses and calculate shipping costs.
+| Geocoding | API used to manage addresses and calculate shipping costs.
 |===
