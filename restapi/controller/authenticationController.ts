@@ -26,12 +26,14 @@ import {User} from '../schemas/userSchema';
 
     login: async(req: Request, res: Response) => {
         const { email, password } = req.body;
-        const user = await User.findOne({email});
+        let str_email = String(email);
+        let str_password = String(password);
+        const user = await User.findOne({email: str_email});
         
         if(!user) {
             return res.status(404).send('User not found');
         }
-        const isMatch = await bcrypt.compare(password, user.password);
+        const isMatch = await bcrypt.compare(str_password, String(user.password));
         if(!isMatch) {
             return res.status(401).send('Invalid password');
         }
