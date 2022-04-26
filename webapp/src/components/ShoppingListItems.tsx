@@ -8,8 +8,9 @@ type Props = {
     item: SharedProduct;
 };
 
+
 const ShoppingListItem: React.FC<Props> = ({item}) => (
-    <Card sx={{width: 600}} >
+    <Card className="ShoppingList" id="item" sx={{width: 600}} >
           <Grid container direction="column" justifyContent="flex-end" alignItems="center" >
         <div>
             <h3> {item.type}</h3>
@@ -25,7 +26,7 @@ const ShoppingListItem: React.FC<Props> = ({item}) => (
        
         <div className="buttons">
         <Grid container direction="row" justifyContent="flex-end" alignItems="center" >
-            <p> {item.amount} </p>
+            <p>Cantidad:  {item.amount} </p>
             </Grid>
         </div>
         </Grid>

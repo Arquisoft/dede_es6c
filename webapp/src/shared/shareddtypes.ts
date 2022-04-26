@@ -21,6 +21,9 @@ export type SharedProduct = {
     product_price: number;
     amount: number;
     id: number;
+    order_id: number;
+    state: string;
+    date: Date;
   }
 
   export type ProductoPedido = {
