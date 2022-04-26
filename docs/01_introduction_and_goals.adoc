@@ -55,6 +55,8 @@ for sale, even if they do not register.
 * Purchase of vehicles by customers, which can be purchased by anyone as long as it is for 
 sale and they have logged in.
 
+* History of orders made by the customer, in which they can see the products, quantity, price and status of the order
+
 * Modification of the catalog: apart from the clients, there will be an administrator user 
 who will be able to add or remove vehicles from the application's list of vehicles for sale.
 
