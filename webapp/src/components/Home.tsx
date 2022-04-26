@@ -3,7 +3,7 @@ import coche from '../images/coche_home.png';
 
 export default function Home() {
     return (
-        <body>
+        <main>
             <div>
                 <h1>Welcome to DeDe</h1>
                 <p className="principal">Sale of used vehicles, spare parts and accessories related to the automotive industry</p>
@@ -35,6 +35,6 @@ export default function Home() {
                 </div>
             </div>
             <img src={coche} alt="coche" id="coche"/>
-        </body>
+            </main>
     );
 }
