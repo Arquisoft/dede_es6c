@@ -2,7 +2,7 @@ import { render, fireEvent, act } from "@testing-library/react";
 import NavBar from '../components/NavBar';
 import { SharedProduct } from "../shared/shareddtypes";
 
-test("A list of two cart items is rendered", async () => {
+test("NavBar is rendered correctly", async () => {
     const items: SharedProduct[] = [
       {
           _id: 100,

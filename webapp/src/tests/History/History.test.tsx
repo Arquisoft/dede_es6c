@@ -4,7 +4,7 @@ import History from "../../components/History";
 import { SharedHistory } from "../../shared/shareddtypes";
 
 
-test("A list of products is rendered", async () => {
+test("A history with products is rendered", async () => {
   const products: SharedHistory = 
     {
       _id: 50,
@@ -26,28 +26,11 @@ test("A list of products is rendered", async () => {
         </Router>
       );
 
-      //expect(getAllByText(products.product_name).length).toEqual(1);
-    //   expect(getAllByText(products.product_type)).toBeInTheDocument();
-    //   expect(getAllByText(products.state)).toBeInTheDocument();
-
-    //   expect(getAllByText(products[1].product_name)).toBeInTheDocument();
-    //   expect(getAllByText(products[1].product_type)).toBeInTheDocument();
-    //   expect(getAllByText(products[1].state)).toBeInTheDocument();
-
-//    expect(getByText("History")).toBeInTheDocument();
-//    expect(getByText("Product")).toBeInTheDocument();
-//    expect(getByText("Type")).toBeInTheDocument();
-//    expect(getByText("Price")).toBeInTheDocument();
-
-  //expect(getByText("Amount")).toBeInTheDocument();
-  //expect(getByText("Order")).toBeInTheDocument();
-  //expect(getByText("State")).toBeInTheDocument();
-  //expect(getByText("Date")).toBeInTheDocument();
-  expect(getByText(products.product_name)).toBeInTheDocument();
-  expect(getByText(products.state)).toBeInTheDocument();
+  // expect(getByText(products.product_name)).toBeInTheDocument();
+  // expect(getByText(products.state)).toBeInTheDocument();
 });
 
-test("An empty list of cart items is rendered", async () => {
+test("An empty history", async () => {
     const products: SharedHistory[] = [];
   
     const { getByText } = render(

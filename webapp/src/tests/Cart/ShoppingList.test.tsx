@@ -4,7 +4,7 @@ import ShoppingList from "../../components/ShoppingList";
 import { SharedProduct } from "../../shared/shareddtypes";
 
 //Test for the ShoppingCart component, receives a list of cart items and it is rendered properly.
-test("A list of two cart items is rendered", async () => {
+test("A shoppinglist of two cart items is rendered", async () => {
   const cart: SharedProduct[] = [
     {
         _id: 100,
@@ -35,9 +35,6 @@ test("A list of two cart items is rendered", async () => {
 
   //Check that the shopping cart title is rendered
   expect(getByText("Checkout")).toBeInTheDocument();
-  //Check that the buttons continue shopping and checkout are rendered
-  expect(getByText("Precio envío: ")).toBeInTheDocument();
-  expect(getByText("Precio con envío e IVA: ")).toBeInTheDocument();
-  //Check that the proceed to checkout button is disabled
+  expect(getByText("Create order")).toBeInTheDocument();
 
 });
