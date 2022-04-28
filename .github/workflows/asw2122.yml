@@ -46,7 +46,7 @@ jobs:
   docker-push-webapp:
     name: Push webapp Docker Image to GitHub Packages
     runs-on: ubuntu-latest
-    needs: [unit-test-restapi]
+    needs: [unit-test-restapi, unit-test-webapp]
     steps:
       - uses: actions/checkout@v2
       - name: Publish to Registry
