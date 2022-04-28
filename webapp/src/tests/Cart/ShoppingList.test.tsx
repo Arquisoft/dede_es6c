@@ -1,4 +1,4 @@
-import { render } from "@testing-library/react";
+import { getByTestId, render } from "@testing-library/react";
 import { BrowserRouter as Router } from "react-router-dom";
 import ShoppingList from "../../components/ShoppingList";
 import { SharedProduct } from "../../shared/shareddtypes";
@@ -36,5 +36,4 @@ test("A shoppinglist of two cart items is rendered", async () => {
   //Check that the shopping cart title is rendered
   expect(getByText("Checkout")).toBeInTheDocument();
   expect(getByText("Create order")).toBeInTheDocument();
-
 });

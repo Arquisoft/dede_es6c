@@ -19,7 +19,7 @@ beforeAll(async () => {
     };
     app.use(cors(options));
     app.use(bp.json());
-    app.use("/api", api);
+    app.use("/", api);
     app.use("/apiUser", apiUser);
     app.use('/apiProduct', apiProduct);
 
@@ -43,7 +43,7 @@ describe('user ', () => {
      * Test that we can list users without any error.
      */
     it('can be listed',async () => {
-        const response:Response = await request(app).get("/api/users/list");
+        const response:Response = await request(app).get("/users/list");
         expect(response.statusCode).toBe(200);
     });
 
@@ -53,19 +53,19 @@ describe('user ', () => {
     it('can be created correctly', async () => {
         let username:string = 'Luis Manuel'
         let email:string = 'uo269502@prueba.es'
-        const response:Response = await request(app).post('/api/users/add').send({name: username,email: email}).set('Accept', 'application/json')
+        const response:Response = await request(app).post('/users/add').send({name: username,email: email}).set('Accept', 'application/json')
         expect(response.statusCode).toBe(200);
     });
 
     it('cant be created correctly due to empty email', async () => {
       let username:string = 'prueba';
-      const response:Response = await request(app).post('/api/users/add').send({name: username,email: ''}).set('Accept', 'application/json');
+      const response:Response = await request(app).post('/users/add').send({name: username,email: ''}).set('Accept', 'application/json');
       expect(response.statusCode).toBe(500);
     });
 
     it('cant be created correctly due to empty name', async () => {
     let email:string = 'prueba@gmail.com';
-    const response:Response = await request(app).post('/api/users/add').send({name: '',email: email}).set('Accept', 'application/json');
+    const response:Response = await request(app).post('/users/add').send({name: '',email: email}).set('Accept', 'application/json');
     expect(response.statusCode).toBe(500);
     });
 
@@ -89,7 +89,7 @@ describe('product ', () => {
         let name:string = 'Sandero';
         let price:number = 5500;
         let type:string = 'Dacia';
-        const response:Response = await request(app).post('/api/productos/add').send({   
+        const response:Response = await request(app).post('/productos/add').send({   
                 name:name, 
                 type: type, 
                 price: price
