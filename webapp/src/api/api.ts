@@ -1,7 +1,7 @@
 import {SharedHistory, SharedProduct, User} from '../shared/shareddtypes';
 
 
-const apiEndPoint= process.env.REACT_APP_API_URI || 'http://localhost:5000/api'
+const apiEndPoint= process.env.REACT_APP_API_URI || 'http://localhost:5000'
 
 export async function addUser(user:User):Promise<boolean>{
     let response = await fetch(apiEndPoint+'/users/add', {
