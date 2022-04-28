@@ -35,7 +35,7 @@ export default function SolidConection() {
   return (
     <Container id="mainLoginDiv">
       {/* {!session.info.isLoggedIn ? ( */}
-        <body>
+        <main>
           <Typography id="solidLogin" variant="h3">
             SOLID Login
           </Typography>
@@ -66,7 +66,7 @@ export default function SolidConection() {
           <Typography variant="body1" component="p" id="help">
             Don't have a POD? Get one here: <Link id="inrupt" href="https://inrupt.com/" target="_blank">Inrupt</Link>
           </Typography>
-        </body>
+        </main>
       {/* ) : (
         <Typography id="pageTitle" variant="h3">
           Oops! Something went wrong...
