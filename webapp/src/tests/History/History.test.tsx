@@ -26,20 +26,18 @@ test("A history with products is rendered", async () => {
         </Router>
       );
 
-  // expect(getByText(products.product_name)).toBeInTheDocument();
-  // expect(getByText(products.state)).toBeInTheDocument();
+  //  expect(getByText(products.product_name)).toBeInTheDocument();
+  //  expect(getByText(products.state)).toBeInTheDocument();
 });
 
 test("An empty history", async () => {
     const products: SharedHistory[] = [];
   
     const { getByText } = render(
-      <Router>
         <History
         />
-      </Router>
     );
-  
+
     expect(getByText("History")).toBeInTheDocument();
     expect(getByText("Product")).toBeInTheDocument();
     expect(getByText("Type")).toBeInTheDocument();
