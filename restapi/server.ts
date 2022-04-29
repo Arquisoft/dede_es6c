@@ -9,7 +9,7 @@ const app: Application = express();
 const port: number = 5000;
 
 const options: cors.CorsOptions = {
-  origin: ['http://localhost:3000', 'http://*:5000']
+  origin: ['http://localhost:3000', 'http://localhost:5000']
 };
 
 const metricsMiddleware:RequestHandler = promBundle({includeMethod: true});
