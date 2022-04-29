@@ -9,4 +9,4 @@ ARG API_URI="http://localhost:5000"
 ENV REACT_APP_API_URI=$API_URI
 
 #Create an optimized version of the webapp
-RUN npm start
+RUN npm start & npm wait-on http://localhost:3000
