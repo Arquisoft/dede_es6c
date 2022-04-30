@@ -26,7 +26,7 @@ export default function History() {
       });
 
     return (
-        <body>
+        <main>
             <h1>History</h1>
             <div style={{ height: 400, width: '100%' }}>
                 <DataGrid
@@ -38,6 +38,6 @@ export default function History() {
                     pagination
                 />
             </div>
-        </body>
+        </main>
     );
 }
