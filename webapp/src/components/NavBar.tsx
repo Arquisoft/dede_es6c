@@ -35,18 +35,16 @@ const NavBar:React.FC<Props>= ({cartItems,handleAddToCart,handleRemoveFromCart})
             DeDe
           </Typography>
           
-          <Button href="/" onClick={() => {
+          <Button id="btHome" href="/" onClick={() => {
                                 window.location.assign('/');
                                 window.location.reload();
                                 }} color="inherit">
               Home
           </Button>
-          <Button href="/products" onClick={() => {
+          <Button id="btProducts" href="/products" onClick={() => {
                                 window.location.assign('/products');
                                 window.location.reload();
-                                }} color="inherit">
-              Products
-          </Button>
+                                }} color="inherit">Products</Button>
           <Drawer anchor='right' open={cartOpen} onClose={() => setCartOpen(false)}>
           <Cart 
           cartItems={cartItems}
@@ -54,14 +52,14 @@ const NavBar:React.FC<Props>= ({cartItems,handleAddToCart,handleRemoveFromCart})
            removeFromCart={handleRemoveFromCart}
            />
           </Drawer>
-          <Button onClick={() => setCartOpen(true)} color="inherit">Shopping Cart</Button>
-          <Button href="/history" onClick={() => {
+          <Button id="btShoppingCart" onClick={() => setCartOpen(true)} color="inherit">Shopping Cart</Button>
+          <Button id="btHistory" href="/history" onClick={() => {
                                 window.location.assign('/history');
                                 window.location.reload();
                                 }} color="inherit">
               History
           </Button>
-          <Button href="/login" onClick={() => {
+          <Button id="btLogin" href="/login" onClick={() => {
                                 window.location.assign('/login');
                                 window.location.reload();
                                 }} color="inherit">
