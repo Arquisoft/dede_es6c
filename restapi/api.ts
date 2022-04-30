@@ -21,25 +21,21 @@ const crypto = require('crypto').webcrypto;
     product_price: number;
   }
 
-const mongoose = require('mongoose');
-mongoose.connect('mongodb+srv://uo269502:mpRh919kQXYXT98r@cluster0.fp7y3.mongodb.net/Tienda?retryWrites=true&w=majority')
-    .then(() => {
-        console.log("Database connected")
-    }).catch(()=>{
-        console.error("error")
-    });
+ const mongoose = require('mongoose');
+ mongoose.connect('mongodb+srv://uo269502:mpRh919kQXYXT98r@cluster0.fp7y3.mongodb.net/Tienda?retryWrites=true&w=majority')
+     .then(() => {
+         console.log("Database connected")
+     }).catch(()=>{
+         console.error("error")
+     });
 
    api.get("/productos", async (req: Request, res: Response): Promise<Response> => {
-     try {
-         var result = await Product.find().exec();
-         return res.status(200).json(result);
-     } catch (error) {
-       return res.status(500).send(error);
-     }
+        var result = await Product.find().exec();
+        return res.status(200).json(result);
    });
 
   api.post("/historiales", async (req: Request, res: Response): Promise<Response> => {
-    try {
+    //try {
         var currentDate = new Date();
         //var comparisonDate = (moment(new Date().setHours(currentDate.getHours() - 24))).format('DD/MM/YYYY HH:mm');
         var comparisonDate = (moment(new Date().setMinutes(currentDate.getMinutes() - 1))).format('DD/MM/YYYY HH:mm');
@@ -50,9 +46,9 @@ mongoose.connect('mongodb+srv://uo269502:mpRh919kQXYXT98r@cluster0.fp7y3.mongodb
         );
         var result = await History.find({'username': username}).exec();
         return res.status(200).json(result);
-    } catch (error) {
-      return res.status(500).send(error);
-    }
+    //} catch (error) {
+    //  return res.status(500).send(error);
+    //}
   });
 
    api.post("/productos/add",
@@ -113,7 +109,7 @@ mongoose.connect('mongodb+srv://uo269502:mpRh919kQXYXT98r@cluster0.fp7y3.mongodb
       order_id: req.body.order_id,
       state: 'PENDING',
       date: (moment(new Date())).format('DD/MM/YYYY HH:mm'),
-      })
+      });
 
     await producto.save();
     return res.sendStatus(200);
