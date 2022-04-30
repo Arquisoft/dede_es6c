@@ -7,6 +7,8 @@ import api from '../api';
 import apiUser from '../routes/userRoutes';
 import apiProduct from '../routes/productRoutes';
 import mongoose from 'mongoose';
+import { Historial } from '../schemas/historySchema';
+import History from '../models/History';
 
 let app:Application;
 let server:http.Server;
@@ -85,6 +87,11 @@ describe('product ', () => {
         expect(response.statusCode).toBe(200);
     });
 
+    it('list products v2',async () => {
+        const response:Response = await request(app).get("/productos");
+        expect(response.statusCode).toBe(200);
+    });
+
     it('can be created correctly', async () => {
         let name:string = 'Sandero';
         let price:number = 5500;
@@ -94,6 +101,47 @@ describe('product ', () => {
                 type: type, 
                 price: price
             }).set('Accept', 'application/json');
+        expect(response.statusCode).toBe(200);
+    });
+
+});
+
+describe('history ', () => {
+
+     it('user history', async () => {
+         let username:string = 'Luis Manuel';
+         const response:Response = await request(app).post('/historiales').send({   
+                 username:username
+             }).set('Accept', 'application/json');
+         expect(response.statusCode).toBe(200);
+     });
+
+    //  it('error user history', async () => {
+    //     const response:Response = await request(app).post('/historiales').send({   
+    //         }).set('Accept', 'application/json');
+    //     expect(response.statusCode).toBe(500);
+    // });
+
+});
+
+describe('cart ', () => {
+
+    let product_name = "5008";
+    let product_type = "Peugeot";
+    let product_price = 10250;
+    let username = "Luis Manuel";
+    let amount = 1;
+    let order_id = "123";
+
+    it('cart add one item', async () => {
+        const response:Response = await request(app).post('/carrito/add').send({   
+            name:product_name,
+            type:product_type,
+            price:product_price,
+            username:username,
+            amount:amount,
+            order_id:order_id
+        }).set('Accept', 'application/json');
         expect(response.statusCode).toBe(200);
     });
 
