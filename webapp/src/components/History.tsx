@@ -28,7 +28,7 @@ export default function History() {
     return (
         <body>
             <h1 id="titleHistory">History</h1>
-            <div style={{ height: 400, width: '100%' }}>
+            <div id="historyData" style={{ height: 400, width: '100%' }}>
                 <DataGrid
                     columns={columns}
                     rows={history} 

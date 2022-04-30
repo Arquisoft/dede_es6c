@@ -25,19 +25,19 @@ defineFeature(feature, test => {
   test('The unauthenticated user tries to view his history', ({given,when,then}) => {
 
     given('An unauthenticated user goes to the home view', async () => {
-      await page.waitForSelector('#btHome')
-      await page.waitForSelector('#titleWelcome')
+      await page.waitForSelector('#btHome', { timeout: 20000 })
+      await page.waitForSelector('#titleWelcome', { timeout: 20000 })
     });
 
     when('I try to go to history view', async () => {
-        await expect(page).toClick('#btHistory')
+        await expect(page).toClick('#btHistory', { timeout: 20000 })
     });
 
     then('I find the history list empty', async () => {
       await page.waitForNavigation()
-      await page.waitForSelector('#btHome')
-      await page.waitForSelector('#titleHistory')
-      await expect(page).toMatch('No rows')
+      await page.waitForSelector('#btHome', { timeout: 20000 })
+      await page.waitForSelector('#titleHistory', { timeout: 20000 })
+      await expect(page).toMatch('No rows', { timeout: 20000 })
     });
   })
 
