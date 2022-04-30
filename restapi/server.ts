@@ -9,7 +9,7 @@ const app: Application = express();
 const port: number = 5000;
 
 const options: cors.CorsOptions = {
-  origin: ['http://localhost:3000']
+  origin: ['http://*']
 };
 
 const metricsMiddleware:RequestHandler = promBundle({includeMethod: true});
@@ -18,7 +18,7 @@ app.use(metricsMiddleware);
 app.use(cors(options));
 app.use(bp.json());
 
-app.use("/api", api)
+app.use("/", api)
 
 app.listen(port, ():void => {
     console.log('Restapi listening on '+ port);

@@ -34,7 +34,7 @@ const ShoppingList : React.FC<Props> = ({cart, removeFromCart}) => {
       <h1 id="titleCheckout">Checkout</h1>
       <Grid sx={{width: 600}} container direction="column" justifyContent="center" alignItems="center">
         {cart.map((product) => (
-            <Item item={product}/>
+            <Item key={product._id} item={product}/>
             
         ))}
         {cart.forEach(e => {
