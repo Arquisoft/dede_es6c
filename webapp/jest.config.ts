@@ -3,7 +3,7 @@ export default {
         "^.+\.tsx?$": "ts-jest"
     },
     collectCoverage: true,
-    collectCoverageFrom: ["**/*.tsx"],
+    collectCoverageFrom: ['./src/components'],
     testMatch: ["*/steps/.ts"],
     "testTimeout": 15000,
     moduleFileExtensions: ["ts", "tsx", "js", "jsx", "json", "node"],
