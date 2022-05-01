@@ -7,12 +7,15 @@ import api from '../api';
 import apiUser from '../routes/userRoutes';
 import apiProduct from '../routes/productRoutes';
 import mongoose from 'mongoose';
+import {createApp, createServer, closeServer} from './serverTest';
+import { connectDatabase } from './serverTest';
 
 let app:Application;
 let server:http.Server;
 
 beforeAll(async () => {
-    app = express();
+    app = createApp();
+    //app = express();
     const port: number = 5000;
     const options: cors.CorsOptions = {
         origin: ['http://localhost:3000']
@@ -23,15 +26,18 @@ beforeAll(async () => {
     app.use("/apiUser", apiUser);
     app.use('/apiProduct', apiProduct);
 
-    server = app.listen(port, ():void => {
-        console.log('Restapi server for testing listening on '+ port);
-    }).on("error",(error:Error)=>{
-        console.error('Error occured: ' + error.message);
-    });
+    server = createServer(app);
+    await connectDatabase();
+
+    // server = app.listen(port, ():void => {
+    //     console.log('Restapi server for testing listening on '+ port);
+    // }).on("error",(error:Error)=>{
+    //     console.error('Error occured: ' + error.message);
+    // });
 });
 
 afterAll(async () => {
-    server.close() //close the server
+    await closeServer(server); //close the server
     mongoose.connection.close(); //close database
 })
 
@@ -85,6 +91,11 @@ describe('product ', () => {
         expect(response.statusCode).toBe(200);
     });
 
+    it('list products v2',async () => {
+        const response:Response = await request(app).get("/productos");
+        expect(response.statusCode).toBe(200);
+    });
+
     it('can be created correctly', async () => {
         let name:string = 'Sandero';
         let price:number = 5500;
@@ -94,6 +105,47 @@ describe('product ', () => {
                 type: type, 
                 price: price
             }).set('Accept', 'application/json');
+        expect(response.statusCode).toBe(200);
+    });
+
+});
+
+describe('history ', () => {
+
+     it('user history', async () => {
+         let username:string = 'Luis Manuel';
+         const response:Response = await request(app).post('/historiales').send({   
+                 username:username
+             }).set('Accept', 'application/json');
+         expect(response.statusCode).toBe(200);
+     });
+
+    //  it('error user history', async () => {
+    //     const response:Response = await request(app).post('/historiales').send({   
+    //         }).set('Accept', 'application/json');
+    //     expect(response.statusCode).toBe(500);
+    // });
+
+});
+
+describe('cart ', () => {
+
+    let product_name = "5008";
+    let product_type = "Peugeot";
+    let product_price = 10250;
+    let username = "Luis Manuel";
+    let amount = 1;
+    let order_id = "123";
+
+    it('cart add one item', async () => {
+        const response:Response = await request(app).post('/carrito/add').send({   
+            name:product_name,
+            type:product_type,
+            price:product_price,
+            username:username,
+            amount:amount,
+            order_id:order_id
+        }).set('Accept', 'application/json');
         expect(response.statusCode).toBe(200);
     });
 
