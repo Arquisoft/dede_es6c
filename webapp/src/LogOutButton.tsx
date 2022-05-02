@@ -6,7 +6,7 @@ const apiEndPoint = process.env.REACT_APP_API_URI || "http://localhost:5000";
 
 const LogoutButton = () => {
     return(
-        <Button onClick={useSession().logout}>
+        <Button id="btLogout" onClick={useSession().logout}>
             Logout
         </Button>
     )

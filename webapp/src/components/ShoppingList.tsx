@@ -31,7 +31,7 @@ const ShoppingList : React.FC<Props> = ({cart, removeFromCart}) => {
 }
   return(
         <Box sx={{ flexGrow: 1 }}>
-      <h1>Checkout</h1>
+      <h1 id="titleCheckout">Checkout</h1>
       <Grid sx={{width: 600}} container direction="column" justifyContent="center" alignItems="center">
         {cart.map((product) => (
             <Item key={product._id} item={product}/>
@@ -43,7 +43,7 @@ const ShoppingList : React.FC<Props> = ({cart, removeFromCart}) => {
       </Grid>
       <p>Precio envío: {parseFloat(precio2).toFixed(2)}</p>
       <p>Precio con envío e IVA: {((precioTotal/0.79).toFixed(2))}</p>
-      <p><Button onClick={() =>  completeOrder(cart) } 
+      <p><Button id="btOrder" onClick={() =>  completeOrder(cart) } 
       color="inherit"> Create order
       </Button></p>
     </Box>

@@ -59,7 +59,7 @@ const NavBar:React.FC<Props>= ({cartItems,handleAddToCart,handleRemoveFromCart})
                                 }} color="inherit">
               History
           </Button>
-          <Button id="btLogin" href="/login" onClick={() => {
+          <Button id="btProfile" href="/login" onClick={() => {
                                 window.location.assign('/login');
                                 window.location.reload();
                                 }} color="inherit">
