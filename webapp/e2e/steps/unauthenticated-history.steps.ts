@@ -12,7 +12,7 @@ defineFeature(feature, test => {
   beforeAll(async () => {
     browser = process.env.GITHUB_ACTIONS
       ? await puppeteer.launch()
-      : await puppeteer.launch({ headless: false });
+      : await puppeteer.launch({ headless: true });
     page = await browser.newPage();
 
     await page
