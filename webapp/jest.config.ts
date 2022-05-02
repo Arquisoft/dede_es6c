@@ -1,6 +1,6 @@
 export default {
     collectCoverage: true,
-    collectCoverageFrom: ["src/**/*.{tsx}"],
+    collectCoverageFrom: ["src/components/*.{tsx}"],
     transform: {
         "^.+\\.tsx?$": "ts-jest"
     },
