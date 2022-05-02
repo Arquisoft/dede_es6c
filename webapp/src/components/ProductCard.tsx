@@ -47,7 +47,7 @@ const Product:React.FC<Props> = ({producto,handleAddToCart}) => (
         </Typography>
       </CardContent>
       <CardActions>
-        <Button  onClick={() => handleAddToCart(producto)}  size="small">Add to cart</Button>
+        <Button id="addToCart" onClick={() => handleAddToCart(producto)}  size="small">Add to cart</Button>
        </CardActions>
     </Card>
 )

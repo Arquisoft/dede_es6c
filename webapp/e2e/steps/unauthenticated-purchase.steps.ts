@@ -5,7 +5,7 @@ const feature = loadFeature('./e2e/features/unauthenticated-purchase.feature');
 
 let page: puppeteer.Page;
 let browser: puppeteer.Browser;
-jest.setTimeout(50000)
+jest.setTimeout(500000)
 
 defineFeature(feature, test => {
   
@@ -25,22 +25,24 @@ defineFeature(feature, test => {
   test('The user is not authenticated and tries to make a purchase', ({given,when,then}) => {
 
     given('An unauthenticated user goes to the product list', async () => {
-      await page.waitForSelector('#btProducts')
-      await expect(page).toMatch('Welcome to DeDe')
-      await expect(page).toMatch('Products')
-      await expect(page).toClick('#btProducts')
+      await page.waitForSelector('#btHome', { timeout: 20000 })
+      await page.waitForSelector('#titleWelcome', { timeout: 20000 })
+      await expect(page).toClick('#btProducts', { timeout: 20000 })
     });
 
     when('I try to make a purchase', async () => {
       await page.waitForNavigation()
-      await page.waitForSelector('#btProducts')
-      await expect(page).toMatch('Vista de productos')
-      //await expect(page).toClick('Button', { text: 'ADD TO CART' })
-      //await expect(page).toClick('Button', { text: 'PAY' })
+      await page.waitForSelector('#btHome', { timeout: 20000 })
+      await page.waitForSelector('#titleProductos', { timeout: 20000 })
+      await expect(page).toClick('#addToCart', { timeout: 20000 })
+      await expect(page).toClick('#btShoppingCart', { timeout: 20000 })
+      await expect(page).toClick('#Pagar', { timeout: 20000 })
     });
 
-    then('I am redirected to the login page', async () => {
-      //await expect(page).toMatch('SOLID Login')
+    then('I am redirected to the profile page', async () => {
+      await page.waitForNavigation()
+      await page.waitForSelector('#btHome', { timeout: 20000 })
+      await page.waitForSelector('#solidLogin', { timeout: 20000 })
     });
   })
 

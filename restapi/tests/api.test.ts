@@ -7,6 +7,8 @@ import api from '../api';
 import apiUser from '../routes/userRoutes';
 import apiProduct from '../routes/productRoutes';
 import mongoose from 'mongoose';
+import { Historial } from '../schemas/historySchema';
+import History from '../models/History';
 import {createApp, createServer, closeServer} from './serverTest';
 import { connectDatabase } from './serverTest';
 

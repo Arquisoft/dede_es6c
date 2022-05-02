@@ -25,7 +25,7 @@ export default function Profile() {
             <CardContent>
                 <div className="cardContent">
                 <Typography gutterBottom variant="h4" component="h1" id="solidName">
-                <Text property={FOAF.name.iri.value} />
+                <Text id="userName" property={FOAF.name.iri.value} />
                 </Typography>
                 </div>
                 <div className="cardContent">
