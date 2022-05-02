@@ -12,14 +12,14 @@ the customer's data will be saved in the database and access to make the purchas
 image::06_signUp_runtime_view.png[Sign Up]
 
 === Log In
-Both the client and the administrator will see the option to log in, 
+Both the client and the administrator will see the option to log in, selecting the Solid provider they are using, they will be redirected to said site and log in there,
 for this they must enter their username and password, if they are registered in the database, 
-the system is loaded corresponding to their role and access is allowed, otherwise they will be deny access.
+the system is loaded corresponding to their role and access is allowed, otherwise they will be denied access.
 
 image::06_login_runtime_view.png[Log In]
 
 === Buy Product
-The client selects all the elements that he is going to buy, a new order is made that must be registered in the database.
+The client selects all the elements that he is going to buy, they are placed in the shopping cart, which is session-bound, meaning once the user logs out, it will be emptied. Once the client finishes the order and clicks the "buy" button, a new order is made that must be registered in the database.
 If there is no problem, a confirmation message will be sent.
 
 image::06_buyProduct_runtime_view.png[Buy Product]
