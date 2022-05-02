@@ -49,7 +49,7 @@ defineFeature(feature, test => {
       await expect(page).toMatch('Login', { timeout: 20000 })
       await expect(page).toFillForm('form', {
         username: username,
-        contrasena: contrasena,
+        password: contrasena,
       })
       await expect(page).toClick('#login', { timeout: 20000 })
     });
