@@ -2,7 +2,7 @@ export default {
     collectCoverage: true,
     collectCoverageFrom: ["src/**/*.{tsx}"],
     transform: {
-        "^.+\.tsx?$": "ts-jest"
+        "^.+\\.tsx?$": "ts-jest"
     },
     //testMatch: ["*/steps/.ts"],
     testTimeout: 15000,
