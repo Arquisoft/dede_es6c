@@ -25,7 +25,7 @@ defineFeature(feature, test => {
   test('The user is not authenticated and tries to authenticate', ({given,when,then}) => {
 
     let username: string;
-    let password: string;
+    let contrasena: string;
 
     given('An unauthenticated user goes to the profile view', async () => {
       await page.waitForSelector('#btHome', { timeout: 20000 })
@@ -33,7 +33,7 @@ defineFeature(feature, test => {
       await expect(page).toClick('#btProfile', { timeout: 20000 })
 
       username = "UO263595"
-      password = "UO263595_pod"
+      contrasena = "UO263595_pod"
       
     });
 
@@ -49,7 +49,7 @@ defineFeature(feature, test => {
       await expect(page).toMatch('Login', { timeout: 20000 })
       await expect(page).toFillForm('form', {
         username: username,
-        password: password,
+        contrasena: contrasena,
       })
       await expect(page).toClick('#login', { timeout: 20000 })
     });
