@@ -23,6 +23,8 @@ defineFeature(feature, test => {
   });
 
   test('The authenticated user makes a purchase', ({given,when,then}) => {
+    let username: string;
+    let password: string;
 
     given('A user is authenticated', async () => {
         await page.waitForSelector('#btHome', { timeout: 20000 })
@@ -37,9 +39,12 @@ defineFeature(feature, test => {
         await page.waitForNavigation()
         await page.waitForSelector('#login', { timeout: 20000 })
         await expect(page).toMatch('Login', { timeout: 20000 })
+        username = "UO263595"
+        password = "UO263595_pod"
+
         await expect(page).toFillForm('form', {
-            username: 'UO263595',
-            password: 'UO263595_pod',
+            username: username,
+            password: username,
         })
         await expect(page).toClick('#login', { timeout: 20000 })
         await page.waitForNavigation()
