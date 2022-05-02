@@ -1,8 +1,3 @@
-import path from 'path';
-
-var dotenvPath = path.resolve('../.env');
-require("dotenv").config({path: dotenvPath});
-
 import express, { Application } from 'express';
 import * as http from 'http';
 import bp from 'body-parser';
@@ -20,6 +15,12 @@ export function createApp(): Application{
     app.use(bp.json());
 
     return app;
+}
+
+export async function connectDatabase(){
+    const conexiondb: string = 'mongodb+srv://uo269502:mpRh919kQXYXT98r@cluster0.fp7y3.mongodb.net/Tienda?retryWrites=true&w=majority';
+    await mongoose.connect(conexiondb) 
+    .then(() => console.log("BD conectada"))
 }
 
 export function createServer(app : Application): http.Server{

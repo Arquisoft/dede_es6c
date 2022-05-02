@@ -9,12 +9,15 @@ import apiProduct from '../routes/productRoutes';
 import mongoose from 'mongoose';
 import { Historial } from '../schemas/historySchema';
 import History from '../models/History';
+import {createApp, createServer, closeServer} from './serverTest';
+import { connectDatabase } from './serverTest';
 
 let app:Application;
 let server:http.Server;
 
 beforeAll(async () => {
-    app = express();
+    app = createApp();
+    //app = express();
     const port: number = 5000;
     const options: cors.CorsOptions = {
         origin: ['http://localhost:3000']
@@ -25,15 +28,18 @@ beforeAll(async () => {
     app.use("/apiUser", apiUser);
     app.use('/apiProduct', apiProduct);
 
-    server = app.listen(port, ():void => {
-        console.log('Restapi server for testing listening on '+ port);
-    }).on("error",(error:Error)=>{
-        console.error('Error occured: ' + error.message);
-    });
+    server = createServer(app);
+    await connectDatabase();
+
+    // server = app.listen(port, ():void => {
+    //     console.log('Restapi server for testing listening on '+ port);
+    // }).on("error",(error:Error)=>{
+    //     console.error('Error occured: ' + error.message);
+    // });
 });
 
 afterAll(async () => {
-    server.close() //close the server
+    await closeServer(server); //close the server
     mongoose.connection.close(); //close database
 })
 
