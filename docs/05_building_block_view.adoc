@@ -3,8 +3,6 @@
 == Building Block View
 
 === Level 1 Whitebox Overall System
-[role="arc42help"]
-****
 :imagesdir: images/ 
 image:Level1.png["Whitebox Overrall System"]
 
@@ -21,10 +19,8 @@ Contained Building Blocks::
 |Dede | System developed to be used by the users. Through it information in the PODs will be taken.  
 |Pod's service| Has the aim to access each user personal pod
 |===
-****
 
 === Level 2
-[role="arc42help"]
 
 :imagesdir: images/ 
 image:Level2.png["Level2"]
@@ -49,7 +45,6 @@ Contained Building Blocks::
 :imagesdir: images/ 
 image:Level3.png["Level3"]
 
-****
 Motivation::
 
 Detailed structure of the system application. Focused in the components of the User Interface and Data Access.
@@ -70,4 +65,3 @@ Contained Building Blocks::
 |MapboxAPI | It obtains the address of the logged in user, for each kilometer of distance from this address with respect to our headquarters (University of Oviedo) 10 euros more are added for shipping costs.
 |WebStorageAPI | The Web Storage API provides mechanisms by which browsers can store key/value pairs, in a much more intuitive fashion than using cookies.
 |===
-****
