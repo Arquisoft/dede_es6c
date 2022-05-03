@@ -44,7 +44,7 @@ image:08_domain_model.png["Domain Model"]
 
 .Domain Concepts
 * User: interface that groups the generic behaviors of a user.
-* SuperUser: user administrator of the application. It has special permissions such as adding or deleting products and viewing the list of all existing users in the database.
+* SuperUser: user administrator of the application. It has special permissions such as adding or deleting products and viewing the list of all existing users in the database. In actuality when we refer to the SuperUser or administrator we are actually referring to the owner of the application.
 * StandardUser: standar user of the application. They store their data in PODs.
 * POD: stores the data of each of the user.
     - username (primary key): user account login name.
