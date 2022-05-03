@@ -44,7 +44,7 @@ defineFeature(feature, test => {
 
         await expect(page).toFillForm('form', {
             username: username,
-            password: username,
+            password: contrasena,
         })
         await expect(page).toClick('#login', { timeout: 20000 })
         await page.waitForNavigation()
