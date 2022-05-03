@@ -34,4 +34,5 @@ A list of identified technical risks or technical debts, ordered by priority.
 | Documentation | Lack of full documentation | Develop and update current documentation as the project progresses
 | Qualification | Lack of qualification on the part of the team to develop such a large project | Team effort to remedy existing shortcomings
 | Code externalization | High dependence on external code | Try to reduce dependencies to external code
+| Administrator User | Eliminating the need to use the Database directly for the owner, allowing them to use the application exclusively | Adding a different interface for users with administrator priviledges
 |=== 
