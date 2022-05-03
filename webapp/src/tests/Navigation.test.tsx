@@ -1,8 +1,8 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import NavBar from '../components/NavBar';
 import { SharedProduct } from "../shared/shareddtypes";
 
-test("NavBar is rendered correctly", async () => {
+test("The navigation works correctly", async () => {
     const items: SharedProduct[] = [
       {
           _id: 100,
@@ -22,19 +22,15 @@ test("NavBar is rendered correctly", async () => {
       },
     ];
   
-    const { getByText } = render(
+    render(
         <NavBar
             cartItems={items}
             handleAddToCart={() => {}}
             handleRemoveFromCart={() => {}}
         />
     );
-  
-    expect(getByText("DeDe")).toBeInTheDocument();
-    expect(getByText("Home")).toBeInTheDocument();
-    expect(getByText("Products")).toBeInTheDocument();
-    expect(getByText("Shopping Cart")).toBeInTheDocument();
-    expect(getByText("History")).toBeInTheDocument();
-    expect(getByText("Profile")).toBeInTheDocument();
- 
+
+    ///
+    let linkElement = screen.getByAltText(/products/i);
+    expect(linkElement).toBeInTheDocument();
 });
