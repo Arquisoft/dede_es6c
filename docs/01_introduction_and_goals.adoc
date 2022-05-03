@@ -85,9 +85,9 @@ A table with quality goals and concrete scenarios, ordered by priorities
 [options="header",cols="1,2,2"]
 |===
 |Nº|Quality attribute|Motivation
-| _1_ | _Usability_ | _Users should be able to use the page with little difficulty without having to search for instructions for use. A web application is useless if no one knows how to handle it._
+| _1_ | _Confidentiality_ | _Customer data can only be accessed by them, and the store manager must be the only one capable of changing the available stock._
 | _2_ | _Security_ | _The application must be able to resist attack from anyone trying to take down the application or extract information from it without authorization. If a user doesn't feel safe in the app, they might leave the app._
-| _3_ | _Confidentiality_ | _Customer data can only be accessed by them, and the store manager must be the only one capable of changing the available stock._
+| _3_ | _Usability_ | _Users should be able to use the page with little difficulty without having to search for instructions for use. A web application is useless if no one knows how to handle it._
 |===
 
 === Stakeholders
