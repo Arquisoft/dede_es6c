@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import Container from '@mui/material/Container';
 import  {getProducts} from './api/api';
 import {SharedProduct} from './shared/shareddtypes';
-import Products from './components/Products';
+import Products from './Products';
 import Header from './NavBar';
 import Footer from './components/Footer';
 import ShoppingList from "./components/ShoppingList";
@@ -10,7 +10,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import SolidConection from "./SolidConection";
 import Home from "./components/Home";
 import History from "./components/History";
-import Profile from "./components/profile";
+import Profile from "./profile";
 import SolidDisconection from "./SolidDisconection";
 
 
