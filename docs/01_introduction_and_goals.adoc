@@ -57,8 +57,7 @@ sale and they have logged in.
 
 * History of orders made by the customer, in which they can see the products, quantity, price and status of the order
 
-* Modification of the catalog: apart from the clients, there will be an administrator user 
-who will be able to add or remove vehicles from the application's list of vehicles for sale.
+* Modification of the catalog: the owner will be able to add or delete new products to the shop through the database directly.
 
 * Registration: for a user to be able to buy any vehicle, they must sign up as a client of the application.
 
