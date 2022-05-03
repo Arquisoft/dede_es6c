@@ -4,7 +4,7 @@ import './estilos/estilo.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { SessionProvider } from "@inrupt/solid-ui-react";
-import ResumenCompra from './components/ResumenCompra';
+import ResumenCompra from './ResumenCompra';
 
 ReactDOM.render(
   <React.StrictMode>

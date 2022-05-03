@@ -16,4 +16,6 @@
 | MongoDB | MongoDB is an open source NoSQL database management program. 
 | NoSQL | NoSQL describes the wide variety of database technologies created to address the shortcomings of RDBMS and the demands of modern software development.
 | RDBMS | Relational DataBase Management System
+| AWS | Amazon Web Service, more accurately, the server provider we use to deploy the application.
+| Geomapping | Geographical API used to manage address-related operations.
 |===
