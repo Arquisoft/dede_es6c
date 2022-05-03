@@ -1,11 +1,15 @@
 import { render } from "@testing-library/react";
 import SolidConection from '../../SolidConection';
+import { BrowserRouter as Router } from "react-router-dom";
 
 test('Profile page is rendered correctly', async () => {
-    const {getByText} = render(<SolidConection></SolidConection>);
+    const {getByText} = render(
+        <Router>
+            <SolidConection></SolidConection>
+        </Router>
+    );
     
     expect(getByText("SOLID Login")).toBeInTheDocument();
     expect(getByText("CONNECT")).toBeInTheDocument();
-    expect(getByText("CANCEL")).toBeInTheDocument();
-    expect(getByText("Don't have a POD? Get one here: Inrupt")).toBeInTheDocument();
+    expect(getByText("Inrupt")).toBeInTheDocument();
 });

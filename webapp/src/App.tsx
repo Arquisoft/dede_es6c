@@ -3,7 +3,7 @@ import Container from '@mui/material/Container';
 import  {getProducts} from './api/api';
 import {SharedProduct} from './shared/shareddtypes';
 import Products from './components/Products';
-import Header from './components/NavBar';
+import Header from './NavBar';
 import Footer from './components/Footer';
 import ShoppingList from "./components/ShoppingList";
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
