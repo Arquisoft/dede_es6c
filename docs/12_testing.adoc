@@ -1,13 +1,45 @@
 [[section-testing]]
 == Testing
 
-.Tests Restapi
-A list of identified technical risks or technical debts, ordered by priority.
+.Restapi Tests
+Tests of the RestAPI part (Representational State Transfer API).
 
-.Tests Webapp
-A list of identified technical risks or technical debts, ordered by priority.
+* Products: it is verified that products can be created and listed correctly.
+* History: we verify that all the products in a user's history can be displayed.
+* Cart: we test that the selected products are inserted in the cart and can be subsequently purchased.
 
-.Tests End to End (e2e)
+image::RestapiTest.png[Restapi Coverage]
+
+.Webapp Tests
+Tests of the WebApp part (Web Application).
+
+* Home: check that the home view is displayed properly.
+* Footer: check that the footer is displayed properly.
+* Cart: check if the cart view is correctly displayed with the products it should contain.
+* History: check that the history view is displayed correctly with the products corresponding to the user.
+* Products: checks that the product view is displayed correctly with the products contained in the database.
+* Profile: check that the profile view is correctly displayed with the requested fields.
+
+image::WebappTest.png[Webapp Coverage]
+
+.End to End (e2e) Test
 It consists of testing an application from the point of view of the end user.
 
-* 
+* Unauthenticated history: the unauthenticated user tries to access the history and it appears empty.
+* Unauthenticated Purchase: the unauthenticated user attempts to make a purchase and is redirected to the login page.
+* User Authentication: the unauthenticated user tries to authenticate and is redirected to the profile page, where they can see their details such as name, address and company.
+* Authenticated Purchase: the authenticated user makes a purchase and is redirected to the history where it is reflected.
+
+Note: they can only be executed locally.
+
+image::E2ETest.png[End to End Results]
+
+.Gatling Test
+Gatling is a Web application load testing tool that allows you to generate tests very easily. We have conducted tests for two different scenarios.
+
+* scenario 1: a sudden user peak of 1500 users is introduced, to observe how the application reacts to the sudden increase in requests.
+image::GatlingTest_1.1.png[Scenario 1.1]
+image::GatlingTest_1.2.png[Scenario 1.2]
+* scenario 2: more complete scenario where several stress peaks are simulated followed by application recoveries, to observe how our application recovers from these stress peaks.
+image::GatlingTest_2.1.png[Scenario 2.1]
+image::GatlingTest_2.2.png[Scenario 2.2]
