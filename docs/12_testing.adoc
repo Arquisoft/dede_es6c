@@ -38,8 +38,8 @@ image::E2ETest.png[End to End Results]
 Gatling is a Web application load testing tool that allows you to generate tests very easily. We have conducted tests for two different scenarios.
 
 * scenario 1: a sudden user peak of 1500 users is introduced, to observe how the application reacts to the sudden increase in requests.
-image::GatlingTest_1.1.png[Scenario 1.1]
-image::GatlingTest_1.2.png[Scenario 1.2]
+image::GatlingTest_1_1.png[Scenario 1.1]
+image::GatlingTest_1_2.png[Scenario 1.2]
 * scenario 2: more complete scenario where several stress peaks are simulated followed by application recoveries, to observe how our application recovers from these stress peaks.
-image::GatlingTest_2.1.png[Scenario 2.1]
-image::GatlingTest_2.2.png[Scenario 2.2]
+image::GatlingTest_2_1.png[Scenario 2.1]
+image::GatlingTest_2_2.png[Scenario 2.2]
