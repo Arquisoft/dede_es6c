@@ -1,0 +1,10 @@
+{
+  "simulation": "escenariodede.dede",
+  "simulationId": "dede",
+  "start": 1650992509671,
+  "description": "",
+  "scenarios": ["dede"],
+  "assertions": [
+
+  ]
+}
