@@ -45,6 +45,7 @@ This are the constraints that affect the develop, organization and enviroment of
 Decisions about how are we going to document our project and how are we going to work in general.
 |===
 |Constraint|Explanation
+| _RGPD_ | _We want to respect and fit the RGPD in our project_
 | _Arc42_ | _We have to use Arc42 to document out project because it's used professionally and it's clear and simple_
 | _Language_ | _We decided to write the documentation of the project in english because it's a trade-off, its harder to us to do it, but its more professional_
 |=== 

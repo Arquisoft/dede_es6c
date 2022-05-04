@@ -35,4 +35,5 @@ A list of identified technical risks or technical debts, ordered by priority.
 | Qualification | Lack of qualification on the part of the team to develop such a large project | Team effort to remedy existing shortcomings
 | Code externalization | High dependence on external code | Try to reduce dependencies to external code
 | Administrator User | Eliminating the need to use the Database directly for the owner, allowing them to use the application exclusively | Adding a different interface for users with administrator priviledges
+| SSL Certificate | We cant generate a SSL Certificate on a public IP on AWS, because Lets Encrypt dont give certificates to public AWS addresses | Buy a domain and generate that SSL Certificate to be able to connect via https and get the crypto for Solid Login.
 |=== 
