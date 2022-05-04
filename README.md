@@ -4,6 +4,8 @@
 [![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=Arquisoft_dede_es6c&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=Arquisoft_dede_es6c)
 [![codecov](https://codecov.io/gh/Arquisoft/dede_es6c/branch/master/graph/badge.svg?token=QHRw41aid0)](https://codecov.io/gh/Arquisoft/dede_es6c)
 [![Gatling](https://github.com/UO258472/Gatling_for_dede_es6c/blob/main/gatling.svg)](https://github.com/UO258472/Gatling_for_dede_es6c)
+[![AWS](https://blog.wildix.com/wp-content/uploads/2020/06/react-logo.jpg)](http://54.161.139.62:3000)
+
 
 
 <p float="left">
