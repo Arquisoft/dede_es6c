@@ -1924,19 +1924,103 @@ List of risks and/or technical debts, probably including suggested measures to m
 <h2 id="section-testing">12. Testing</h2>
 <div class="sectionbody">
 <div class="paragraph">
-<div class="title">Tests Restapi</div>
-<p>A list of identified technical risks or technical debts, ordered by priority.</p>
+<div class="title">Restapi Tests</div>
+<p>Tests of the RestAPI part (Representational State Transfer API).</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Products: it is verified that products can be created and listed correctly.</p>
+</li>
+<li>
+<p>History: we verify that all the products in a user&#8217;s history can be displayed.</p>
+</li>
+<li>
+<p>Cart: we test that the selected products are inserted in the cart and can be subsequently purchased.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/RestapiTest.png" alt="Restapi Coverage">
+</div>
 </div>
 <div class="paragraph">
-<div class="title">Tests Webapp</div>
-<p>A list of identified technical risks or technical debts, ordered by priority.</p>
+<div class="title">Webapp Tests</div>
+<p>Tests of the WebApp part (Web Application).</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>Home: check that the home view is displayed properly.</p>
+</li>
+<li>
+<p>Footer: check that the footer is displayed properly.</p>
+</li>
+<li>
+<p>Cart: check if the cart view is correctly displayed with the products it should contain.</p>
+</li>
+<li>
+<p>History: check that the history view is displayed correctly with the products corresponding to the user.</p>
+</li>
+<li>
+<p>Products: checks that the product view is displayed correctly with the products contained in the database.</p>
+</li>
+<li>
+<p>Profile: check that the profile view is correctly displayed with the requested fields.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/WebappTest.png" alt="Webapp Coverage">
+</div>
 </div>
 <div class="paragraph">
-<div class="title">Tests End to End (e2e)</div>
+<div class="title">End to End (e2e) Test</div>
 <p>It consists of testing an application from the point of view of the end user.</p>
 </div>
+<div class="ulist">
+<ul>
+<li>
+<p>Unauthenticated history: the unauthenticated user tries to access the history and it appears empty.</p>
+</li>
+<li>
+<p>Unauthenticated Purchase: the unauthenticated user attempts to make a purchase and is redirected to the login page.</p>
+</li>
+<li>
+<p>User Authentication: the unauthenticated user tries to authenticate and is redirected to the profile page, where they can see their details such as name, address and company.</p>
+</li>
+<li>
+<p>Authenticated Purchase: the authenticated user makes a purchase and is redirected to the history where it is reflected.</p>
+</li>
+</ul>
+</div>
 <div class="paragraph">
-<p>*</p>
+<p>Note: they can only be executed locally.</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/E2ETest.png" alt="End to End Results">
+</div>
+</div>
+<div class="paragraph">
+<div class="title">Gatling Test</div>
+<p>Gatling is a Web application load testing tool that allows you to generate tests very easily. We have conducted tests for two different scenarios.</p>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>scenario 1: a sudden user peak of 1500 users is introduced, to observe how the application reacts to the sudden increase in requests.
+image::GatlingTest_1.1.png[Scenario 1.1]
+image::GatlingTest_1.2.png[Scenario 1.2]</p>
+</li>
+<li>
+<p>scenario 2: more complete scenario where several stress peaks are simulated followed by application recoveries, to observe how our application recovers from these stress peaks.
+image::GatlingTest_2.1.png[Scenario 2.1]
+image::GatlingTest_2.2.png[Scenario 2.2]</p>
+</li>
+</ul>
 </div>
 <div style="page-break-after: always;"></div>
 </div>
@@ -2023,7 +2107,7 @@ Created by Dr. Peter Hruschka &amp; Dr. Gernot Starke.</p>
 </div>
 <div id="footer">
 <div id="footer-text">
-Last updated 2022-05-04 12:18:03 +0200
+Last updated 2022-05-04 13:51:45 +0200
 </div>
 </div>
 </body>
