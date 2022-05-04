@@ -1126,6 +1126,31 @@ Refer to details in the following sections.</p>
 <div class="sect1">
 <h2 id="section-building-block-view">5. Building Block View</h2>
 <div class="sectionbody">
+<div class="sidebarblock arc42help">
+<div class="content">
+<div class="paragraph">
+<div class="title">Content</div>
+<p>The building block view shows the static decomposition of the system into building blocks (modules, components, subsystems, classes,
+interfaces, packages, libraries, frameworks, layers, partitions, tiers, functions, macros, operations,
+datas structures, &#8230;&#8203;) as well as their dependencies (relationships, associations, &#8230;&#8203;)
+This view is mandatory for every architecture documentation.
+In analogy to a house this is the floor plan.
+.Motivation
+Maintain an overview of your source code by making its structure understandable through
+abstraction.
+This allows you to communicate with your stakeholder on an abstract level without disclosing implementation details.
+.Form
+The building block view is a hierarchical collection of black boxes and white boxes
+(see figure below) and their descriptions.
+<span class="image"><img src="./images/05_building_blocks-EN.png" alt="Hierarchy of building blocks"></span>
+Level 1 is the white box description of the overall system together with black
+box descriptions of all contained building blocks.
+Level 2 zooms into some building blocks of level 1.
+Thus it contains the white box description of selected building blocks of level 1, together with black box descriptions of their internal building blocks.
+Level 3 zooms into selected building blocks of level 2, and so on.</p>
+</div>
+</div>
+</div>
 <div class="sect2">
 <h3 id="_level_1_whitebox_overall_system">5.1. Level 1 Whitebox Overall System</h3>
 <div class="paragraph">
@@ -1211,7 +1236,7 @@ All the data that belongs to the user is stored safely in their POD&#8217;s.</p>
 </div>
 <div class="sect2">
 <h3 id="_level_3">5.3. Level 3</h3>
-<div class="paragraph arc42help">
+<div class="paragraph">
 <p><span class="image"><img src="./images/Level3.png" alt="Level3"></span></p>
 </div>
 <div class="dlist">
@@ -2011,16 +2036,36 @@ List of risks and/or technical debts, probably including suggested measures to m
 <div class="ulist">
 <ul>
 <li>
-<p>scenario 1: a sudden user peak of 1500 users is introduced, to observe how the application reacts to the sudden increase in requests.
-image::GatlingTest_1_1.png[Scenario 1.1]
-image::GatlingTest_1_2.png[Scenario 1.2]</p>
-</li>
-<li>
-<p>scenario 2: more complete scenario where several stress peaks are simulated followed by application recoveries, to observe how our application recovers from these stress peaks.
-image::GatlingTest_2_1.png[Scenario 2.1]
-image::GatlingTest_2_2.png[Scenario 2.2]</p>
+<p>scenario 1: a sudden user peak of 1500 users is introduced, to observe how the application reacts to the sudden increase in requests.</p>
 </li>
 </ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/GatlingTest_1_1.png" alt="Scenario 1.1">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/GatlingTest_1_2.png" alt="Scenario 1.2">
+</div>
+</div>
+<div class="ulist">
+<ul>
+<li>
+<p>scenario 2: more complete scenario where several stress peaks are simulated followed by application recoveries, to observe how our application recovers from these stress peaks.</p>
+</li>
+</ul>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/GatlingTest_2_1.png" alt="Scenario 2.1">
+</div>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="./images/GatlingTest_2_2.png" alt="Scenario 2.2">
+</div>
 </div>
 <div style="page-break-after: always;"></div>
 </div>
