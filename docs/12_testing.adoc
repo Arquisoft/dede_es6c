@@ -1,0 +1,13 @@
+[[section-testing]]
+== Testing
+
+.Tests Restapi
+A list of identified technical risks or technical debts, ordered by priority.
+
+.Tests Webapp
+A list of identified technical risks or technical debts, ordered by priority.
+
+.Tests End to End (e2e)
+It consists of testing an application from the point of view of the end user.
+
+* 
