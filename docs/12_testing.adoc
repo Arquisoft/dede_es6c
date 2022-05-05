@@ -35,7 +35,7 @@ Note: they can only be executed locally.
 image::E2ETest.png[End to End Results]
 
 .Gatling Test
-Gatling is a Web application load testing tool that allows you to generate tests very easily. We have conducted tests for two different scenarios.
+Gatling is a Web application load testing tool that allows you to generate tests very easily. We have conducted tests for two different scenarios. Link to the Gatling tests repository: https://github.com/UO258472/Gatling_for_dede_es6c
 
 * scenario 1: a sudden user peak of 1500 users is introduced, to observe how the application reacts to the sudden increase in requests.
 
