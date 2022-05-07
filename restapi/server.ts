@@ -1,27 +1,30 @@
 import express, { Application, RequestHandler } from "express";
-import cors from 'cors';
-import bp from 'body-parser';
-import promBundle from 'express-prom-bundle';
-import api from "./api"; 
-
+import cors from "cors";
+import bp from "body-parser";
+import promBundle from "express-prom-bundle";
+import api from "./api";
+const fs = require("fs");
+const https = require("https");
 
 const app: Application = express();
 const port: number = 5000;
 
-const options: cors.CorsOptions = {
-  origin: ['http://localhost:3000']
-};
-
-const metricsMiddleware:RequestHandler = promBundle({includeMethod: true});
+const metricsMiddleware: RequestHandler = promBundle({ includeMethod: true });
 app.use(metricsMiddleware);
 
-app.use(cors());// NOSONAR
+app.use(cors()); // NOSONAR
 app.use(bp.json());
 
-app.use("/", api)
+app.use("/", api);
 
-app.listen(port, ():void => {
-    console.log('Restapi listening on '+ port);
-}).on("error",(error:Error)=>{
-    console.error('Error occured: ' + error.message);
-});
+https
+  .createServer(
+    {
+      key: fs.readFileSync("pkey.key"),
+      cert: fs.readFileSync("cert.crt"),
+    },
+    app
+  )
+  .listen(port, function () {
+    console.log("My HTTPS server listening on port " + port + "...");
+  });
