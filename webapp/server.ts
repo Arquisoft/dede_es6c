@@ -1,14 +1,23 @@
-import express,{Application} from 'express'; 
-//for using an import here we need to configure the tsconfig.json
-//setting the option module to commonjs
+const fs = require("fs");
+const https = require("https");
+const express = require("express");
 
-var app: Application = express()
-const port: number = 3000;
+const PORT = 3001;
 
-app.use(express.static('build'))
+const app = express();
 
-app.listen(port, ():void => {
-    console.log('Webapp started on port '+ port);
-}).on("error",(error:Error)=>{
-    console.error('Error occured: ' + error.message);
+https
+  .createServer(
+    {
+      key: fs.readFileSync("pkey.key"),
+      cert: fs.readFileSync("cert.crt"),
+    },
+    app
+  )
+  .listen(PORT, function () {
+    console.log("My HTTPS server listening on port " + PORT + "...");
+  });
+
+app.get("/foo", function (req, res) {
+  console.log("Hello, I am foo.");
 });
