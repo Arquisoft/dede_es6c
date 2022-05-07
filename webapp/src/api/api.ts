@@ -1,6 +1,6 @@
 import { SharedHistory, SharedProduct, User } from "../shared/shareddtypes";
 
-const apiEndPoint = process.env.REACT_APP_API_URI || "https://localhost:5000";
+const apiEndPoint = "https://dedees6c.uksouth.cloudapp.azure.com:5000";
 
 export async function addUser(user: User): Promise<boolean> {
   let response = await fetch(apiEndPoint + "/users/add", {
